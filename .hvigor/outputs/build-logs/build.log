@@ -1,0 +1,1561 @@
+[2025-11-10T15:42:16.153] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-11-10T15:42:27.789] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-10T15:43:25.254] [DEBUG] debug-file - hvigorfile, require result:  { default: { system: [Function: appTasks], plugins: [] } }
+[2025-11-10T15:43:25.405] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-10T15:43:25.409] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-11-10T15:43:25.431] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-11-10T15:43:25.483] [DEBUG] debug-file - Project task initialization takes 4 ms 
+[2025-11-10T15:43:25.503] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T15:43:25.510] [DEBUG] debug-file - project has submodules:entry
+[2025-11-10T15:43:25.589] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T15:43:25.599] [DEBUG] debug-file - entry : clean cost memory 0.12711334228515625
+[2025-11-10T15:42:16.154] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '6.0.0',
+  dependencies: {},
+  execution: {},
+  logging: {},
+  debugging: {},
+  nodeOptions: {}
+}
+[2025-11-10T15:42:27.790] [DEBUG] debug-file - Since current hvigor version 6.20.0 differs from last hvigor version 
+      undefined, delete file-cache.json and task-cache.json.
+[2025-11-10T15:43:25.625] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-11-10T15:43:25.255] [DEBUG] debug-file - hvigorfile, binding system plugins [Function: appTasks]
+[2025-11-10T15:43:25.405] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-10T15:43:25.419] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-11-10T15:43:25.478] [DEBUG] debug-file - Sdk init in 58 ms 
+[2025-11-10T15:43:25.483] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T15:43:25.503] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T15:43:25.511] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-11-10T15:43:25.592] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-11-10T15:43:25.599] [DEBUG] debug-file - runTaskFromQueue task cost before running: 57 s 817 ms 
+[2025-11-10T15:42:16.156] [DEBUG] debug-file - env: daemon=false
+[2025-11-10T15:42:27.790] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-11-10T15:43:25.628] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-11-10T15:43:25.406] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-10T15:43:25.421] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-11-10T15:43:25.483] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T15:43:25.504] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T15:43:25.514] [DEBUG] debug-file - load to the disk finished
+[2025-11-10T15:43:25.600] [INFO] debug-file - Finished :entry:clean... after 2 ms 
+[2025-11-10T15:42:16.156] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2025-11-10T15:42:27.791] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T15:43:25.592] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-11-10T15:43:25.630] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2025-11-10T15:43:25.406] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-10T15:43:25.426] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-11-10T15:43:25.483] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T15:43:25.504] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T15:43:25.514] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T15:43:25.600] [DEBUG] debug-file - Executing task ::clean
+[2025-11-10T15:43:25.596] [DEBUG] debug-file - Configuration phase cost:57 s 806 ms 
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Clear worker 0.
+[2025-11-10T15:43:25.484] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T15:43:25.504] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T15:43:25.586] [DEBUG] debug-file - Module MysterySolo Collected Dependency: 
+[2025-11-10T15:43:25.600] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-11-10T15:43:25.597] [DEBUG] debug-file - Configuration task cost before running: 57 s 815 ms 
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Worker 0 has been cleared.
+[2025-11-10T15:43:25.489] [DEBUG] debug-file - hvigorfile, require result:  { default: { system: [Function: hapTasks], plugins: [] } }
+[2025-11-10T15:43:25.504] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T15:43:25.586] [DEBUG] debug-file - Module MysterySolo's total dependency: 0
+[2025-11-10T15:43:25.601] [DEBUG] debug-file - MysterySolo : clean cost memory 0.01969146728515625
+[2025-11-10T15:43:25.598] [DEBUG] debug-file - Executing task :entry:clean
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-11-10T15:43:25.489] [DEBUG] debug-file - hvigorfile, binding system plugins [Function: hapTasks]
+[2025-11-10T15:43:25.504] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-11-10T15:43:25.601] [DEBUG] debug-file - runTaskFromQueue task cost before running: 57 s 818 ms 
+[2025-11-10T15:43:25.598] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-11-10T15:43:25.490] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\cli\main\cli.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\bin\hvigor.js
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-11-10T15:43:25.601] [INFO] debug-file - Finished ::clean... after 1 ms 
+[2025-11-10T15:43:25.504] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Clear worker 1.
+[2025-11-10T15:43:25.601] [DEBUG] debug-file - Executing task :entry:init
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Worker 1 has been cleared.
+[2025-11-10T15:43:25.602] [DEBUG] debug-file - entry : init cost memory 0.0152130126953125
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Current idle worker size: 0.
+[2025-11-10T15:43:25.602] [DEBUG] debug-file - runTaskFromQueue task cost before running: 57 s 819 ms 
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T15:43:25.631] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-11-10T15:43:25.602] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T15:43:25.632] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-11-10T15:43:25.602] [DEBUG] debug-file - Executing task ::init
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T15:43:25.637] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2025-11-10T15:43:25.602] [DEBUG] debug-file - MysterySolo : init cost memory 0.011474609375
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T15:43:25.637] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2025-11-10T15:43:25.602] [DEBUG] debug-file - runTaskFromQueue task cost before running: 57 s 819 ms 
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T15:43:25.638] [DEBUG] debug-file - Current worker pool is terminated.
+[2025-11-10T15:43:25.602] [INFO] debug-file - Finished ::init... after 1 ms 
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T15:43:25.614] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T15:43:25.615] [DEBUG] debug-file - Obtain build option for module 'entry' target 'ohosTest'in this build.
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T15:43:25.623] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-11-10T15:43:25.505] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T15:43:25.623] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-11-10T15:43:25.509] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2025-11-10T15:43:25.509] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T15:43:25.509] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T15:43:25.509] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T16:10:27.916] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-11-10T16:10:28.184] [DEBUG] debug-file - begin to create new key files
+[2025-11-10T16:10:27.918] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '6.0.0',
+  dependencies: {},
+  execution: {},
+  logging: {},
+  debugging: {},
+  nodeOptions: {}
+}
+[2025-11-10T16:10:28.226] [DEBUG] debug-file - env: daemon=true
+[2025-11-10T16:10:31.926] [DEBUG] debug-file - java daemon started at port 45050 pid 60556
+[2025-11-10T16:10:31.982] [DEBUG] debug-file - session manager: set active socket. socketId=qYZmh7yX0zys-Od9AAAB
+[2025-11-10T16:10:32.378] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T16:10:32.385] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-10T16:10:32.386] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-11-10T16:10:32.387] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T16:10:34.233] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T16:10:34.233] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T16:10:34.370] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-10T16:10:34.370] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-10T16:10:34.370] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-10T16:10:34.370] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-10T16:10:34.373] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-11-10T16:10:34.380] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-11-10T16:10:34.381] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-11-10T16:10:34.385] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-11-10T16:10:34.388] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-11-10T16:10:34.414] [DEBUG] debug-file - Sdk init in 34 ms 
+[2025-11-10T16:10:34.418] [DEBUG] debug-file - Project task initialization takes 3 ms 
+[2025-11-10T16:10:34.418] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T16:10:34.418] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T16:10:34.418] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T16:10:34.419] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T16:10:34.424] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T16:10:34.424] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T16:10:34.425] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-11-10T16:10:34.438] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T16:10:34.438] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T16:10:34.439] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T16:10:34.440] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T16:10:34.440] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T16:10:34.440] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T16:10:34.440] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T16:10:34.440] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T16:10:34.440] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T16:10:34.440] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T16:10:34.444] [DEBUG] debug-file - Module entry task initialization takes 4 ms 
+[2025-11-10T16:10:34.444] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T16:10:34.444] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T16:10:34.444] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T16:10:34.499] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 55 ms 
+[2025-11-10T16:10:34.500] [DEBUG] debug-file - project has submodules:entry
+[2025-11-10T16:10:34.501] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-11-10T16:10:34.505] [DEBUG] debug-file - load to the disk finished
+[2025-11-10T16:10:34.506] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T16:10:34.515] [DEBUG] debug-file - Module MysterySolo Collected Dependency: 
+[2025-11-10T16:10:34.515] [DEBUG] debug-file - Module MysterySolo's total dependency: 0
+[2025-11-10T16:10:34.516] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T16:10:34.518] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-11-10T16:10:34.518] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-11-10T16:10:34.521] [DEBUG] debug-file - Configuration phase cost:2 s 135 ms 
+[2025-11-10T16:10:34.522] [DEBUG] debug-file - Configuration task cost before running: 2 s 143 ms 
+[2025-11-10T16:10:34.523] [DEBUG] debug-file - Executing task :entry:init
+[2025-11-10T16:10:34.523] [DEBUG] debug-file - entry : init cost memory 0.01801300048828125
+[2025-11-10T16:10:34.523] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 143 ms 
+[2025-11-10T16:10:34.523] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2025-11-10T16:10:34.524] [DEBUG] debug-file - Executing task ::init
+[2025-11-10T16:10:34.524] [DEBUG] debug-file - MysterySolo : init cost memory 0.015350341796875
+[2025-11-10T16:10:34.524] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 144 ms 
+[2025-11-10T16:10:34.524] [INFO] debug-file - Finished ::init... after 1 ms 
+[2025-11-10T16:10:34.535] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T16:10:34.536] [DEBUG] debug-file - Obtain build option for module 'entry' target 'ohosTest'in this build.
+[2025-11-10T16:10:34.542] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T16:10:34.542] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T16:10:34.627] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-11-10T16:10:34.627] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-11-10T16:10:34.628] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-11-10T16:10:34.630] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Cleanup worker 0.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Worker 0 has been cleaned up.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Current resident worker size: 2.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Cleanup worker 1.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Worker 1 has been cleaned up.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Current idle worker size: 0.
+[2025-11-10T16:10:34.632] [DEBUG] debug-file - Current resident worker size: 2.
+[2025-11-10T16:10:34.633] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-11-10T16:10:34.641] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T16:10:34.641] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T16:10:34.641] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2025-11-10T16:10:34.641] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2025-11-10T16:10:34.977] [DEBUG] debug-file - session manager: set active socket. socketId=dJaGr2nhUBEftjNrAAAD
+[2025-11-10T16:10:34.989] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T16:10:34.994] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-10T16:10:34.994] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-11-10T16:10:34.995] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T16:10:34.998] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T16:10:34.999] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T16:10:35.001] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-10T16:10:35.002] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-10T16:10:35.002] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-10T16:10:35.002] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-10T16:10:35.002] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-11-10T16:10:35.004] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-11-10T16:10:35.005] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-11-10T16:10:35.025] [DEBUG] debug-file - Sdk init in 21 ms 
+[2025-11-10T16:10:35.027] [DEBUG] debug-file - Project task initialization takes 2 ms 
+[2025-11-10T16:10:35.027] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T16:10:35.027] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T16:10:35.027] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T16:10:35.027] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T16:10:35.030] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T16:10:35.030] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T16:10:35.031] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-11-10T16:10:35.032] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T16:10:35.033] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T16:10:35.034] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2025-11-10T16:10:35.034] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T16:10:35.034] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T16:10:35.034] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T16:10:35.080] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 46 ms 
+[2025-11-10T16:10:35.080] [DEBUG] debug-file - project has submodules:entry
+[2025-11-10T16:10:35.081] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-11-10T16:10:35.083] [DEBUG] debug-file - load to the disk finished
+[2025-11-10T16:10:35.084] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T16:10:35.086] [DEBUG] debug-file - Module MysterySolo Collected Dependency: 
+[2025-11-10T16:10:35.086] [DEBUG] debug-file - Module MysterySolo's total dependency: 0
+[2025-11-10T16:10:35.086] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T16:10:35.087] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-11-10T16:10:35.087] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-11-10T16:10:35.088] [DEBUG] debug-file - Configuration phase cost:94 ms 
+[2025-11-10T16:10:35.089] [DEBUG] debug-file - Configuration task cost before running: 98 ms 
+[2025-11-10T16:10:35.093] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-11-10T16:10:35.094] [DEBUG] debug-file - Task 'entry:default@PreBuild' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.226] [DEBUG] debug-file - current product is not Atomic service.
+[2025-11-10T16:10:35.226] [DEBUG] debug-file - Use tool [win32: JAVA_HOME, CLASSPATH]
+ [
+  { JAVA_HOME: 'C:\\Program Files\\Huawei\\DevEco Studio\\jbr' },
+  { CLASSPATH: undefined }
+]
+[2025-11-10T16:10:35.226] [DEBUG] debug-file - Use tool [win32: NODE_HOME]
+ [
+  {
+    NODE_HOME: 'C:\\Program Files\\Huawei\\DevEco Studio\\tools\\node'
+  }
+]
+[2025-11-10T16:10:35.227] [DEBUG] debug-file - entry : default@PreBuild cost memory 10.821136474609375
+[2025-11-10T16:10:35.227] [DEBUG] debug-file - runTaskFromQueue task cost before running: 236 ms 
+[2025-11-10T16:10:35.228] [INFO] debug-file - Finished :entry:default@PreBuild... after 134 ms 
+[2025-11-10T16:10:35.229] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-11-10T16:10:35.229] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.229] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.04286956787109375
+[2025-11-10T16:10:35.229] [DEBUG] debug-file - runTaskFromQueue task cost before running: 239 ms 
+[2025-11-10T16:10:35.229] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-11-10T16:10:35.230] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-11-10T16:10:35.231] [DEBUG] debug-file - Task 'entry:default@MergeProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.231] [DEBUG] debug-file - Change app api release type with 'Release'
+[2025-11-10T16:10:35.231] [DEBUG] debug-file - Change app compile API version with '6.0.0.47'
+[2025-11-10T16:10:35.231] [DEBUG] debug-file - Change app target API version with '60000020'
+[2025-11-10T16:10:35.232] [DEBUG] debug-file - Change app minimum API version with '60000020'
+[2025-11-10T16:10:35.232] [DEBUG] debug-file - Use cli appEnvironment
+[2025-11-10T16:10:35.234] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.16009521484375
+[2025-11-10T16:10:35.234] [DEBUG] debug-file - runTaskFromQueue task cost before running: 243 ms 
+[2025-11-10T16:10:35.234] [INFO] debug-file - Finished :entry:default@MergeProfile... after 4 ms 
+[2025-11-10T16:10:35.235] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-11-10T16:10:35.235] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.238] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.0639190673828125
+[2025-11-10T16:10:35.240] [DEBUG] debug-file - runTaskFromQueue task cost before running: 248 ms 
+[2025-11-10T16:10:35.241] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 4 ms 
+[2025-11-10T16:10:35.246] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-11-10T16:10:35.246] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01630401611328125
+[2025-11-10T16:10:35.247] [DEBUG] debug-file - runTaskFromQueue task cost before running: 256 ms 
+[2025-11-10T16:10:35.247] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-11-10T16:10:35.251] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-11-10T16:10:35.257] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.258] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.26941680908203125
+[2025-11-10T16:10:35.258] [DEBUG] debug-file - runTaskFromQueue task cost before running: 268 ms 
+[2025-11-10T16:10:35.258] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 8 ms 
+[2025-11-10T16:10:35.260] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-11-10T16:10:35.261] [DEBUG] debug-file - Task 'entry:default@ProcessProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.262] [DEBUG] debug-file - [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\tools\\node\\node.exe',
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '20'
+]
+[2025-11-10T16:10:35.611] [DEBUG] debug-file - 13.0.1.0
+[2025-11-10T16:10:35.617] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 2.014923095703125
+[2025-11-10T16:10:35.617] [DEBUG] debug-file - runTaskFromQueue task cost before running: 626 ms 
+[2025-11-10T16:10:35.617] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 357 ms 
+[2025-11-10T16:10:35.621] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-11-10T16:10:35.624] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.0822601318359375
+[2025-11-10T16:10:35.624] [DEBUG] debug-file - runTaskFromQueue task cost before running: 633 ms 
+[2025-11-10T16:10:35.624] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 3 ms 
+[2025-11-10T16:10:35.626] [DEBUG] debug-file - Executing task :entry:default@ProcessShareConfig
+[2025-11-10T16:10:35.627] [DEBUG] debug-file - entry : default@ProcessShareConfig cost memory 0.0691680908203125
+[2025-11-10T16:10:35.627] [DEBUG] debug-file - runTaskFromQueue task cost before running: 637 ms 
+[2025-11-10T16:10:35.628] [INFO] debug-file - Finished :entry:default@ProcessShareConfig... after 2 ms 
+[2025-11-10T16:10:35.628] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-11-10T16:10:35.629] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.631] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.0890350341796875
+[2025-11-10T16:10:35.631] [DEBUG] debug-file - runTaskFromQueue task cost before running: 640 ms 
+[2025-11-10T16:10:35.631] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 3 ms 
+[2025-11-10T16:10:35.632] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewProcessResource
+[2025-11-10T16:10:35.633] [DEBUG] debug-file - Executing task :entry:default@PreviewProcessResource
+[2025-11-10T16:10:35.633] [DEBUG] debug-file - Task 'entry:default@PreviewProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.633] [DEBUG] debug-file - entry : default@PreviewProcessResource cost memory 0.05496978759765625
+[2025-11-10T16:10:35.634] [DEBUG] debug-file - runTaskFromQueue task cost before running: 643 ms 
+[2025-11-10T16:10:35.634] [INFO] debug-file - Finished :entry:default@PreviewProcessResource... after 2 ms 
+[2025-11-10T16:10:35.636] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-11-10T16:10:35.637] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T16:10:35.644] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.6273422241210938
+[2025-11-10T16:10:35.644] [DEBUG] debug-file - runTaskFromQueue task cost before running: 653 ms 
+[2025-11-10T16:10:35.645] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 9 ms 
+[2025-11-10T16:10:35.646] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewCompileResource
+[2025-11-10T16:10:35.647] [DEBUG] debug-file - Executing task :entry:default@PreviewCompileResource
+[2025-11-10T16:10:35.667] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\DevEcoProjects\\MysterySolo\\AppScope\\resources',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled'
+]
+[2025-11-10T16:10:35.667] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 249794560,
+  heapTotal: 190091264,
+  heapUsed: 156079256,
+  external: 3972277,
+  arrayBuffers: 928334
+} os memoryUsage :14.783973693847656
+[2025-11-10T16:10:35.916] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T16:10:35.920] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\src\\main\\resources',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled'
+]
+[2025-11-10T16:10:35.921] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 247312384,
+  heapTotal: 190091264,
+  heapUsed: 156490784,
+  external: 3956019,
+  arrayBuffers: 928475
+} os memoryUsage :14.787712097167969
+[2025-11-10T16:10:36.045] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T16:10:36.050] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-m',
+  'entry',
+  '-f',
+  '-j',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\process_profile\\default\\module.json',
+  '-p',
+  'c***o',
+  '-r',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\generated\\r\\default\\ResourceTable.h',
+  '-z',
+  '--ids',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map',
+  '-i',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled',
+  '-i',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default',
+  '--defined-sysids',
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\hms\\toolchains\\id_defined.json'
+]
+[2025-11-10T16:10:36.050] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 247361536,
+  heapTotal: 190091264,
+  heapUsed: 156665312,
+  external: 3956145,
+  arrayBuffers: 929440
+} os memoryUsage :14.79610824584961
+[2025-11-10T16:10:36.230] [DEBUG] debug-file - Info: hardware concurrency count is : 20
+Info: thread count is : 20
+
+[2025-11-10T16:10:36.230] [DEBUG] debug-file - Info: thread pool is started
+
+[2025-11-10T16:10:36.238] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T16:10:36.238] [DEBUG] debug-file - Info: thread pool is stopped
+
+[2025-11-10T16:10:36.244] [DEBUG] debug-file - entry : default@PreviewCompileResource cost memory 1.172698974609375
+[2025-11-10T16:10:36.245] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 254 ms 
+[2025-11-10T16:10:36.245] [INFO] debug-file - Finished :entry:default@PreviewCompileResource... after 599 ms 
+[2025-11-10T16:10:36.246] [DEBUG] debug-file - Executing task :entry:default@PreviewHookCompileResource
+[2025-11-10T16:10:36.246] [DEBUG] debug-file - entry : default@PreviewHookCompileResource cost memory 0.01801300048828125
+[2025-11-10T16:10:36.246] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 255 ms 
+[2025-11-10T16:10:36.246] [INFO] debug-file - Finished :entry:default@PreviewHookCompileResource... after 1 ms 
+[2025-11-10T16:10:36.247] [DEBUG] debug-file - Executing task :entry:default@CopyPreviewProfile
+[2025-11-10T16:10:36.253] [DEBUG] debug-file - entry : default@CopyPreviewProfile cost memory 0.1378173828125
+[2025-11-10T16:10:36.253] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 262 ms 
+[2025-11-10T16:10:36.253] [INFO] debug-file - Finished :entry:default@CopyPreviewProfile... after 7 ms 
+[2025-11-10T16:10:36.254] [DEBUG] debug-file - Executing task :entry:default@ReplacePreviewerPage
+[2025-11-10T16:10:36.254] [DEBUG] debug-file - entry : default@ReplacePreviewerPage cost memory 0.0178680419921875
+[2025-11-10T16:10:36.255] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 264 ms 
+[2025-11-10T16:10:36.255] [INFO] debug-file - Finished :entry:default@ReplacePreviewerPage... after 1 ms 
+[2025-11-10T16:10:36.255] [DEBUG] debug-file - Executing task :entry:buildPreviewerResource
+[2025-11-10T16:10:36.255] [DEBUG] debug-file - entry : buildPreviewerResource cost memory 0.0144805908203125
+[2025-11-10T16:10:36.255] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 264 ms 
+[2025-11-10T16:10:36.256] [INFO] debug-file - Finished :entry:buildPreviewerResource... after 1 ms 
+[2025-11-10T16:10:36.256] [DEBUG] debug-file - Executing task :entry:default@PreviewUpdateAssets
+[2025-11-10T16:10:36.264] [DEBUG] debug-file - entry : default@PreviewUpdateAssets cost memory 0.06903076171875
+[2025-11-10T16:10:36.264] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 273 ms 
+[2025-11-10T16:10:36.264] [INFO] debug-file - Finished :entry:default@PreviewUpdateAssets... after 8 ms 
+[2025-11-10T16:10:36.266] [DEBUG] debug-file - Executing task :entry:default@PreviewArkTS
+[2025-11-10T16:10:36.266] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-11-10T16:10:36.284] [DEBUG] debug-file - session manager: binding session. socketId=dJaGr2nhUBEftjNrAAAD, threadId=1@1.
+[2025-11-10T16:10:36.287] [DEBUG] debug-file - entry : default@PreviewArkTS cost memory 1.7307510375976562
+[2025-11-10T16:11:07.968] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchStart
+[2025-11-10T16:11:07.969] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2025-11-10T16:11:17.062] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchResult
+[2025-11-10T16:11:17.064] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2025-11-10T16:11:17.064] [DEBUG] debug-file - Ark compile finished.
+[2025-11-10T16:11:17.065] [INFO] debug-file - Finished :entry:default@PreviewArkTS... after 40 s 799 ms 
+[2025-11-10T16:11:17.066] [DEBUG] debug-file - Executing task :entry:PreviewBuild
+[2025-11-10T16:11:17.066] [DEBUG] debug-file - entry : PreviewBuild cost memory -0.9372177124023438
+[2025-11-10T16:11:17.067] [DEBUG] debug-file - runTaskFromQueue task cost before running: 42 s 76 ms 
+[2025-11-10T16:11:17.067] [INFO] debug-file - Finished :entry:PreviewBuild... after 1 ms 
+[2025-11-10T16:11:17.078] [INFO] debug-file - BUILD SUCCESSFUL in 42 s 87 ms 
+[2025-11-10T16:11:17.079] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\AppScope\app.json5 cache by regenerate.
+[2025-11-10T16:11:17.080] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\src\main\module.json5 cache by regenerate.
+[2025-11-10T16:11:17.080] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\build-profile.json5 cache by regenerate.
+[2025-11-10T16:11:17.080] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\build-profile.json5 cache by regenerate.
+[2025-11-10T16:11:17.080] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources\base\profile\main_pages.json cache by regenerate.
+[2025-11-10T16:11:17.080] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\hvigor\hvigor-config.json5 cache by regenerate.
+[2025-11-10T16:11:17.081] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\src\mock\mock-config.json5 cache by regenerate.
+[2025-11-10T16:11:17.081] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\oh-package.json5 cache by regenerate.
+[2025-11-10T16:11:17.081] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\oh-package.json5 cache by regenerate.
+[2025-11-10T16:11:17.081] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:3 ms .
+[2025-11-10T16:11:17.081] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-11-10T16:11:17.082] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-11-10T16:11:17.082] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\DevEcoProjects\MysterySolo\AppScope\app.json5 cache by regenerate.
+[2025-11-10T16:11:17.082] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\DevEcoProjects\MysterySolo\build-profile.json5 cache by regenerate.
+[2025-11-10T16:11:17.082] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\DevEcoProjects\MysterySolo\entry\src\main\module.json5 cache by regenerate.
+[2025-11-10T16:11:17.082] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\merge_profile\default\module.json cache.
+[2025-11-10T16:11:17.082] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:1 ms .
+[2025-11-10T16:11:17.082] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\DevEcoProjects\MysterySolo\AppScope\app.json5 cache by regenerate.
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\DevEcoProjects\MysterySolo\build-profile.json5 cache by regenerate.
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\BuildProfile.ets cache.
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:1 ms .
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\process_profile\default\module.json cache.
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2025-11-10T16:11:17.083] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\DevEcoProjects\MysterySolo\entry\oh-package.json5 cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\DevEcoProjects\MysterySolo\oh-package.json5 cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\DevEcoProjects\MysterySolo\entry\src\main\module.json5 cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\router_map\default\temp-router-map.json cache.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\router_map\default\loader-router-map.json cache.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:1 ms .
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:C:\DevEcoProjects\MysterySolo\entry\oh-package.json5 cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:C:\DevEcoProjects\MysterySolo\oh-package.json5 cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:C:\DevEcoProjects\MysterySolo\entry\src\main\module.json5 cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T16:11:17.084] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\share_config\default\temp-share-config.json cache.
+[2025-11-10T16:11:17.085] [DEBUG] debug-file - Incremental task entry:default@ProcessShareConfig post-execution cost:1 ms .
+[2025-11-10T16:11:17.085] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T16:11:17.085] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\startup\default\startup_config.json cache.
+[2025-11-10T16:11:17.085] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2025-11-10T16:11:17.086] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:C:\DevEcoProjects\MysterySolo\entry\src\mock\mock-config.json5 cache by regenerate.
+[2025-11-10T16:11:17.086] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T16:11:17.086] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\router_map\default\temp-router-map.json cache by regenerate.
+[2025-11-10T16:11:17.086] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\loader.json cache.
+[2025-11-10T16:11:17.087] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:2 ms .
+[2025-11-10T16:11:17.087] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources cache by regenerate.
+[2025-11-10T16:11:17.088] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-11-10T16:11:17.088] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default cache.
+[2025-11-10T16:11:17.090] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\r\default cache.
+[2025-11-10T16:11:17.090] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource post-execution cost:4 ms .
+[2025-11-10T16:11:17.090] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources\base\profile cache by regenerate.
+[2025-11-10T16:11:17.091] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile cache.
+[2025-11-10T16:11:17.091] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile post-execution cost:1 ms .
+[2025-11-10T16:11:17.091] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\module.json cache.
+[2025-11-10T16:11:17.091] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile\main_pages.json cache.
+[2025-11-10T16:11:17.091] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets post-execution cost:1 ms .
+[2025-11-10T16:11:17.092] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default cache by regenerate.
+[2025-11-10T16:11:17.092] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-11-10T16:11:17.093] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-11-10T16:11:17.093] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-11-10T16:11:17.094] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\main\ets cache by regenerate.
+[2025-11-10T16:11:17.094] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T16:11:17.094] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-11-10T16:11:17.094] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\mock\mock-config.json5 cache by regenerate.
+[2025-11-10T16:11:17.095] [DEBUG] debug-file - Update task entry:default@PreviewArkTS output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader_out\default\ets cache.
+[2025-11-10T16:11:17.095] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS post-execution cost:4 ms .
+[2025-11-10T16:11:17.114] [DEBUG] debug-file - There's no busy workers and idle workers need cleanup.
+[2025-11-10T16:11:17.115] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-11-10T16:28:38.267] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchStart
+[2025-11-10T16:28:38.546] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2025-11-10T16:28:39.685] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchResult
+[2025-11-10T16:28:39.687] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2025-11-10T17:08:37.986] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:08:37.991] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:08:38.199] [DEBUG] debug-file - bad codeSnippet [object Object]
+[2025-11-10T17:08:38.253] [DEBUG] debug-file - watch worker: worker is ready to be terminated.
+[2025-11-10T17:08:38.263] [DEBUG] debug-file - Server currently has 0 watch-worker
+[2025-11-10T17:14:03.762] [DEBUG] debug-file - session manager: set active socket. socketId=bmAWMeI5Y_mXabSyAAAF
+[2025-11-10T17:14:03.787] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T17:14:03.849] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-10T17:14:03.883] [DEBUG] debug-file - Cache service initialization finished in 30 ms 
+[2025-11-10T17:14:03.886] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:14:03.934] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:14:03.935] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:14:03.965] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-10T17:14:03.966] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-10T17:14:03.966] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-10T17:14:03.966] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-10T17:14:03.968] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-11-10T17:14:03.976] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-11-10T17:14:03.984] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-11-10T17:14:04.030] [DEBUG] debug-file - Sdk init in 53 ms 
+[2025-11-10T17:14:04.037] [DEBUG] debug-file - Project task initialization takes 4 ms 
+[2025-11-10T17:14:04.037] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:14:04.037] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:14:04.037] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:14:04.037] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:14:04.042] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:14:04.042] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:14:04.043] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-11-10T17:14:04.049] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:14:04.049] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:14:04.050] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:14:04.050] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:14:04.050] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:14:04.050] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:14:04.051] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T17:14:04.053] [DEBUG] debug-file - Module entry task initialization takes 2 ms 
+[2025-11-10T17:14:04.053] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:14:04.054] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:14:04.054] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:14:04.123] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 69 ms 
+[2025-11-10T17:14:04.123] [DEBUG] debug-file - project has submodules:entry
+[2025-11-10T17:14:04.124] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-11-10T17:14:04.128] [DEBUG] debug-file - load to the disk finished
+[2025-11-10T17:14:04.131] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:14:04.134] [DEBUG] debug-file - Module MysterySolo Collected Dependency: 
+[2025-11-10T17:14:04.134] [DEBUG] debug-file - Module MysterySolo's total dependency: 0
+[2025-11-10T17:14:04.134] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:14:04.135] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-11-10T17:14:04.135] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-11-10T17:14:04.137] [DEBUG] debug-file - Configuration phase cost:254 ms 
+[2025-11-10T17:14:04.138] [DEBUG] debug-file - Configuration task cost before running: 317 ms 
+[2025-11-10T17:14:04.138] [DEBUG] debug-file - Executing task :entry:init
+[2025-11-10T17:14:04.138] [DEBUG] debug-file - entry : init cost memory 0.01564788818359375
+[2025-11-10T17:14:04.138] [DEBUG] debug-file - runTaskFromQueue task cost before running: 317 ms 
+[2025-11-10T17:14:04.138] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2025-11-10T17:14:04.139] [DEBUG] debug-file - Executing task ::init
+[2025-11-10T17:14:04.139] [DEBUG] debug-file - MysterySolo : init cost memory 0.01441192626953125
+[2025-11-10T17:14:04.139] [DEBUG] debug-file - runTaskFromQueue task cost before running: 318 ms 
+[2025-11-10T17:14:04.140] [INFO] debug-file - Finished ::init... after 1 ms 
+[2025-11-10T17:14:04.150] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T17:14:04.151] [DEBUG] debug-file - Obtain build option for module 'entry' target 'ohosTest'in this build.
+[2025-11-10T17:14:04.152] [DEBUG] debug-file - There's no busy workers and idle workers need cleanup.
+[2025-11-10T17:14:04.152] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-11-10T17:14:04.158] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:14:04.159] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:14:04.233] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T17:14:04.234] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T17:14:31.494] [DEBUG] debug-file - session manager: set active socket. socketId=Hkg0s1R_o3anWOJOAAAH
+[2025-11-10T17:14:31.509] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T17:14:31.517] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-10T17:14:31.520] [DEBUG] debug-file - Cache service initialization finished in 3 ms 
+[2025-11-10T17:14:31.521] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:14:31.527] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:14:31.527] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:14:31.530] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-10T17:14:31.530] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-10T17:14:31.530] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-10T17:14:31.530] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-10T17:14:31.531] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-11-10T17:14:31.533] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-11-10T17:14:31.535] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-11-10T17:14:31.559] [DEBUG] debug-file - Sdk init in 25 ms 
+[2025-11-10T17:14:31.562] [DEBUG] debug-file - Project task initialization takes 3 ms 
+[2025-11-10T17:14:31.562] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:14:31.562] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:14:31.562] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:14:31.562] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:14:31.566] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:14:31.566] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:14:31.566] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-11-10T17:14:31.568] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:14:31.569] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:14:31.569] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:14:31.569] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:14:31.569] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:14:31.570] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:14:31.570] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-11-10T17:14:31.570] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:14:31.570] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:14:31.570] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:14:31.570] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:14:31.570] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:14:31.571] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:14:31.571] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:14:31.571] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:14:31.571] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:14:31.571] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:14:31.571] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:14:31.571] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T17:14:31.572] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2025-11-10T17:14:31.572] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:14:31.572] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:14:31.572] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:14:31.631] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 59 ms 
+[2025-11-10T17:14:31.631] [DEBUG] debug-file - project has submodules:entry
+[2025-11-10T17:14:31.632] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-11-10T17:14:31.635] [DEBUG] debug-file - load to the disk finished
+[2025-11-10T17:14:31.636] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:14:31.638] [DEBUG] debug-file - Module MysterySolo Collected Dependency: 
+[2025-11-10T17:14:31.638] [DEBUG] debug-file - Module MysterySolo's total dependency: 0
+[2025-11-10T17:14:31.638] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:14:31.639] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-11-10T17:14:31.639] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-11-10T17:14:31.640] [DEBUG] debug-file - Configuration phase cost:121 ms 
+[2025-11-10T17:14:31.641] [DEBUG] debug-file - Configuration task cost before running: 129 ms 
+[2025-11-10T17:14:31.644] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-11-10T17:14:31.647] [DEBUG] debug-file - Task 'entry:default@PreBuild' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.651] [DEBUG] debug-file - entry:default@PreBuild is not up-to-date, since the input file 'C:\DevEcoProjects\MysterySolo\entry\src\main\resources\base\profile\main_pages.json' has been changed.
+[2025-11-10T17:14:31.651] [DEBUG] debug-file - Incremental task entry:default@PreBuild pre-execution cost: 2 ms .
+[2025-11-10T17:14:31.668] [DEBUG] debug-file - current product is not Atomic service.
+[2025-11-10T17:14:31.669] [DEBUG] debug-file - Use tool [win32: JAVA_HOME, CLASSPATH]
+ [
+  { JAVA_HOME: 'C:\\Program Files\\Huawei\\DevEco Studio\\jbr' },
+  { CLASSPATH: undefined }
+]
+[2025-11-10T17:14:31.669] [DEBUG] debug-file - Use tool [win32: NODE_HOME]
+ [
+  {
+    NODE_HOME: 'C:\\Program Files\\Huawei\\DevEco Studio\\tools\\node'
+  }
+]
+[2025-11-10T17:14:31.669] [DEBUG] debug-file - entry : default@PreBuild cost memory -2.7129364013671875
+[2025-11-10T17:14:31.669] [DEBUG] debug-file - runTaskFromQueue task cost before running: 157 ms 
+[2025-11-10T17:14:31.670] [INFO] debug-file - Finished :entry:default@PreBuild... after 25 ms 
+[2025-11-10T17:14:31.671] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-11-10T17:14:31.671] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.671] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.04167938232421875
+[2025-11-10T17:14:31.671] [DEBUG] debug-file - runTaskFromQueue task cost before running: 159 ms 
+[2025-11-10T17:14:31.672] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-11-10T17:14:31.672] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-11-10T17:14:31.672] [DEBUG] debug-file - Task 'entry:default@MergeProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.674] [DEBUG] debug-file - Incremental task entry:default@MergeProfile pre-execution cost: 2 ms .
+[2025-11-10T17:14:31.674] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.15682220458984375
+[2025-11-10T17:14:31.675] [INFO] debug-file - UP-TO-DATE :entry:default@MergeProfile...  
+[2025-11-10T17:14:31.675] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-11-10T17:14:31.676] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.677] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile pre-execution cost: 1 ms .
+[2025-11-10T17:14:31.677] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.09429931640625
+[2025-11-10T17:14:31.677] [INFO] debug-file - UP-TO-DATE :entry:default@CreateBuildProfile...  
+[2025-11-10T17:14:31.677] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-11-10T17:14:31.678] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01670074462890625
+[2025-11-10T17:14:31.678] [DEBUG] debug-file - runTaskFromQueue task cost before running: 166 ms 
+[2025-11-10T17:14:31.678] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-11-10T17:14:31.679] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-11-10T17:14:31.684] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.685] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo pre-execution cost: 1 ms .
+[2025-11-10T17:14:31.685] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.28781890869140625
+[2025-11-10T17:14:31.685] [INFO] debug-file - UP-TO-DATE :entry:default@GeneratePkgContextInfo...  
+[2025-11-10T17:14:31.686] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-11-10T17:14:31.688] [DEBUG] debug-file - Task 'entry:default@ProcessProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.689] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile pre-execution cost: 1 ms .
+[2025-11-10T17:14:31.689] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 0.13460540771484375
+[2025-11-10T17:14:31.689] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessProfile...  
+[2025-11-10T17:14:31.689] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-11-10T17:14:31.691] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap pre-execution cost: 2 ms .
+[2025-11-10T17:14:31.691] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.1398162841796875
+[2025-11-10T17:14:31.691] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessRouterMap...  
+[2025-11-10T17:14:31.692] [DEBUG] debug-file - Executing task :entry:default@ProcessShareConfig
+[2025-11-10T17:14:31.693] [DEBUG] debug-file - Incremental task entry:default@ProcessShareConfig pre-execution cost: 1 ms .
+[2025-11-10T17:14:31.693] [DEBUG] debug-file - entry : default@ProcessShareConfig cost memory 0.124969482421875
+[2025-11-10T17:14:31.693] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessShareConfig...  
+[2025-11-10T17:14:31.694] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-11-10T17:14:31.694] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.695] [DEBUG] debug-file - entry:default@ProcessStartupConfig is not up-to-date, since the output file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\startup\default\startup_config.json' does not exist.
+[2025-11-10T17:14:31.695] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig pre-execution cost: 1 ms .
+[2025-11-10T17:14:31.695] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.13005828857421875
+[2025-11-10T17:14:31.695] [DEBUG] debug-file - runTaskFromQueue task cost before running: 183 ms 
+[2025-11-10T17:14:31.696] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 2 ms 
+[2025-11-10T17:14:31.696] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewProcessResource
+[2025-11-10T17:14:31.698] [DEBUG] debug-file - Executing task :entry:default@PreviewProcessResource
+[2025-11-10T17:14:31.698] [DEBUG] debug-file - Task 'entry:default@PreviewProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.698] [DEBUG] debug-file - entry : default@PreviewProcessResource cost memory 0.05396270751953125
+[2025-11-10T17:14:31.699] [DEBUG] debug-file - runTaskFromQueue task cost before running: 186 ms 
+[2025-11-10T17:14:31.699] [INFO] debug-file - Finished :entry:default@PreviewProcessResource... after 2 ms 
+[2025-11-10T17:14:31.700] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-11-10T17:14:31.702] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:14:31.706] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson pre-execution cost: 3 ms .
+[2025-11-10T17:14:31.706] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.5475387573242188
+[2025-11-10T17:14:31.708] [INFO] debug-file - UP-TO-DATE :entry:default@GenerateLoaderJson...  
+[2025-11-10T17:14:31.708] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewCompileResource
+[2025-11-10T17:14:31.709] [DEBUG] debug-file - Executing task :entry:default@PreviewCompileResource
+[2025-11-10T17:14:31.711] [DEBUG] debug-file - entry:default@PreviewCompileResource is not up-to-date, since the input file 'C:\DevEcoProjects\MysterySolo\entry\src\main\resources' has been changed.
+[2025-11-10T17:14:31.711] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource pre-execution cost: 2 ms .
+[2025-11-10T17:14:31.755] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\DevEcoProjects\\MysterySolo\\AppScope\\resources',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled'
+]
+[2025-11-10T17:14:31.756] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 132046848,
+  heapTotal: 168247296,
+  heapUsed: 129661320,
+  external: 3530528,
+  arrayBuffers: 502969
+} os memoryUsage :14.368499755859375
+[2025-11-10T17:14:31.947] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T17:14:31.954] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\src\\main\\resources',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled'
+]
+[2025-11-10T17:14:31.954] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 132390912,
+  heapTotal: 168247296,
+  heapUsed: 129885696,
+  external: 3530654,
+  arrayBuffers: 503110
+} os memoryUsage :14.265953063964844
+[2025-11-10T17:14:32.143] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T17:14:32.151] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-m',
+  'entry',
+  '-f',
+  '-j',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\process_profile\\default\\module.json',
+  '-p',
+  'c***o',
+  '-r',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\generated\\r\\default\\ResourceTable.h',
+  '-z',
+  '--ids',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map',
+  '--defined-ids',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map\\id_defined.json',
+  '-i',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled',
+  '-i',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default',
+  '--defined-sysids',
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\hms\\toolchains\\id_defined.json'
+]
+[2025-11-10T17:14:32.152] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 132579328,
+  heapTotal: 168247296,
+  heapUsed: 130058272,
+  external: 3530780,
+  arrayBuffers: 504244
+} os memoryUsage :14.290420532226562
+[2025-11-10T17:14:32.330] [DEBUG] debug-file - Info: hardware concurrency count is : 20
+Info: thread count is : 20
+
+[2025-11-10T17:14:32.330] [DEBUG] debug-file - Info: thread pool is started
+
+[2025-11-10T17:14:32.333] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T17:14:32.333] [DEBUG] debug-file - Info: thread pool is stopped
+
+[2025-11-10T17:14:32.344] [DEBUG] debug-file - entry : default@PreviewCompileResource cost memory -6.411415100097656
+[2025-11-10T17:14:32.344] [DEBUG] debug-file - runTaskFromQueue task cost before running: 832 ms 
+[2025-11-10T17:14:32.346] [INFO] debug-file - Finished :entry:default@PreviewCompileResource... after 636 ms 
+[2025-11-10T17:14:32.348] [DEBUG] debug-file - Executing task :entry:default@PreviewHookCompileResource
+[2025-11-10T17:14:32.349] [DEBUG] debug-file - entry : default@PreviewHookCompileResource cost memory 0.01744842529296875
+[2025-11-10T17:14:32.349] [DEBUG] debug-file - runTaskFromQueue task cost before running: 837 ms 
+[2025-11-10T17:14:32.349] [INFO] debug-file - Finished :entry:default@PreviewHookCompileResource... after 1 ms 
+[2025-11-10T17:14:32.351] [DEBUG] debug-file - Executing task :entry:default@CopyPreviewProfile
+[2025-11-10T17:14:32.351] [DEBUG] debug-file - entry:default@CopyPreviewProfile is not up-to-date, since the input file 'C:\DevEcoProjects\MysterySolo\entry\src\main\resources\base\profile' has been changed.
+[2025-11-10T17:14:32.351] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile pre-execution cost: 1 ms .
+[2025-11-10T17:14:32.357] [DEBUG] debug-file - entry : default@CopyPreviewProfile cost memory 0.21280670166015625
+[2025-11-10T17:14:32.358] [DEBUG] debug-file - runTaskFromQueue task cost before running: 845 ms 
+[2025-11-10T17:14:32.358] [INFO] debug-file - Finished :entry:default@CopyPreviewProfile... after 7 ms 
+[2025-11-10T17:14:32.359] [DEBUG] debug-file - Executing task :entry:default@ReplacePreviewerPage
+[2025-11-10T17:14:32.359] [DEBUG] debug-file - entry : default@ReplacePreviewerPage cost memory 0.01739501953125
+[2025-11-10T17:14:32.359] [DEBUG] debug-file - runTaskFromQueue task cost before running: 847 ms 
+[2025-11-10T17:14:32.359] [INFO] debug-file - Finished :entry:default@ReplacePreviewerPage... after 1 ms 
+[2025-11-10T17:14:32.359] [DEBUG] debug-file - Executing task :entry:buildPreviewerResource
+[2025-11-10T17:14:32.360] [DEBUG] debug-file - entry : buildPreviewerResource cost memory 0.0143585205078125
+[2025-11-10T17:14:32.360] [DEBUG] debug-file - runTaskFromQueue task cost before running: 847 ms 
+[2025-11-10T17:14:32.360] [INFO] debug-file - Finished :entry:buildPreviewerResource... after 1 ms 
+[2025-11-10T17:14:32.361] [DEBUG] debug-file - Executing task :entry:default@PreviewUpdateAssets
+[2025-11-10T17:14:32.361] [DEBUG] debug-file - entry:default@PreviewUpdateAssets is not up-to-date, since the output file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\module.json' has been changed.
+[2025-11-10T17:14:32.362] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets pre-execution cost: 1 ms .
+[2025-11-10T17:14:32.369] [DEBUG] debug-file - entry : default@PreviewUpdateAssets cost memory 0.10840606689453125
+[2025-11-10T17:14:32.369] [DEBUG] debug-file - runTaskFromQueue task cost before running: 857 ms 
+[2025-11-10T17:14:32.369] [INFO] debug-file - Finished :entry:default@PreviewUpdateAssets... after 9 ms 
+[2025-11-10T17:14:32.371] [DEBUG] debug-file - Executing task :entry:default@PreviewArkTS
+[2025-11-10T17:14:32.371] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-11-10T17:14:32.375] [DEBUG] debug-file - entry:default@PreviewArkTS is not up-to-date, since the input file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\ResourceTable.txt' has been changed.
+[2025-11-10T17:14:32.375] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS pre-execution cost: 2 ms .
+[2025-11-10T17:14:32.385] [DEBUG] debug-file - session manager: binding session. socketId=Hkg0s1R_o3anWOJOAAAH, threadId=1@2.
+[2025-11-10T17:14:32.386] [DEBUG] debug-file - entry : default@PreviewArkTS cost memory 1.0673065185546875
+[2025-11-10T17:14:35.122] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchStart
+[2025-11-10T17:14:35.124] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2025-11-10T17:14:37.156] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-10T17:14:37.158] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-10T17:14:37.156] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-10T17:14:37.161] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-10T17:14:37.157] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-10T17:14:37.162] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-10T17:14:38.613] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchResult
+[2025-11-10T17:14:38.613] [DEBUG] debug-file - Ark compile finished.
+[2025-11-10T17:14:38.616] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2025-11-10T17:14:38.613] [DEBUG] debug-file - default@PreviewArkTS watch work[2] failed.
+[2025-11-10T17:14:38.614] [ERROR] debug-file - Failed :entry:default@PreviewArkTS... 
+[2025-11-10T17:14:38.614] [DEBUG] debug-file - hvigor build process will be closed with an error.
+[2025-11-10T17:14:38.651] [DEBUG] debug-file - ERROR: stacktrace = Error: [31m10605008 ArkTS Compiler Error
+Error Message: Use explicit types instead of "any", "unknown" (arkts-no-any-unknown) At File: C:/DevEcoProjects/MysterySolo/entry/src/main/ets/pages/HomePage.ets:18:73
+[39m
+    at handleResponse (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:1772)
+    at async Worker.<anonymous> (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:3061)
+[2025-11-10T17:14:38.651] [ERROR] debug-file - Error: [31m10605008 ArkTS Compiler Error
+Error Message: Use explicit types instead of "any", "unknown" (arkts-no-any-unknown) At File: C:/DevEcoProjects/MysterySolo/entry/src/main/ets/pages/HomePage.ets:18:73
+[39m
+    at handleResponse (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:1772)
+    at async Worker.<anonymous> (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:3061)
+[2025-11-10T17:14:38.663] [ERROR] debug-file - BUILD FAILED in 7 s 151 ms 
+[2025-11-10T17:14:38.664] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\AppScope\app.json5 cache by regenerate.
+[2025-11-10T17:14:38.664] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\src\main\module.json5 cache by regenerate.
+[2025-11-10T17:14:38.664] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\build-profile.json5 cache by regenerate.
+[2025-11-10T17:14:38.664] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\build-profile.json5 cache by regenerate.
+[2025-11-10T17:14:38.664] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources\base\profile\main_pages.json cache from map.
+[2025-11-10T17:14:38.664] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\hvigor\hvigor-config.json5 cache by regenerate.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\src\mock\mock-config.json5 cache by regenerate.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\entry\oh-package.json5 cache by regenerate.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\DevEcoProjects\MysterySolo\oh-package.json5 cache by regenerate.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:2 ms .
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@MergeProfile is up-to-date.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CreateBuildProfile is up-to-date.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GeneratePkgContextInfo is up-to-date.
+[2025-11-10T17:14:38.665] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessProfile is up-to-date.
+[2025-11-10T17:14:38.666] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessRouterMap is up-to-date.
+[2025-11-10T17:14:38.666] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessShareConfig is up-to-date.
+[2025-11-10T17:14:38.666] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T17:14:38.666] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\startup\default\startup_config.json cache.
+[2025-11-10T17:14:38.666] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2025-11-10T17:14:38.666] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GenerateLoaderJson is up-to-date.
+[2025-11-10T17:14:38.667] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources cache from map.
+[2025-11-10T17:14:38.667] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-11-10T17:14:38.667] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default cache.
+[2025-11-10T17:14:38.669] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\r\default cache.
+[2025-11-10T17:14:38.669] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource post-execution cost:3 ms .
+[2025-11-10T17:14:38.669] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources\base\profile cache from map.
+[2025-11-10T17:14:38.669] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile cache.
+[2025-11-10T17:14:38.670] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile post-execution cost:1 ms .
+[2025-11-10T17:14:38.670] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\module.json cache.
+[2025-11-10T17:14:38.670] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile\main_pages.json cache.
+[2025-11-10T17:14:38.670] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets post-execution cost:1 ms .
+[2025-11-10T17:14:38.671] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default cache by regenerate.
+[2025-11-10T17:14:38.671] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\ResourceTable.txt cache from map.
+[2025-11-10T17:14:38.671] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-11-10T17:14:38.671] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-11-10T17:14:38.671] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\main\ets cache by regenerate.
+[2025-11-10T17:14:38.672] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T17:14:38.672] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-11-10T17:14:38.673] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\mock\mock-config.json5 cache by regenerate.
+[2025-11-10T17:14:38.673] [DEBUG] debug-file - Update task entry:default@PreviewArkTS output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader_out\default\ets cache.
+[2025-11-10T17:14:38.673] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS post-execution cost:3 ms .
+[2025-11-10T17:14:38.692] [DEBUG] debug-file - There's no busy workers and idle workers need cleanup.
+[2025-11-10T17:14:38.692] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-11-10T17:14:38.700] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:14:38.701] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:14:38.707] [DEBUG] debug-file - watch worker: worker is ready to be terminated.
+[2025-11-10T17:14:38.707] [DEBUG] debug-file - Server currently has 0 watch-worker
+[2025-11-10T17:18:12.838] [DEBUG] debug-file - session manager: set active socket. socketId=N7z8FwT0EPwWAzsyAAAJ
+[2025-11-10T17:18:12.856] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T17:18:12.864] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-10T17:18:12.867] [DEBUG] debug-file - Cache service initialization finished in 3 ms 
+[2025-11-10T17:18:12.868] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:18:12.957] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:18:12.957] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:18:12.974] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-10T17:18:12.974] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-10T17:18:12.974] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-10T17:18:12.975] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-10T17:18:12.975] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-11-10T17:18:12.980] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-11-10T17:18:12.983] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-11-10T17:18:13.004] [DEBUG] debug-file - Sdk init in 23 ms 
+[2025-11-10T17:18:13.008] [DEBUG] debug-file - Project task initialization takes 3 ms 
+[2025-11-10T17:18:13.008] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:18:13.008] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:18:13.008] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:18:13.008] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:18:13.011] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:18:13.011] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:18:13.011] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-11-10T17:18:13.021] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:18:13.021] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:18:13.021] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:18:13.021] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:18:13.021] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:18:13.021] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:18:13.021] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-11-10T17:18:13.022] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:18:13.022] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:18:13.022] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:18:13.022] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:18:13.022] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:18:13.023] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:18:13.023] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:18:13.023] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:18:13.023] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:18:13.023] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:18:13.023] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:18:13.023] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T17:18:13.027] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2025-11-10T17:18:13.027] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:18:13.027] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:18:13.027] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:18:13.083] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 56 ms 
+[2025-11-10T17:18:13.083] [DEBUG] debug-file - project has submodules:entry
+[2025-11-10T17:18:13.084] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-11-10T17:18:13.087] [DEBUG] debug-file - load to the disk finished
+[2025-11-10T17:18:13.088] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:18:13.091] [DEBUG] debug-file - Module MysterySolo Collected Dependency: 
+[2025-11-10T17:18:13.091] [DEBUG] debug-file - Module MysterySolo's total dependency: 0
+[2025-11-10T17:18:13.092] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:18:13.093] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-11-10T17:18:13.093] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-11-10T17:18:13.095] [DEBUG] debug-file - Configuration phase cost:228 ms 
+[2025-11-10T17:18:13.096] [DEBUG] debug-file - Configuration task cost before running: 236 ms 
+[2025-11-10T17:18:13.099] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-11-10T17:18:13.100] [DEBUG] debug-file - Task 'entry:default@PreBuild' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.105] [DEBUG] debug-file - Incremental task entry:default@PreBuild pre-execution cost: 3 ms .
+[2025-11-10T17:18:13.105] [DEBUG] debug-file - entry : default@PreBuild cost memory -3.6354446411132812
+[2025-11-10T17:18:13.106] [INFO] debug-file - UP-TO-DATE :entry:default@PreBuild...  
+[2025-11-10T17:18:13.106] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-11-10T17:18:13.106] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.107] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.04107666015625
+[2025-11-10T17:18:13.107] [DEBUG] debug-file - runTaskFromQueue task cost before running: 246 ms 
+[2025-11-10T17:18:13.107] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-11-10T17:18:13.108] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-11-10T17:18:13.108] [DEBUG] debug-file - Task 'entry:default@MergeProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.109] [DEBUG] debug-file - Incremental task entry:default@MergeProfile pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.109] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.1336517333984375
+[2025-11-10T17:18:13.109] [INFO] debug-file - UP-TO-DATE :entry:default@MergeProfile...  
+[2025-11-10T17:18:13.110] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-11-10T17:18:13.110] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.111] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.111] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.0939483642578125
+[2025-11-10T17:18:13.111] [INFO] debug-file - UP-TO-DATE :entry:default@CreateBuildProfile...  
+[2025-11-10T17:18:13.112] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-11-10T17:18:13.112] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01633453369140625
+[2025-11-10T17:18:13.112] [DEBUG] debug-file - runTaskFromQueue task cost before running: 252 ms 
+[2025-11-10T17:18:13.112] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-11-10T17:18:13.113] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-11-10T17:18:13.116] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.117] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.117] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.4462890625
+[2025-11-10T17:18:13.117] [INFO] debug-file - UP-TO-DATE :entry:default@GeneratePkgContextInfo...  
+[2025-11-10T17:18:13.118] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-11-10T17:18:13.119] [DEBUG] debug-file - Task 'entry:default@ProcessProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.119] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.119] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 0.13488006591796875
+[2025-11-10T17:18:13.119] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessProfile...  
+[2025-11-10T17:18:13.120] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-11-10T17:18:13.121] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.121] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.13930511474609375
+[2025-11-10T17:18:13.122] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessRouterMap...  
+[2025-11-10T17:18:13.123] [DEBUG] debug-file - Executing task :entry:default@ProcessShareConfig
+[2025-11-10T17:18:13.124] [DEBUG] debug-file - Incremental task entry:default@ProcessShareConfig pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.124] [DEBUG] debug-file - entry : default@ProcessShareConfig cost memory 0.125030517578125
+[2025-11-10T17:18:13.124] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessShareConfig...  
+[2025-11-10T17:18:13.125] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-11-10T17:18:13.126] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.126] [DEBUG] debug-file - entry:default@ProcessStartupConfig is not up-to-date, since the output file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\startup\default\startup_config.json' does not exist.
+[2025-11-10T17:18:13.126] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.127] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.1287384033203125
+[2025-11-10T17:18:13.127] [DEBUG] debug-file - runTaskFromQueue task cost before running: 267 ms 
+[2025-11-10T17:18:13.127] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 2 ms 
+[2025-11-10T17:18:13.128] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewProcessResource
+[2025-11-10T17:18:13.129] [DEBUG] debug-file - Executing task :entry:default@PreviewProcessResource
+[2025-11-10T17:18:13.129] [DEBUG] debug-file - Task 'entry:default@PreviewProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.129] [DEBUG] debug-file - entry : default@PreviewProcessResource cost memory 0.051971435546875
+[2025-11-10T17:18:13.130] [DEBUG] debug-file - runTaskFromQueue task cost before running: 269 ms 
+[2025-11-10T17:18:13.130] [INFO] debug-file - Finished :entry:default@PreviewProcessResource... after 1 ms 
+[2025-11-10T17:18:13.131] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-11-10T17:18:13.134] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:18:13.140] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson pre-execution cost: 4 ms .
+[2025-11-10T17:18:13.140] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.7807235717773438
+[2025-11-10T17:18:13.142] [INFO] debug-file - UP-TO-DATE :entry:default@GenerateLoaderJson...  
+[2025-11-10T17:18:13.144] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewCompileResource
+[2025-11-10T17:18:13.144] [DEBUG] debug-file - Executing task :entry:default@PreviewCompileResource
+[2025-11-10T17:18:13.151] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource pre-execution cost: 7 ms .
+[2025-11-10T17:18:13.151] [DEBUG] debug-file - entry : default@PreviewCompileResource cost memory 0.4855804443359375
+[2025-11-10T17:18:13.156] [INFO] debug-file - UP-TO-DATE :entry:default@PreviewCompileResource...  
+[2025-11-10T17:18:13.157] [DEBUG] debug-file - Executing task :entry:default@PreviewHookCompileResource
+[2025-11-10T17:18:13.157] [DEBUG] debug-file - entry : default@PreviewHookCompileResource cost memory 0.01751708984375
+[2025-11-10T17:18:13.157] [DEBUG] debug-file - runTaskFromQueue task cost before running: 296 ms 
+[2025-11-10T17:18:13.157] [INFO] debug-file - Finished :entry:default@PreviewHookCompileResource... after 1 ms 
+[2025-11-10T17:18:13.157] [DEBUG] debug-file - Executing task :entry:default@CopyPreviewProfile
+[2025-11-10T17:18:13.158] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.158] [DEBUG] debug-file - entry : default@CopyPreviewProfile cost memory 0.10652923583984375
+[2025-11-10T17:18:13.158] [INFO] debug-file - UP-TO-DATE :entry:default@CopyPreviewProfile...  
+[2025-11-10T17:18:13.159] [DEBUG] debug-file - Executing task :entry:default@ReplacePreviewerPage
+[2025-11-10T17:18:13.159] [DEBUG] debug-file - entry : default@ReplacePreviewerPage cost memory 0.0234375
+[2025-11-10T17:18:13.159] [DEBUG] debug-file - runTaskFromQueue task cost before running: 299 ms 
+[2025-11-10T17:18:13.159] [INFO] debug-file - Finished :entry:default@ReplacePreviewerPage... after 1 ms 
+[2025-11-10T17:18:13.159] [DEBUG] debug-file - Executing task :entry:buildPreviewerResource
+[2025-11-10T17:18:13.160] [DEBUG] debug-file - entry : buildPreviewerResource cost memory 0.014404296875
+[2025-11-10T17:18:13.160] [DEBUG] debug-file - runTaskFromQueue task cost before running: 299 ms 
+[2025-11-10T17:18:13.160] [INFO] debug-file - Finished :entry:buildPreviewerResource... after 1 ms 
+[2025-11-10T17:18:13.161] [DEBUG] debug-file - Executing task :entry:default@PreviewUpdateAssets
+[2025-11-10T17:18:13.163] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets pre-execution cost: 1 ms .
+[2025-11-10T17:18:13.163] [DEBUG] debug-file - entry : default@PreviewUpdateAssets cost memory 0.34449005126953125
+[2025-11-10T17:18:13.163] [INFO] debug-file - UP-TO-DATE :entry:default@PreviewUpdateAssets...  
+[2025-11-10T17:18:13.164] [DEBUG] debug-file - Executing task :entry:default@PreviewArkTS
+[2025-11-10T17:18:13.164] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-11-10T17:18:13.175] [DEBUG] debug-file - session manager: binding session. socketId=N7z8FwT0EPwWAzsyAAAJ, threadId=1@3.
+[2025-11-10T17:18:13.176] [DEBUG] debug-file - entry : default@PreviewArkTS cost memory 1.0780715942382812
+[2025-11-10T17:18:15.477] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchStart
+[2025-11-10T17:18:15.478] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2025-11-10T17:18:17.481] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-10T17:18:17.483] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-10T17:18:17.482] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-10T17:18:17.485] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-10T17:18:17.483] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-10T17:18:17.486] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-10T17:18:18.966] [DEBUG] debug-file - Ark compile finished.
+[2025-11-10T17:18:18.966] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchResult
+[2025-11-10T17:18:18.969] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2025-11-10T17:18:18.966] [DEBUG] debug-file - default@PreviewArkTS watch work[3] failed.
+[2025-11-10T17:18:18.967] [ERROR] debug-file - Failed :entry:default@PreviewArkTS... 
+[2025-11-10T17:18:18.967] [DEBUG] debug-file - hvigor build process will be closed with an error.
+[2025-11-10T17:18:18.969] [DEBUG] debug-file - ERROR: stacktrace = Error: [31m10605040 ArkTS Compiler Error
+Error Message: Object literals cannot be used as type declarations (arkts-no-obj-literals-as-types) At File: C:/DevEcoProjects/MysterySolo/entry/src/main/ets/pages/HomePage.ets:4:20
+[39m
+    at handleResponse (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:1772)
+    at async Worker.<anonymous> (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:3061)
+[2025-11-10T17:18:18.969] [ERROR] debug-file - Error: [31m10605040 ArkTS Compiler Error
+Error Message: Object literals cannot be used as type declarations (arkts-no-obj-literals-as-types) At File: C:/DevEcoProjects/MysterySolo/entry/src/main/ets/pages/HomePage.ets:4:20
+[39m
+    at handleResponse (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:1772)
+    at async Worker.<anonymous> (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\pool\worker-pool\watch-worker.js:1:3061)
+[2025-11-10T17:18:18.986] [ERROR] debug-file - BUILD FAILED in 6 s 124 ms 
+[2025-11-10T17:18:18.986] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@PreBuild is up-to-date.
+[2025-11-10T17:18:18.986] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-11-10T17:18:18.986] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@MergeProfile is up-to-date.
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CreateBuildProfile is up-to-date.
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GeneratePkgContextInfo is up-to-date.
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessProfile is up-to-date.
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessRouterMap is up-to-date.
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessShareConfig is up-to-date.
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T17:18:18.987] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\startup\default\startup_config.json cache.
+[2025-11-10T17:18:18.988] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2025-11-10T17:18:18.988] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GenerateLoaderJson is up-to-date.
+[2025-11-10T17:18:18.988] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@PreviewCompileResource is up-to-date.
+[2025-11-10T17:18:18.988] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CopyPreviewProfile is up-to-date.
+[2025-11-10T17:18:18.988] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@PreviewUpdateAssets is up-to-date.
+[2025-11-10T17:18:18.989] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default cache by regenerate.
+[2025-11-10T17:18:18.990] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-11-10T17:18:18.990] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-11-10T17:18:18.990] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-11-10T17:18:18.990] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\main\ets cache by regenerate.
+[2025-11-10T17:18:18.992] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T17:18:18.992] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-11-10T17:18:18.993] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\mock\mock-config.json5 cache by regenerate.
+[2025-11-10T17:18:18.993] [DEBUG] debug-file - Update task entry:default@PreviewArkTS output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader_out\default\ets cache.
+[2025-11-10T17:18:18.993] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS post-execution cost:6 ms .
+[2025-11-10T17:18:19.016] [DEBUG] debug-file - There's no busy workers and idle workers need cleanup.
+[2025-11-10T17:18:19.017] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-11-10T17:18:19.020] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:18:19.021] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-10T17:18:19.025] [DEBUG] debug-file - watch worker: worker is ready to be terminated.
+[2025-11-10T17:18:19.026] [DEBUG] debug-file - Server currently has 0 watch-worker
+[2025-11-10T17:22:50.051] [DEBUG] debug-file - session manager: set active socket. socketId=g6Ht2I3KS7G9F3L8AAAL
+[2025-11-10T17:22:50.069] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-11-10T17:22:50.073] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-10T17:22:50.075] [DEBUG] debug-file - Cache service initialization finished in 3 ms 
+[2025-11-10T17:22:50.076] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:22:50.080] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:22:50.080] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:22:50.085] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-10T17:22:50.085] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-10T17:22:50.085] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-10T17:22:50.085] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-10T17:22:50.086] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-11-10T17:22:50.089] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-11-10T17:22:50.090] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-11-10T17:22:50.110] [DEBUG] debug-file - Sdk init in 21 ms 
+[2025-11-10T17:22:50.112] [DEBUG] debug-file - Project task initialization takes 2 ms 
+[2025-11-10T17:22:50.112] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:22:50.112] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:22:50.112] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+[2025-11-10T17:22:50.112] [DEBUG] debug-file - hvigorfile, resolving C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:22:50.115] [DEBUG] debug-file - hvigorfile, require result:  { default: { plugins: [] } }
+[2025-11-10T17:22:50.115] [DEBUG] debug-file - hvigorfile, binding system plugins null
+[2025-11-10T17:22:50.115] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\DevEcoProjects\MysterySolo\hvigorfile.ts
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-11-10T17:22:50.117] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Target 'default' config initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Target 'ohosTest' config initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Module 'entry' target 'ohosTest' build option initialized
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-11-10T17:22:50.118] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-11-10T17:22:50.119] [DEBUG] debug-file - Module entry task initialization takes 1 ms 
+[2025-11-10T17:22:50.119] [DEBUG] debug-file - hvigorfile, binding custom plugins []
+[2025-11-10T17:22:50.119] [DEBUG] debug-file - hvigorfile, no custom plugins were found in C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:22:50.119] [DEBUG] debug-file - hvigorfile, resolve finished C:\DevEcoProjects\MysterySolo\entry\hvigorfile.ts
+[2025-11-10T17:22:50.169] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 50 ms 
+[2025-11-10T17:22:50.169] [DEBUG] debug-file - project has submodules:entry
+[2025-11-10T17:22:50.170] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-11-10T17:22:50.172] [DEBUG] debug-file - load to the disk finished
+[2025-11-10T17:22:50.173] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:22:50.175] [DEBUG] debug-file - Module MysterySolo Collected Dependency: 
+[2025-11-10T17:22:50.175] [DEBUG] debug-file - Module MysterySolo's total dependency: 0
+[2025-11-10T17:22:50.175] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-11-10T17:22:50.176] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-11-10T17:22:50.176] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-11-10T17:22:50.177] [DEBUG] debug-file - Configuration phase cost:102 ms 
+[2025-11-10T17:22:50.178] [DEBUG] debug-file - Configuration task cost before running: 107 ms 
+[2025-11-10T17:22:50.179] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-11-10T17:22:50.180] [DEBUG] debug-file - Task 'entry:default@PreBuild' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.183] [DEBUG] debug-file - Incremental task entry:default@PreBuild pre-execution cost: 2 ms .
+[2025-11-10T17:22:50.183] [DEBUG] debug-file - entry : default@PreBuild cost memory 0.31964111328125
+[2025-11-10T17:22:50.183] [INFO] debug-file - UP-TO-DATE :entry:default@PreBuild...  
+[2025-11-10T17:22:50.184] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-11-10T17:22:50.184] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.184] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.04085540771484375
+[2025-11-10T17:22:50.184] [DEBUG] debug-file - runTaskFromQueue task cost before running: 114 ms 
+[2025-11-10T17:22:50.184] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-11-10T17:22:50.185] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-11-10T17:22:50.185] [DEBUG] debug-file - Task 'entry:default@MergeProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.186] [DEBUG] debug-file - Incremental task entry:default@MergeProfile pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.186] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.12445831298828125
+[2025-11-10T17:22:50.186] [INFO] debug-file - UP-TO-DATE :entry:default@MergeProfile...  
+[2025-11-10T17:22:50.187] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-11-10T17:22:50.187] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.187] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.187] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.0939483642578125
+[2025-11-10T17:22:50.187] [INFO] debug-file - UP-TO-DATE :entry:default@CreateBuildProfile...  
+[2025-11-10T17:22:50.189] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-11-10T17:22:50.190] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01633453369140625
+[2025-11-10T17:22:50.190] [DEBUG] debug-file - runTaskFromQueue task cost before running: 119 ms 
+[2025-11-10T17:22:50.190] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-11-10T17:22:50.191] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-11-10T17:22:50.193] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.193] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.193] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.27930450439453125
+[2025-11-10T17:22:50.194] [INFO] debug-file - UP-TO-DATE :entry:default@GeneratePkgContextInfo...  
+[2025-11-10T17:22:50.194] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-11-10T17:22:50.195] [DEBUG] debug-file - Task 'entry:default@ProcessProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.196] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.196] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 0.13257598876953125
+[2025-11-10T17:22:50.196] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessProfile...  
+[2025-11-10T17:22:50.196] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-11-10T17:22:50.197] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.197] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.13909149169921875
+[2025-11-10T17:22:50.197] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessRouterMap...  
+[2025-11-10T17:22:50.198] [DEBUG] debug-file - Executing task :entry:default@ProcessShareConfig
+[2025-11-10T17:22:50.199] [DEBUG] debug-file - Incremental task entry:default@ProcessShareConfig pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.199] [DEBUG] debug-file - entry : default@ProcessShareConfig cost memory 0.1249542236328125
+[2025-11-10T17:22:50.199] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessShareConfig...  
+[2025-11-10T17:22:50.200] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-11-10T17:22:50.200] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.200] [DEBUG] debug-file - entry:default@ProcessStartupConfig is not up-to-date, since the output file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\startup\default\startup_config.json' does not exist.
+[2025-11-10T17:22:50.200] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.201] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.12870025634765625
+[2025-11-10T17:22:50.201] [DEBUG] debug-file - runTaskFromQueue task cost before running: 130 ms 
+[2025-11-10T17:22:50.201] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 1 ms 
+[2025-11-10T17:22:50.202] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewProcessResource
+[2025-11-10T17:22:50.202] [DEBUG] debug-file - Executing task :entry:default@PreviewProcessResource
+[2025-11-10T17:22:50.202] [DEBUG] debug-file - Task 'entry:default@PreviewProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.202] [DEBUG] debug-file - entry : default@PreviewProcessResource cost memory 0.05218505859375
+[2025-11-10T17:22:50.202] [DEBUG] debug-file - runTaskFromQueue task cost before running: 132 ms 
+[2025-11-10T17:22:50.203] [INFO] debug-file - Finished :entry:default@PreviewProcessResource... after 1 ms 
+[2025-11-10T17:22:50.203] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-11-10T17:22:50.205] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-11-10T17:22:50.209] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson pre-execution cost: 3 ms .
+[2025-11-10T17:22:50.209] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.54400634765625
+[2025-11-10T17:22:50.212] [INFO] debug-file - UP-TO-DATE :entry:default@GenerateLoaderJson...  
+[2025-11-10T17:22:50.212] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@PreviewCompileResource
+[2025-11-10T17:22:50.213] [DEBUG] debug-file - Executing task :entry:default@PreviewCompileResource
+[2025-11-10T17:22:50.216] [DEBUG] debug-file - entry:default@PreviewCompileResource is not up-to-date, since the output file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default' has been changed.
+[2025-11-10T17:22:50.216] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource pre-execution cost: 4 ms .
+[2025-11-10T17:22:50.256] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\DevEcoProjects\\MysterySolo\\AppScope\\resources',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled'
+]
+[2025-11-10T17:22:50.256] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 151085056,
+  heapTotal: 169820160,
+  heapUsed: 127285520,
+  external: 3530528,
+  arrayBuffers: 502969
+} os memoryUsage :14.875865936279297
+[2025-11-10T17:22:50.409] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T17:22:50.413] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-x',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\src\\main\\resources',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled'
+]
+[2025-11-10T17:22:50.413] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 151105536,
+  heapTotal: 169820160,
+  heapUsed: 127510976,
+  external: 3530654,
+  arrayBuffers: 503110
+} os memoryUsage :14.918827056884766
+[2025-11-10T17:22:50.523] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T17:22:50.526] [DEBUG] debug-file - Use tool [C:\Program Files\Huawei\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-m',
+  'entry',
+  '-f',
+  '-j',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\process_profile\\default\\module.json',
+  '-p',
+  'c***o',
+  '-r',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\generated\\r\\default\\ResourceTable.h',
+  '-z',
+  '--ids',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map',
+  '--defined-ids',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\ids_map\\id_defined.json',
+  '-i',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\app_compiled',
+  '-i',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default\\module_compiled',
+  '-o',
+  'C:\\DevEcoProjects\\MysterySolo\\entry\\.preview\\default\\intermediates\\res\\default',
+  '--defined-sysids',
+  'C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\hms\\toolchains\\id_defined.json'
+]
+[2025-11-10T17:22:50.526] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 151113728,
+  heapTotal: 169820160,
+  heapUsed: 127807784,
+  external: 3530780,
+  arrayBuffers: 504244
+} os memoryUsage :14.800849914550781
+[2025-11-10T17:22:50.665] [DEBUG] debug-file - Info: hardware concurrency count is : 20
+Info: thread count is : 20
+
+[2025-11-10T17:22:50.665] [DEBUG] debug-file - Info: thread pool is started
+
+[2025-11-10T17:22:50.670] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-11-10T17:22:50.670] [DEBUG] debug-file - Info: thread pool is stopped
+
+[2025-11-10T17:22:50.677] [DEBUG] debug-file - entry : default@PreviewCompileResource cost memory -9.487213134765625
+[2025-11-10T17:22:50.677] [DEBUG] debug-file - runTaskFromQueue task cost before running: 606 ms 
+[2025-11-10T17:22:50.677] [INFO] debug-file - Finished :entry:default@PreviewCompileResource... after 465 ms 
+[2025-11-10T17:22:50.678] [DEBUG] debug-file - Executing task :entry:default@PreviewHookCompileResource
+[2025-11-10T17:22:50.678] [DEBUG] debug-file - entry : default@PreviewHookCompileResource cost memory 0.01744842529296875
+[2025-11-10T17:22:50.678] [DEBUG] debug-file - runTaskFromQueue task cost before running: 608 ms 
+[2025-11-10T17:22:50.678] [INFO] debug-file - Finished :entry:default@PreviewHookCompileResource... after 1 ms 
+[2025-11-10T17:22:50.679] [DEBUG] debug-file - Executing task :entry:default@CopyPreviewProfile
+[2025-11-10T17:22:50.679] [DEBUG] debug-file - entry:default@CopyPreviewProfile is not up-to-date, since the output file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile' does not exist.
+[2025-11-10T17:22:50.680] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.683] [DEBUG] debug-file - entry : default@CopyPreviewProfile cost memory 0.19274139404296875
+[2025-11-10T17:22:50.683] [DEBUG] debug-file - runTaskFromQueue task cost before running: 612 ms 
+[2025-11-10T17:22:50.683] [INFO] debug-file - Finished :entry:default@CopyPreviewProfile... after 4 ms 
+[2025-11-10T17:22:50.684] [DEBUG] debug-file - Executing task :entry:default@ReplacePreviewerPage
+[2025-11-10T17:22:50.684] [DEBUG] debug-file - entry : default@ReplacePreviewerPage cost memory 0.01739501953125
+[2025-11-10T17:22:50.684] [DEBUG] debug-file - runTaskFromQueue task cost before running: 614 ms 
+[2025-11-10T17:22:50.685] [INFO] debug-file - Finished :entry:default@ReplacePreviewerPage... after 1 ms 
+[2025-11-10T17:22:50.685] [DEBUG] debug-file - Executing task :entry:buildPreviewerResource
+[2025-11-10T17:22:50.685] [DEBUG] debug-file - entry : buildPreviewerResource cost memory 0.0143585205078125
+[2025-11-10T17:22:50.685] [DEBUG] debug-file - runTaskFromQueue task cost before running: 615 ms 
+[2025-11-10T17:22:50.685] [INFO] debug-file - Finished :entry:buildPreviewerResource... after 1 ms 
+[2025-11-10T17:22:50.686] [DEBUG] debug-file - Executing task :entry:default@PreviewUpdateAssets
+[2025-11-10T17:22:50.686] [DEBUG] debug-file - entry:default@PreviewUpdateAssets is not up-to-date, since the output file 'C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\module.json' has been changed.
+[2025-11-10T17:22:50.687] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets pre-execution cost: 1 ms .
+[2025-11-10T17:22:50.688] [DEBUG] debug-file - entry : default@PreviewUpdateAssets cost memory 0.1075286865234375
+[2025-11-10T17:22:50.688] [DEBUG] debug-file - runTaskFromQueue task cost before running: 618 ms 
+[2025-11-10T17:22:50.688] [INFO] debug-file - Finished :entry:default@PreviewUpdateAssets... after 3 ms 
+[2025-11-10T17:22:50.690] [DEBUG] debug-file - Executing task :entry:default@PreviewArkTS
+[2025-11-10T17:22:50.690] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-11-10T17:22:50.698] [DEBUG] debug-file - session manager: binding session. socketId=g6Ht2I3KS7G9F3L8AAAL, threadId=1@4.
+[2025-11-10T17:22:50.699] [DEBUG] debug-file - entry : default@PreviewArkTS cost memory 1.0295944213867188
+[2025-11-10T17:22:52.878] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchStart
+[2025-11-10T17:22:52.879] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2025-11-10T17:22:54.811] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-10T17:22:54.812] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-10T17:22:56.158] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchResult
+[2025-11-10T17:22:56.158] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2025-11-10T17:22:56.159] [DEBUG] debug-file - Ark compile finished.
+[2025-11-10T17:22:56.160] [INFO] debug-file - Finished :entry:default@PreviewArkTS... after 5 s 470 ms 
+[2025-11-10T17:22:56.161] [DEBUG] debug-file - Executing task :entry:PreviewBuild
+[2025-11-10T17:22:56.161] [DEBUG] debug-file - entry : PreviewBuild cost memory 0.01422882080078125
+[2025-11-10T17:22:56.161] [DEBUG] debug-file - runTaskFromQueue task cost before running: 6 s 91 ms 
+[2025-11-10T17:22:56.161] [INFO] debug-file - Finished :entry:PreviewBuild... after 1 ms 
+[2025-11-10T17:22:56.173] [INFO] debug-file - BUILD SUCCESSFUL in 6 s 102 ms 
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@PreBuild is up-to-date.
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@MergeProfile is up-to-date.
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CreateBuildProfile is up-to-date.
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GeneratePkgContextInfo is up-to-date.
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessProfile is up-to-date.
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessRouterMap is up-to-date.
+[2025-11-10T17:22:56.174] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessShareConfig is up-to-date.
+[2025-11-10T17:22:56.175] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T17:22:56.175] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\startup\default\startup_config.json cache.
+[2025-11-10T17:22:56.175] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:2 ms .
+[2025-11-10T17:22:56.176] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GenerateLoaderJson is up-to-date.
+[2025-11-10T17:22:56.176] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources cache by regenerate.
+[2025-11-10T17:22:56.177] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-11-10T17:22:56.177] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default cache.
+[2025-11-10T17:22:56.179] [DEBUG] debug-file - Update task entry:default@PreviewCompileResource output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\r\default cache.
+[2025-11-10T17:22:56.180] [DEBUG] debug-file - Incremental task entry:default@PreviewCompileResource post-execution cost:5 ms .
+[2025-11-10T17:22:56.180] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile input file:C:\DevEcoProjects\MysterySolo\entry\src\main\resources\base\profile cache by regenerate.
+[2025-11-10T17:22:56.181] [DEBUG] debug-file - Update task entry:default@CopyPreviewProfile output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile cache.
+[2025-11-10T17:22:56.182] [DEBUG] debug-file - Incremental task entry:default@CopyPreviewProfile post-execution cost:2 ms .
+[2025-11-10T17:22:56.182] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\module.json cache.
+[2025-11-10T17:22:56.182] [DEBUG] debug-file - Update task entry:default@PreviewUpdateAssets output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile\main_pages.json cache.
+[2025-11-10T17:22:56.182] [DEBUG] debug-file - Incremental task entry:default@PreviewUpdateAssets post-execution cost:1 ms .
+[2025-11-10T17:22:56.183] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default cache by regenerate.
+[2025-11-10T17:22:56.183] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-11-10T17:22:56.183] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-11-10T17:22:56.184] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-11-10T17:22:56.184] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\main\ets cache by regenerate.
+[2025-11-10T17:22:56.185] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader\default\pkgContextInfo.json cache by regenerate.
+[2025-11-10T17:22:56.185] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-11-10T17:22:56.185] [DEBUG] debug-file - Update task entry:default@PreviewArkTS input file:C:\DevEcoProjects\MysterySolo\entry\src\mock\mock-config.json5 cache by regenerate.
+[2025-11-10T17:22:56.185] [DEBUG] debug-file - Update task entry:default@PreviewArkTS output file:C:\DevEcoProjects\MysterySolo\entry\.preview\default\intermediates\loader_out\default\ets cache.
+[2025-11-10T17:22:56.185] [DEBUG] debug-file - Incremental task entry:default@PreviewArkTS post-execution cost:4 ms .
+[2025-11-10T17:22:56.205] [DEBUG] debug-file - There's no busy workers and idle workers need cleanup.
+[2025-11-10T17:22:56.205] [DEBUG] debug-file - hvigor build process will be closed.
