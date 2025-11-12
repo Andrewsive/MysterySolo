@@ -1,9 +1,19 @@
 {
   "src": [
+    "pages/OnboardingPage",
     "pages/HomePage",
+    "pages/LibraryPage",
     "pages/DetailPage",
     "pages/PlayPage",
     "pages/NotesPage",
-    "pages/ResultPage"
+    "pages/NotesEditorPage",
+    "pages/ResultPage",
+    "pages/DownloadsPage",
+    "pages/DownloadDetailPage",
+    "pages/ProfilePage",
+    "pages/HistoryDetailPage",
+    "pages/AchievementsPage",
+    "pages/SettingsPage",
+    "pages/ErrorPage"
   ]
 }

@@ -1,10 +1,11 @@
-import { Script, Scene, Choice, FlagBag } from './types';
+import { Script, Scene, Choice, FlagBag, TrailEntry } from './types';
 
 export class Engine {
   private script: Script;
   private sceneId: string;
   private flags: FlagBag = {};
   private clues: Set<string> = new Set<string>();
+  private trail: TrailEntry[] = [];
 
   constructor(script: Script) {
     this.script = script;
@@ -17,6 +18,7 @@ export class Engine {
 
   getClues(): string[] { return Array.from(this.clues); }
   getFlags(): FlagBag { return this.flags; }
+  getTrail(): TrailEntry[] { return this.trail.map((item: TrailEntry) => ({ ...item })); }
 
   private meets(require?: FlagBag): boolean {
     if (!require) return true;
@@ -33,6 +35,7 @@ export class Engine {
     if (cur?.setFlags) Object.assign(this.flags, cur.setFlags);
     if (cur?.gainClues) cur.gainClues.forEach((id) => this.clues.add(id));
 
+    this.trail.push({ sceneId: this.sceneId, choiceText: c.text });
     this.sceneId = c.next;
     const isEnding = this.script.endings.some(e => e.id === this.sceneId);
     return isEnding ? { ended: true, endingId: this.sceneId } : { ended: false };
@@ -42,6 +45,7 @@ export class Engine {
     this.sceneId = this.script.start ?? this.script.scenes[0].id;
     this.flags = {};
     this.clues.clear();
+    this.trail = [];
   }
 
   // ------- 新增：给 UI 用的轻量接口 -------

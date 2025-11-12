@@ -1,6 +1,7 @@
 import router from '@ohos.router';
 import { getScript } from '../model/store';
 import { ResultParams } from '../model/types';
+import { getLastPlaySummary, buildReplaySuggestions, trailDisplay } from '../model/progress';
 
 @Entry
 @Component
@@ -10,6 +11,9 @@ struct ResultPage {
   @State title: string = '';
   @State summary: string = '';
   @State score: number = 0;
+  @State clueIds: string[] = [];
+  @State suggestions: string[] = [];
+  @State trailLines: string[] = [];
 
   aboutToAppear() {
     try {
@@ -27,6 +31,16 @@ struct ResultPage {
       this.title = '';
       this.summary = '';
       this.score = 0;
+    }
+    const last = getLastPlaySummary();
+    if (last && last.scriptId === this.sid) {
+      this.clueIds = last.clues;
+      this.suggestions = buildReplaySuggestions(last);
+      this.trailLines = trailDisplay(last.trail);
+    } else {
+      this.clueIds = [];
+      this.suggestions = [];
+      this.trailLines = [];
     }
   }
 
@@ -48,12 +62,44 @@ struct ResultPage {
           Text(this.summary).fontSize(14).opacity(0.75)
         }.padding({ left: 20, right: 20 })
 
+        if (this.clueIds.length > 0) {
+          Column({ space: 8 }) {
+            Text('关键线索').fontSize(16).fontWeight(FontWeight.Medium)
+            ForEach(this.clueIds, (id: string) => {
+              Text(`· ${id}`).fontSize(13).opacity(0.65)
+            }, (id: string) => id)
+          }.padding({ left: 20, right: 20 })
+        }
+
+        if (this.trailLines.length > 0) {
+          Column({ space: 8 }) {
+            Text('选择轨迹').fontSize(16).fontWeight(FontWeight.Medium)
+            ForEach(this.trailLines, (line: string) => {
+              Text(line).fontSize(13).opacity(0.65)
+            }, (line: string) => line)
+          }.padding({ left: 20, right: 20 })
+        }
+
+        Column({ space: 8 }) {
+          Text('复盘建议').fontSize(16).fontWeight(FontWeight.Medium)
+          if (this.suggestions.length === 0) {
+            Text('暂无更多建议，尝试新的选择吧。').fontSize(13).opacity(0.6)
+          } else {
+            ForEach(this.suggestions, (text: string) => {
+              Text(`· ${text}`).fontSize(13).opacity(0.7)
+            }, (text: string) => text)
+          }
+        }.padding({ left: 20, right: 20 })
+
         Column({ space: 12 }) {
           Button('回到首页').onClick(() => {
             try { router.replaceUrl({ url: 'pages/HomePage' }) } catch (_) {}
           })
           Button('再来一次').type(ButtonType.Capsule).onClick(() => {
             try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.sid } }) } catch (_) {}
+          })
+          Button('撰写推理笔记').onClick(() => {
+            try { router.pushUrl({ url: 'pages/NotesEditorPage', params: { id: this.sid } }) } catch (_) {}
           })
         }.margin({ left: 20, right: 20, bottom: 24 })
       }

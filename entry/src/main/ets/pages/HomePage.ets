@@ -1,6 +1,7 @@
 import router from '@ohos.router';
 import { listScripts } from '../model/store';
 import { ShortScript } from '../model/types';
+import { hasOnboarded } from '../model/progress';
 
 interface TabEntry {
   label: string;
@@ -19,6 +20,12 @@ struct HomePage {
   ];
   @State keyword: string = '';
   @State activeTab: number = 0;
+
+  aboutToAppear() {
+    if (!hasOnboarded()) {
+      try { router.replaceUrl({ url: 'pages/OnboardingPage' }) } catch (_) {}
+    }
+  }
 
   private filtered(): ShortScript[] {
     return this.data.filter((s: ShortScript) => this.matchTab(s) && this.matchKeyword(s));
@@ -65,9 +72,12 @@ struct HomePage {
           Text('随时沉浸单人剧本杀，记录你的推理灵感').fontSize(13).opacity(0.6).padding({ left: 20, right: 20 })
         }
 
-        Column({ space: 12 }) {
+        Column({ space: 16 }) {
           TextInput({ placeholder: '搜索剧本或标签' })
             .onChange((v: string) => { this.keyword = v })
+            .onSubmit(() => {
+              try { router.pushUrl({ url: 'pages/LibraryPage' }) } catch (_) {}
+            })
             .margin({ left: 20, right: 20 })
 
           Row({ space: 10 }) {
@@ -77,7 +87,18 @@ struct HomePage {
                 .fontSize(13)
                 .padding({ left: 14, right: 14 })
                 .onClick(() => { this.activeTab = tab.idx; })
-            })
+            }, (tab: TabEntry) => tab.idx.toString())
+            Blank()
+          }.margin({ left: 20, right: 20 })
+
+          Row({ space: 12 }) {
+            Button('剧本库')
+              .type(ButtonType.Capsule)
+              .onClick(() => { try { router.pushUrl({ url: 'pages/LibraryPage' }) } catch (_) {} })
+            Button('下载管理')
+              .onClick(() => { try { router.pushUrl({ url: 'pages/DownloadsPage' }) } catch (_) {} })
+            Button('个人中心')
+              .onClick(() => { try { router.pushUrl({ url: 'pages/ProfilePage' }) } catch (_) {} })
             Blank()
           }.margin({ left: 20, right: 20 })
         }
@@ -124,14 +145,22 @@ struct HomePage {
                       Text(item.tagline).fontSize(13).opacity(0.7)
                     }
                     Text(`${this.difficultyLabel(item.difficulty)} · 约 ${item.durationMin} 分钟`).fontSize(12).opacity(0.55)
+                    if (item.rating) {
+                      Text(`评分 ${item.rating?.toFixed(1)}`).fontSize(12).opacity(0.55)
+                    }
                     if (item.tags) {
                       Row({ space: 6 }) {
                         ForEach(item.tags, (tag: string) => {
                           Text(`#${tag}`).fontSize(11).opacity(0.6)
                             .padding({ left: 8, right: 8, top: 4, bottom: 4 })
                             .backgroundColor('#EEF1F5').borderRadius(12)
-                        })
+                        }, (tag: string) => tag)
                       }
+                    }
+                    if (item.offlineAvailable) {
+                      Text('离线可玩').fontSize(11).opacity(0.7)
+                        .padding({ left: 8, right: 8, top: 4, bottom: 4 })
+                        .backgroundColor('#E5F5EA').borderRadius(12)
                     }
                   }
                   Blank()
@@ -140,7 +169,7 @@ struct HomePage {
                   })
                 }
               }.padding({ left: 20, right: 20, top: 14, bottom: 14 }).backgroundColor('#FFFFFF').borderRadius(18)
-            })
+            }, (item: ShortScript) => item.id)
           }.padding({ bottom: 24 })
         }
       }

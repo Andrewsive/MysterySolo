@@ -9,7 +9,10 @@ export function listScripts(): ShortScript[] {
     durationMin: s.durationMin,
     tagline: s.tagline,
     tags: s.tags,
-    mood: s.mood
+    mood: s.mood,
+    rating: s.rating,
+    offlineAvailable: s.offlineAvailable,
+    sizeMB: s.sizeMB
   }));
 }
 

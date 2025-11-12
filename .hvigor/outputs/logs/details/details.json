@@ -7,7 +7,8 @@
       }
     ],
     "NATIVE_COMPILER": "Default",
-    "BUILD_MODE": "debug"
+    "BUILD_MODE": "debug",
+    "USE_NORMALIZED_OHMURL": true
   },
   "HVIGOR": {
     "IS_INCREMENTAL": true,
@@ -16,22 +17,15 @@
     "IS_HVIGORFILE_TYPE_CHECK": false,
     "TASK_TIME": {
       "1043bfc77febe75fafec0c4309faccf1": {
-        "init": 817500,
-        "CreateModuleInfo": 939500,
-        "PreCheckSyscap": 422500,
-        "ProcessStartupConfig": 17356400,
-        "PreviewProcessResource": 2362500,
-        "PreviewCompileResource": 840549500,
-        "PreviewHookCompileResource": 636500,
-        "CopyPreviewProfile": 11882800,
-        "ReplacePreviewerPage": 1116000,
-        "buildPreviewerResource": 479800,
-        "PreviewUpdateAssets": 5309000,
-        "PreviewArkTS": 43257305300,
-        "PreviewBuild": 461500
-      },
-      "APP": {
-        "init": 543400
+        "CreateModuleInfo": 993900,
+        "PreCheckSyscap": 308500,
+        "ProcessStartupConfig": 2580900,
+        "PreviewProcessResource": 2053100,
+        "PreviewHookCompileResource": 256900,
+        "ReplacePreviewerPage": 373900,
+        "buildPreviewerResource": 202100,
+        "PreviewArkTS": 8716935700,
+        "PreviewBuild": 367500
       }
     },
     "APIS": [
@@ -42,8 +36,6 @@
       "getAllNodes",
       "getRootNode",
       "getNodeName",
-      "getStartParams",
-      "buildFinished",
       "getNodePath",
       "subNodes",
       "getExtraOption",
@@ -54,10 +46,11 @@
       "getParameter",
       "getProductName",
       "nodesEvaluated",
-      "getCommandEntryTask"
+      "getCommandEntryTask",
+      "getStartParams"
     ],
     "CONFIG_PROPERTIES": {},
-    "BUILD_ID": "202511121012599150",
-    "TOTAL_TIME": 44413458100
+    "TOTAL_TIME": 9219181600,
+    "BUILD_ID": "202511122103230900"
   }
 }

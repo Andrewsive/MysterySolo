@@ -54,9 +54,14 @@ struct NotesPage {
           })
         }.padding({ bottom: 24 })
 
-        Button('返回').margin({ left: 20, right: 20, bottom: 24 }).onClick(() => {
-          try { router.back() } catch (_) {}
-        })
+        Row({ space: 12 }) {
+          Button('添加推理笔记').type(ButtonType.Capsule).onClick(() => {
+            try { router.pushUrl({ url: 'pages/NotesEditorPage', params: { id: this.sid } }) } catch (_) {}
+          })
+          Button('返回').onClick(() => {
+            try { router.back() } catch (_) {}
+          })
+        }.margin({ left: 20, right: 20, bottom: 24 })
       }
     }.scrollBar(BarState.Off).height('100%').backgroundColor('#FFFFFF')
   }

@@ -13,6 +13,19 @@ export const SCRIPTS: Script[] = [
     recommendedFocus: '适合喜欢慢推理的玩家',
     mood: '压抑却温柔的雨夜',
     highlight: '以日记与物件串联的线索网',
+    highlights: [
+      { title: '日记引导', description: '通过手札的只言片语获取下一步行动提示。' },
+      { title: '道具互动', description: '钥匙、边门等道具关联，触发不同剧情分支。' },
+      { title: '情绪线索', description: '暴雨与灯光构建情感氛围，触发回忆片段。' }
+    ],
+    sizeMB: 32,
+    releaseDaysAgo: 12,
+    rating: 4.6,
+    offlineAvailable: true,
+    hints: [
+      { id: 'demo-h1', text: '手札与边门之间存在时间限制，注意日记中的时间线。' },
+      { id: 'demo-h2', text: '钥匙不仅可以开门，也许还代表某个数字或日期。' }
+    ],
     start: 'start',
     scenes: [
       {
@@ -66,6 +79,18 @@ export const SCRIPTS: Script[] = [
     recommendedFocus: '新手快速上手',
     mood: '温暖而略带惆怅',
     highlight: '通过邻里互动拼凑出真实记忆',
+    highlights: [
+      { title: '邻里访谈', description: '与管理员、邻居对话获得不同视角的线索。' },
+      { title: '声音谜题', description: '回声的节奏暗藏密码，可与档案互相印证。' }
+    ],
+    sizeMB: 24,
+    releaseDaysAgo: 5,
+    rating: 4.4,
+    offlineAvailable: false,
+    hints: [
+      { id: 'echo-h1', text: '花香与舞者之间有联系，试着把气味与档案对照。' },
+      { id: 'echo-h2', text: '投影仪与脚步声的节奏一致，说明回声来自影像。' }
+    ],
     start: 'lobby',
     scenes: [
       {
@@ -129,6 +154,19 @@ export const SCRIPTS: Script[] = [
     recommendedFocus: '喜欢多线索交织的玩家',
     mood: '冷冽而理性',
     highlight: '每幅画都是解谜密码，收集色号决定结局',
+    highlights: [
+      { title: '色卡拼图', description: '不同色块对应字母，拼合后是储物柜密码。' },
+      { title: '暗房底片', description: '底片记录学生情绪，可决定最终结局。' },
+      { title: '导师手稿', description: '手稿提示师生矛盾，用于判断不同分支。' }
+    ],
+    sizeMB: 48,
+    releaseDaysAgo: 38,
+    rating: 4.8,
+    offlineAvailable: true,
+    hints: [
+      { id: 'atelier-h1', text: '色卡上标注的“锁”与储物柜形状一致，考虑颜色顺序。' },
+      { id: 'atelier-h2', text: '暗房底片与手稿搭配阅读，能看出学生失踪的真正原因。' }
+    ],
     start: 'studio',
     scenes: [
       {
