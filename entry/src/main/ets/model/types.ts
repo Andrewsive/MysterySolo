@@ -41,6 +41,12 @@ export interface Script {
   endings: Ending[];
   clues: Clue[];
   cover?: string;
+  tagline?: string;
+  tags?: string[];
+  genre?: string;
+  recommendedFocus?: string;
+  mood?: string;
+  highlight?: string;
 }
 
 // 供 UI 列表使用的轻量类型
@@ -49,6 +55,9 @@ export interface ShortScript {
   title: string;
   difficulty: number;
   durationMin: number;
+  tagline?: string;
+  tags?: string[];
+  mood?: string;
 }
 
 // 页面参数类型（统一放 TS 文件，避免 .ets 顶层声明）

@@ -1,5 +1,9 @@
 {
   "src": [
-    "pages/HomePage"
+    "pages/HomePage",
+    "pages/DetailPage",
+    "pages/PlayPage",
+    "pages/NotesPage",
+    "pages/ResultPage"
   ]
 }

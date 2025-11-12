@@ -9,7 +9,7 @@
 		"SELECT_BUILD_PRODUCT":"default",
 		"BUNDLE_NAME":"com.yichen.mysterysolo",
 		"BUILD_PATH":{
-			"OUTPUT_PATH":"C:\\DevEcoProjects\\MysterySolo\\build\\outputs\\default"
+			"OUTPUT_PATH":"C:\\Dev\\MysterySolo\\build\\outputs\\default"
 		},
 		"SELECT_BUILD_MODE":""
 	}
