@@ -252,7 +252,6 @@ struct PlayPage {
                 this.navigateEnding(result.endingId);
               } else {
                 this.refreshFromEngine();
-                try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.sid } }) } catch (_) {}
               }
             })
           })

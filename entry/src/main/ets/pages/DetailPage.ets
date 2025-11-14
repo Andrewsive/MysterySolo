@@ -108,4 +108,4 @@ struct DetailPage {
       }
     }.scrollBar(BarState.Off).height('100%').backgroundColor('#FFFFFF')
   }
-}
+} 
