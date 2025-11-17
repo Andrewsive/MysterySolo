@@ -4,6 +4,7 @@ import { getScript } from '../model/store';
 import { Engine } from '../model/engine';
 import { Choice, PlayParams, PlaySummary, Script } from '../model/types';
 import { recordPlay } from '../model/progress';
+import { WarmTheme, WarmShadow } from './uiTheme';
 
 @Entry
 @Component
@@ -100,12 +101,12 @@ struct PlayPage {
 
   build() {
     Scroll() {
-      Column({ space: 16 }) {
+      Column({ space: 18 }) {
         // 顶部标题栏
         Column({ space: 6 }) {
-          Text(this.scriptTitle).fontSize(22).fontWeight(FontWeight.Bold).padding({ top: 20, left: 20, right: 20 })
+          Text(this.scriptTitle).fontSize(24).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary).padding({ top: 24, left: 20, right: 20 })
           if (this.scriptMood.length > 0) {
-            Text(this.scriptMood).fontSize(13).opacity(0.6).padding({ left: 20, right: 20 })
+            Text(this.scriptMood).fontSize(13).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
           }
         }
 
@@ -113,9 +114,9 @@ struct PlayPage {
         if (this.totalClues > 0) {
           Column({ space: 8 }) {
             Row() {
-              Text('🔍 线索进度').fontSize(14).fontWeight(FontWeight.Medium)
+              Text('🔍 线索进度').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
               Blank()
-              Text(`${this.clueCount}/${this.totalClues}`).fontSize(14).opacity(0.7)
+              Text(`${this.clueCount}/${this.totalClues}`).fontSize(14).fontColor(WarmTheme.textSecondary)
             }.width('100%')
             
             Progress({ value: this.clueCount, total: this.totalClues, type: ProgressType.Linear })
@@ -124,11 +125,11 @@ struct PlayPage {
               .borderRadius(3)
             
             if (this.hasNewClue) {
-              Text('✨ 刚刚获得了新线索！').fontSize(12).fontColor('#52C41A')
+              Text('✨ 刚刚获得了新线索！').fontSize(12).fontColor(WarmTheme.accentDark)
             }
           }
           .padding(16)
-          .backgroundColor('#F0F9FF')
+          .backgroundColor('#FFF0E0')
           .borderRadius(12)
           .margin({ left: 20, right: 20 })
         }
@@ -146,9 +147,9 @@ struct PlayPage {
               }
             }
             .type(ButtonType.Normal)
-            .backgroundColor('#E8F4FD')
-            .borderRadius(12)
-            .height(44)
+            .backgroundColor('#FFF2E5')
+            .borderRadius(14)
+            .height(46)
             .layoutWeight(1)
             .onClick(() => {
               try {
@@ -165,9 +166,9 @@ struct PlayPage {
               }
             }
             .type(ButtonType.Normal)
-            .backgroundColor('#FFF7E6')
-            .borderRadius(12)
-            .height(44)
+            .backgroundColor('#FFECDC')
+            .borderRadius(14)
+            .height(46)
             .layoutWeight(1)
             .onClick(() => {
               this.showHint();
@@ -181,9 +182,9 @@ struct PlayPage {
             }
           }
           .type(ButtonType.Normal)
-          .backgroundColor('#F6F7F9')
-          .borderRadius(12)
-          .height(44)
+          .backgroundColor('#F4E7DC')
+          .borderRadius(14)
+          .height(46)
           .width('100%')
           .onClick(() => {
             promptAction.showDialog({
@@ -208,22 +209,25 @@ struct PlayPage {
         }.padding({ left: 20, right: 20 })
 
         // 剧情文本区域
-        Column() {
+        Column({ space: 12 }) {
+          Text('剧情进展').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
           Text(this.sceneText)
             .fontSize(16)
             .lineHeight(26)
-            .padding({ left: 20, right: 20, top: 20, bottom: 20 })
+            .fontColor(WarmTheme.textPrimary)
+            .padding({ left: 16, right: 16, top: 16, bottom: 16 })
         }
-        .backgroundColor('#F6F7F9')
-        .borderRadius(16)
+        .backgroundColor(WarmTheme.card)
+        .borderRadius(20)
         .margin({ left: 20, right: 20 })
+        .shadow(WarmShadow.light)
 
         // 选项提示
         if (this.choices.length > 0) {
           Text('📍 请选择你的行动：')
             .fontSize(14)
             .fontWeight(FontWeight.Medium)
-            .opacity(0.8)
+            .fontColor(WarmTheme.textPrimary)
             .padding({ left: 20 })
         }
 
@@ -232,17 +236,17 @@ struct PlayPage {
           ForEach(this.choices, (c: Choice, index: number) => {
             Button() {
               Row({ space: 8 }) {
-                Text(`${index + 1}`).fontSize(14).opacity(0.5)
-                Text(c.text).fontSize(15).layoutWeight(1).textAlign(TextAlign.Start)
-                Text('→').fontSize(16).opacity(0.3)
+                Text(`${index + 1}`).fontSize(14).fontColor(WarmTheme.textSecondary)
+                Text(c.text).fontSize(15).layoutWeight(1).textAlign(TextAlign.Start).fontColor(WarmTheme.textPrimary)
+                Text('→').fontSize(16).fontColor(WarmTheme.textSecondary)
               }.width('100%')
             }
             .type(ButtonType.Normal)
             .margin({ left: 20, right: 20 })
             .padding({ top: 16, bottom: 16, left: 16, right: 16 })
-            .backgroundColor('#FFFFFF')
-            .borderRadius(14)
-            .border({ width: 1, color: '#E5E7EB' })
+            .backgroundColor(WarmTheme.card)
+            .borderRadius(18)
+            .shadow(WarmShadow.light)
             .onClick(() => {
               if (!this.eng) {
                 return;
@@ -255,9 +259,9 @@ struct PlayPage {
               }
             })
           })
-        }.padding({ bottom: 20 })
+        }.padding({ bottom: 32 })
       }
-    }.scrollBar(BarState.Off).height('100%').backgroundColor('#FFFFFF')
+    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
   }
 }
 

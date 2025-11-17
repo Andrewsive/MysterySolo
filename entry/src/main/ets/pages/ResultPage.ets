@@ -2,6 +2,7 @@ import router from '@ohos.router';
 import { getScript } from '../model/store';
 import { ResultParams } from '../model/types';
 import { getLastPlaySummary, buildReplaySuggestions, trailDisplay } from '../model/progress';
+import { WarmTheme, WarmShadow } from './uiTheme';
 
 @Entry
 @Component
@@ -48,62 +49,74 @@ struct ResultPage {
     Scroll() {
       Column({ space: 20 }) {
         Column({ space: 6 }) {
-          Text('推理结束').fontSize(24).fontWeight(FontWeight.Bold).padding({ top: 24, left: 20, right: 20 })
-          Text('整理思路，记录你的演绎故事').fontSize(13).opacity(0.6).padding({ left: 20, right: 20 })
+          Text('推理结束').fontSize(26).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary).padding({ top: 24, left: 20, right: 20 })
+          Text('整理思路，记录你的演绎故事').fontSize(13).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
         }
 
-        Column({ space: 10 }) {
-          Text(this.title).fontSize(20).fontWeight(FontWeight.Medium)
-          Text(`得分 ${this.score}`).fontSize(32).fontWeight(FontWeight.Bold)
-        }.padding({ left: 20, right: 20, top: 24, bottom: 24 }).backgroundColor('#F6F7F9').borderRadius(18)
+        Column({ space: 12 }) {
+          Text(this.title).fontSize(20).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+          Text(`得分 ${this.score}`).fontSize(34).fontWeight(FontWeight.Bold).fontColor(WarmTheme.accentDark)
+        }.padding({ left: 24, right: 24, top: 24, bottom: 24 }).backgroundColor(WarmTheme.card).borderRadius(24).shadow(WarmShadow.card)
 
         Column({ space: 12 }) {
-          Text('结局摘要').fontSize(16).fontWeight(FontWeight.Medium)
-          Text(this.summary).fontSize(14).opacity(0.75)
-        }.padding({ left: 20, right: 20 })
+          Text('结局摘要').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+          Text(this.summary).fontSize(14).fontColor(WarmTheme.textSecondary)
+        }.padding({ left: 24, right: 24 })
 
         if (this.clueIds.length > 0) {
           Column({ space: 8 }) {
-            Text('关键线索').fontSize(16).fontWeight(FontWeight.Medium)
+            Text('关键线索').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
             ForEach(this.clueIds, (id: string) => {
-              Text(`· ${id}`).fontSize(13).opacity(0.65)
+              Text(`· ${id}`).fontSize(13).fontColor(WarmTheme.textSecondary)
             }, (id: string) => id)
-          }.padding({ left: 20, right: 20 })
+          }.padding({ left: 24, right: 24 })
         }
 
         if (this.trailLines.length > 0) {
           Column({ space: 8 }) {
-            Text('选择轨迹').fontSize(16).fontWeight(FontWeight.Medium)
+            Text('选择轨迹').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
             ForEach(this.trailLines, (line: string) => {
-              Text(line).fontSize(13).opacity(0.65)
+              Text(line).fontSize(13).fontColor(WarmTheme.textSecondary)
             }, (line: string) => line)
-          }.padding({ left: 20, right: 20 })
+          }.padding({ left: 24, right: 24 })
         }
 
         Column({ space: 8 }) {
-          Text('复盘建议').fontSize(16).fontWeight(FontWeight.Medium)
+          Text('复盘建议').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
           if (this.suggestions.length === 0) {
-            Text('暂无更多建议，尝试新的选择吧。').fontSize(13).opacity(0.6)
+            Text('暂无更多建议，尝试新的选择吧。').fontSize(13).fontColor(WarmTheme.textSecondary)
           } else {
             ForEach(this.suggestions, (text: string) => {
-              Text(`· ${text}`).fontSize(13).opacity(0.7)
+              Text(`· ${text}`).fontSize(13).fontColor(WarmTheme.textSecondary)
             }, (text: string) => text)
           }
-        }.padding({ left: 20, right: 20 })
+        }.padding({ left: 24, right: 24 })
 
         Column({ space: 12 }) {
-          Button('回到首页').onClick(() => {
-            try { router.replaceUrl({ url: 'pages/HomePage' }) } catch (_) {}
-          })
-          Button('再来一次').type(ButtonType.Capsule).onClick(() => {
-            try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.sid } }) } catch (_) {}
-          })
-          Button('撰写推理笔记').onClick(() => {
-            try { router.pushUrl({ url: 'pages/NotesEditorPage', params: { id: this.sid } }) } catch (_) {}
-          })
-        }.margin({ left: 20, right: 20, bottom: 24 })
+          Button('回到首页')
+            .type(ButtonType.Capsule)
+            .backgroundColor(WarmTheme.accentLight)
+            .fontColor(WarmTheme.accentDark)
+            .onClick(() => {
+              try { router.replaceUrl({ url: 'pages/HomePage' }) } catch (_) {}
+            })
+          Button('再来一次')
+            .type(ButtonType.Capsule)
+            .backgroundColor(WarmTheme.accent)
+            .fontColor('#FFFFFF')
+            .onClick(() => {
+              try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.sid } }) } catch (_) {}
+            })
+          Button('撰写推理笔记')
+            .type(ButtonType.Normal)
+            .backgroundColor('#F5E9E0')
+            .fontColor(WarmTheme.textPrimary)
+            .onClick(() => {
+              try { router.pushUrl({ url: 'pages/NotesEditorPage', params: { id: this.sid } }) } catch (_) {}
+            })
+        }.margin({ left: 24, right: 24, bottom: 24 })
       }
-    }.scrollBar(BarState.Off).height('100%').backgroundColor('#FFFFFF')
+    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
   }
 }
 

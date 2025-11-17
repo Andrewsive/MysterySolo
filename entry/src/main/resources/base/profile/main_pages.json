@@ -11,6 +11,7 @@
     "pages/DownloadsPage",
     "pages/DownloadDetailPage",
     "pages/ProfilePage",
+    "pages/ReviewPage",
     "pages/HistoryDetailPage",
     "pages/AchievementsPage",
     "pages/SettingsPage",

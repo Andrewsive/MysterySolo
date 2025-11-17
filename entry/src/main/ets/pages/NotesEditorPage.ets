@@ -1,6 +1,7 @@
 import router from '@ohos.router';
 import { NotesParams } from '../model/types';
 import { getNote, saveNote } from '../model/progress';
+import { WarmTheme, WarmShadow } from './uiTheme';
 
 @Entry
 @Component
@@ -43,56 +44,56 @@ struct NotesEditorPage {
   build() {
     Scroll() {
       Column({ space: 18 }) {
-        Text('推理笔记').fontSize(24).fontWeight(FontWeight.Bold).padding({ top: 24, left: 20, right: 20 })
-        Text(`剧本 ${this.scriptId}`).fontSize(12).opacity(0.6).padding({ left: 20, right: 20 })
+        Text('推理笔记').fontSize(26).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary).padding({ top: 24, left: 20, right: 20 })
+        Text(`剧本 ${this.scriptId}`).fontSize(12).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
 
-        Column({ space: 12 }) {
-          Text('嫌疑人 & 关系').fontSize(14).fontWeight(FontWeight.Medium)
-          TextInput({ placeholder: '记录嫌疑人与关系线索', text: this.suspects })
-            .onChange((value: string) => { this.suspects = value; this.saved = false; })
-            .height(120)
-            .margin({ top: 4 })
-        }.padding({ left: 20, right: 20 })
-
-        Column({ space: 12 }) {
-          Text('动机假设').fontSize(14).fontWeight(FontWeight.Medium)
-          TextInput({ placeholder: '写下你推测的动机或矛盾', text: this.motive })
-            .onChange((value: string) => { this.motive = value; this.saved = false; })
-            .height(120)
-        }.padding({ left: 20, right: 20 })
-
-        Column({ space: 12 }) {
-          Text('关键证据').fontSize(14).fontWeight(FontWeight.Medium)
-          TextInput({ placeholder: '线索、证人与物证', text: this.evidence })
-            .onChange((value: string) => { this.evidence = value; this.saved = false; })
-            .height(120)
-        }.padding({ left: 20, right: 20 })
-
-        Column({ space: 12 }) {
-          Text('矛盾点/待查验').fontSize(14).fontWeight(FontWeight.Medium)
-          TextInput({ placeholder: '记录尚未解释的疑点', text: this.paradox })
-            .onChange((value: string) => { this.paradox = value; this.saved = false; })
-            .height(120)
-        }.padding({ left: 20, right: 20 })
+        this.noteCard('嫌疑人 & 关系', '记录嫌疑人与关系线索', this.suspects, (v: string) => { this.suspects = v; this.saved = false })
+        this.noteCard('动机假设', '写下你推测的动机或矛盾', this.motive, (v: string) => { this.motive = v; this.saved = false })
+        this.noteCard('关键证据', '线索、证人与物证', this.evidence, (v: string) => { this.evidence = v; this.saved = false })
+        this.noteCard('矛盾点 / 待查验', '记录尚未解释的疑点', this.paradox, (v: string) => { this.paradox = v; this.saved = false })
 
         if (this.saved) {
-          Text('已保存到本地').fontSize(12).opacity(0.6).padding({ left: 20, right: 20 })
+          Text('✔ 已保存到本地').fontSize(12).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
         }
 
         Row({ space: 12 }) {
-          Button('保存').type(ButtonType.Capsule).onClick(() => { this.save(); })
-          Button('清空').onClick(() => {
-            this.suspects = '';
-            this.motive = '';
-            this.evidence = '';
-            this.paradox = '';
-            this.saved = false;
-          })
+          Button('保存')
+            .type(ButtonType.Capsule)
+            .backgroundColor(WarmTheme.accent)
+            .fontColor('#FFFFFF')
+            .onClick(() => { this.save(); })
+          Button('清空')
+            .backgroundColor('#F6E7DA')
+            .fontColor(WarmTheme.textPrimary)
+            .onClick(() => {
+              this.suspects = '';
+              this.motive = '';
+              this.evidence = '';
+              this.paradox = '';
+              this.saved = false;
+            })
           Blank()
-          Button('返回').onClick(() => { try { router.back() } catch (_) {} })
+          Button('返回')
+            .backgroundColor('#F0E4D9')
+            .fontColor(WarmTheme.textPrimary)
+            .onClick(() => { try { router.back() } catch (_) {} })
         }.margin({ left: 20, right: 20, bottom: 24 })
       }
-    }.scrollBar(BarState.Off).height('100%').backgroundColor('#FFFFFF')
+    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
+  }
+
+  @Builder
+  private noteCard(title: string, placeholder: string, value: string, onChange: (value: string) => void) {
+    Column({ space: 10 }) {
+      Text(title).fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+      TextInput({ placeholder, text: value })
+        .onChange(onChange)
+        .height(120)
+        .backgroundColor(WarmTheme.card)
+        .borderRadius(20)
+        .padding({ left: 12, right: 12 })
+    }
+    .padding({ left: 20, right: 20 })
   }
 }
 

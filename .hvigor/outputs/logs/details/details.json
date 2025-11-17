@@ -7,7 +7,8 @@
       }
     ],
     "NATIVE_COMPILER": "Default",
-    "BUILD_MODE": "debug"
+    "BUILD_MODE": "debug",
+    "USE_NORMALIZED_OHMURL": true
   },
   "HVIGOR": {
     "IS_INCREMENTAL": true,
@@ -16,18 +17,15 @@
     "IS_HVIGORFILE_TYPE_CHECK": false,
     "TASK_TIME": {
       "1043bfc77febe75fafec0c4309faccf1": {
-        "CreateModuleInfo": 2046800,
-        "PreCheckSyscap": 832800,
-        "ProcessStartupConfig": 5677000,
-        "PreviewProcessResource": 3947600,
-        "PreviewCompileResource": 565142700,
-        "PreviewHookCompileResource": 1449200,
-        "CopyPreviewProfile": 29466100,
-        "ReplacePreviewerPage": 2868200,
-        "buildPreviewerResource": 1438400,
-        "PreviewUpdateAssets": 15119200,
-        "PreviewArkTS": 7768997100,
-        "PreviewBuild": 605600
+        "CreateModuleInfo": 2473200,
+        "PreCheckSyscap": 1792500,
+        "ProcessStartupConfig": 4329500,
+        "PreviewProcessResource": 3528300,
+        "PreviewHookCompileResource": 1403900,
+        "ReplacePreviewerPage": 1129200,
+        "buildPreviewerResource": 865000,
+        "PreviewArkTS": 11168077200,
+        "PreviewBuild": 400200
       }
     },
     "APIS": [
@@ -52,7 +50,7 @@
       "getStartParams"
     ],
     "CONFIG_PROPERTIES": {},
-    "TOTAL_TIME": 8939130600,
-    "BUILD_ID": "202511171535371730"
+    "TOTAL_TIME": 12578619300,
+    "BUILD_ID": "202511172132091650"
   }
 }

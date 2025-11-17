@@ -1,6 +1,7 @@
 import router from '@ohos.router';
 import { HistoryParams, TrailEntry } from '../model/types';
 import { getHistoryById } from '../model/progress';
+import { WarmTheme, WarmShadow } from './uiTheme';
 
 @Entry
 @Component
@@ -40,36 +41,44 @@ struct HistoryDetailPage {
     Column() {
       Scroll() {
         Column({ space: 18 }) {
-          Text('历史详情').fontSize(26).fontWeight(FontWeight.Bold)
+          Text('历史详情').fontSize(26).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary)
 
           if (!this.loaded) {
             Column({ space: 12 }) {
-              Text('未找到游玩记录').fontSize(16).padding({ top: 40 })
+              Text('未找到游玩记录').fontSize(16).fontColor(WarmTheme.textSecondary).padding({ top: 40 })
               Button('返回').onClick(() => { try { router.back() } catch (_) {} })
             }
           } else {
             Column({ space: 12 }) {
-              Text(`剧本 ${this.scriptId}`).fontSize(18).fontWeight(FontWeight.Medium)
-              Text(`${new Date(this.timestamp).toLocaleString()} · 得分 ${this.score}`).fontSize(12).opacity(0.6)
-              Text(`结局：${this.endingTitle}`).fontSize(14)
+              Text(`剧本 ${this.scriptId}`).fontSize(18).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+              Text(`${new Date(this.timestamp).toLocaleString()} · 得分 ${this.score}`).fontSize(12).fontColor(WarmTheme.textSecondary)
+              Text(`结局：${this.endingTitle}`).fontSize(14).fontColor(WarmTheme.textPrimary)
             }
+            .padding({ left: 16, right: 16, top: 16, bottom: 16 })
+            .backgroundColor(WarmTheme.card)
+            .borderRadius(20)
+            .shadow(WarmShadow.light)
 
             Column({ space: 8 }) {
-              Text('线路回放').fontSize(16).fontWeight(FontWeight.Medium)
+              Text('线路回放').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
               ForEach(this.trail, (step: TrailEntry, index?: number) => {
                 Column({ space: 4 }) {
-                  Text(`步骤 ${(index ?? 0) + 1}`).fontSize(12).opacity(0.6)
-                  Text(step.choiceText).fontSize(14)
-                }.padding({ top: 10, bottom: 10 }).backgroundColor('#FFFFFF').borderRadius(14)
+                  Text(`步骤 ${(index ?? 0) + 1}`).fontSize(12).fontColor(WarmTheme.textSecondary)
+                  Text(step.choiceText).fontSize(14).fontColor(WarmTheme.textPrimary)
+                }.padding({ top: 10, bottom: 10, left: 16, right: 16 }).backgroundColor(WarmTheme.card).borderRadius(16).shadow(WarmShadow.light)
               }, (step: TrailEntry) => `${step.sceneId}-${step.choiceText}`)
             }
 
             Column({ space: 8 }) {
-              Text('收集线索').fontSize(16).fontWeight(FontWeight.Medium)
+              Text('收集线索').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
               ForEach(this.clues, (id: string) => {
-                Text(`· ${id}`).fontSize(13).opacity(0.65)
+                Text(`· ${id}`).fontSize(13).fontColor(WarmTheme.textSecondary)
               }, (id: string) => id)
             }
+            .padding({ left: 16, right: 16, bottom: 12 })
+            .backgroundColor(WarmTheme.card)
+            .borderRadius(20)
+            .shadow(WarmShadow.light)
           }
         }
         .padding({ left: 20, right: 20, top: 24, bottom: 24 })
@@ -79,13 +88,22 @@ struct HistoryDetailPage {
       .width('100%')
 
       Row({ space: 12 }) {
-        Button('再次挑战').type(ButtonType.Capsule).layoutWeight(1).onClick(() => {
-          try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.scriptId } }) } catch (_) {}
-        })
-        Button('返回').layoutWeight(1).onClick(() => { try { router.back() } catch (_) {} })
+        Button('再次挑战')
+          .type(ButtonType.Capsule)
+          .layoutWeight(1)
+          .backgroundColor(WarmTheme.accent)
+          .fontColor('#FFFFFF')
+          .onClick(() => {
+            try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.scriptId } }) } catch (_) {}
+          })
+        Button('返回')
+          .layoutWeight(1)
+          .backgroundColor('#F6E1D4')
+          .fontColor(WarmTheme.textPrimary)
+          .onClick(() => { try { router.back() } catch (_) {} })
       }
       .padding({ left: 20, right: 20, bottom: 24, top: 12 })
-      .backgroundColor('#F6F7F9')
+      .backgroundColor(WarmTheme.background)
     }
     .height('100%')
   }

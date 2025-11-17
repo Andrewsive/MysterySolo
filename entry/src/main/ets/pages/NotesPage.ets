@@ -1,6 +1,7 @@
 import router from '@ohos.router';
 import { getScript } from '../model/store';
 import { Clue, NotesParams } from '../model/types';
+import { WarmTheme, WarmShadow } from './uiTheme';
 
 @Entry
 @Component
@@ -41,8 +42,8 @@ struct NotesPage {
           Row() {
             Button('← 返回')
               .type(ButtonType.Normal)
-              .backgroundColor('#F6F7F9')
-              .borderRadius(12)
+              .backgroundColor('#F6E7DA')
+              .borderRadius(14)
               .height(36)
               .onClick(() => {
                 try { router.back() } catch (_) {}
@@ -50,17 +51,17 @@ struct NotesPage {
             Blank()
           }.width('100%').padding({ left: 20, right: 20, top: 12 })
           
-          Text('📋 线索簿').fontSize(24).fontWeight(FontWeight.Bold).padding({ top: 8, left: 20, right: 20 })
-          Text(`已掌握 ${this.ownedCount()} / ${this.clues.length} 条线索`).fontSize(13).opacity(0.6).padding({ left: 20, right: 20 })
+          Text('📋 线索簿').fontSize(24).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary).padding({ top: 8, left: 20, right: 20 })
+          Text(`已掌握 ${this.ownedCount()} / ${this.clues.length} 条线索`).fontSize(13).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
         }
 
         // 进度条
         if (this.clues.length > 0) {
           Column({ space: 6 }) {
             Row() {
-              Text('收集进度').fontSize(14).fontWeight(FontWeight.Medium)
+              Text('收集进度').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
               Blank()
-              Text(`${Math.round((this.ownedCount() / this.clues.length) * 100)}%`).fontSize(14).fontColor('#52C41A')
+              Text(`${Math.round((this.ownedCount() / this.clues.length) * 100)}%`).fontSize(14).fontColor(WarmTheme.accentDark)
             }.width('100%')
             
             Progress({ value: this.ownedCount(), total: this.clues.length, type: ProgressType.Linear })
@@ -69,8 +70,8 @@ struct NotesPage {
               .borderRadius(4)
           }
           .padding(16)
-          .backgroundColor('#F0F9FF')
-          .borderRadius(12)
+          .backgroundColor('#FFF0E0')
+          .borderRadius(16)
           .margin({ left: 20, right: 20 })
         }
 
@@ -79,23 +80,23 @@ struct NotesPage {
           Column({ space: 8 }) {
             Row({ space: 6 }) {
               Text('💡').fontSize(18)
-              Text('推理建议').fontSize(14).fontWeight(FontWeight.Medium)
+              Text('推理建议').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
             }
             Text('你已经收集了多条线索，试着将它们串联起来思考：线索之间有什么联系？哪些信息是关键？')
               .fontSize(13)
-              .opacity(0.7)
+              .fontColor(WarmTheme.textSecondary)
               .lineHeight(20)
           }
           .padding(16)
-          .backgroundColor('#FFF7E6')
-          .borderRadius(12)
+          .backgroundColor('#FFF5E8')
+          .borderRadius(16)
           .margin({ left: 20, right: 20 })
           .alignItems(HorizontalAlign.Start)
         }
 
         // 线索列表
         Column({ space: 12 }) {
-          Text('🔍 线索详情').fontSize(16).fontWeight(FontWeight.Medium).padding({ left: 20 })
+          Text('🔍 线索详情').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 20 })
           
           ForEach(this.clues, (c: Clue, index: number) => {
             Column({ space: 10 }) {
@@ -105,28 +106,28 @@ struct NotesPage {
                 
                 Column({ space: 6 }) {
                   Row() {
-                    Text(`${index + 1}. ${c.name}`)
-                      .fontSize(16)
-                      .fontWeight(FontWeight.Medium)
-                      .opacity(this.isOwned(c.id) ? 1 : 0.4)
+                  Text(`${index + 1}. ${c.name}`)
+                    .fontSize(16)
+                    .fontWeight(FontWeight.Medium)
+                    .fontColor(this.isOwned(c.id) ? WarmTheme.textPrimary : '#C7B8AC')
                     Blank()
                     Text(this.isOwned(c.id) ? '已获得' : '未解锁')
                       .fontSize(12)
                       .padding({ left: 8, right: 8, top: 4, bottom: 4 })
-                      .backgroundColor(this.isOwned(c.id) ? '#D4EDDA' : '#E9ECEF')
-                      .fontColor(this.isOwned(c.id) ? '#155724' : '#6C757D')
+                    .backgroundColor(this.isOwned(c.id) ? '#FFE1CD' : '#F1E5DB')
+                    .fontColor(this.isOwned(c.id) ? WarmTheme.accentDark : WarmTheme.textSecondary)
                       .borderRadius(8)
                   }.width('100%')
                   
                   if (this.isOwned(c.id)) {
                     Text(c.desc)
                       .fontSize(14)
-                      .opacity(0.75)
+                    .fontColor(WarmTheme.textSecondary)
                       .lineHeight(22)
                   } else {
                     Text('继续探索以解锁此线索...')
                       .fontSize(14)
-                      .opacity(0.4)
+                    .fontColor('#C8B9AB')
                       .fontStyle(FontStyle.Italic)
                   }
                 }.layoutWeight(1).alignItems(HorizontalAlign.Start)
@@ -135,12 +136,9 @@ struct NotesPage {
               .alignItems(VerticalAlign.Top)
             }
             .padding(16)
-            .backgroundColor(this.isOwned(c.id) ? '#F0F5EE' : '#F9FAFB')
-            .borderRadius(12)
-            .border({ 
-              width: this.isOwned(c.id) ? 2 : 1, 
-              color: this.isOwned(c.id) ? '#52C41A' : '#E5E7EB' 
-            })
+            .backgroundColor(WarmTheme.card)
+            .borderRadius(20)
+            .shadow(WarmShadow.light)
             .margin({ left: 20, right: 20 })
           })
         }.padding({ bottom: 16 })
@@ -154,9 +152,9 @@ struct NotesPage {
             }
           }
           .type(ButtonType.Normal)
-          .backgroundColor('#0A84FF')
+          .backgroundColor(WarmTheme.accent)
           .fontColor('#FFFFFF')
-          .borderRadius(14)
+          .borderRadius(18)
           .height(48)
           .width('100%')
           .onClick(() => {
@@ -171,6 +169,6 @@ struct NotesPage {
           }
         }.padding({ left: 20, right: 20, bottom: 24 })
       }
-    }.scrollBar(BarState.Off).height('100%').backgroundColor('#FFFFFF')
+    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
   }
 }

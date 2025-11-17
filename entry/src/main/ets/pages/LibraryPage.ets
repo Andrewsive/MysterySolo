@@ -2,6 +2,7 @@ import router from '@ohos.router';
 import { listScripts, getScript } from '../model/store';
 import { ShortScript, Script, DownloadItem, DownloadStatus } from '../model/types';
 import { listDownloads, startOrResumeDownload, pauseDownload, deleteDownload } from '../model/downloads';
+import { WarmTheme, WarmShadow } from './uiTheme';
 
 interface FilterChip {
   label: string;
@@ -177,6 +178,8 @@ struct LibraryPage {
           .type(current === chip.value ? ButtonType.Capsule : ButtonType.Normal)
           .fontSize(12)
           .padding({ left: 12, right: 12 })
+          .backgroundColor(current === chip.value ? WarmTheme.accentLight : '#F5E7DA')
+          .fontColor(current === chip.value ? WarmTheme.accentDark : WarmTheme.textSecondary)
           .onClick(() => {
             onSelect(chip.value);
             this.applyFilters();
@@ -190,52 +193,63 @@ struct LibraryPage {
     Column({ space: 10 }) {
       Row({ space: 12 }) {
         Column({ space: 6 }) {
-          Text(script.title).fontSize(18).fontWeight(FontWeight.Medium)
+          Text(script.title).fontSize(18).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
           if (script.tagline) {
-            Text(script.tagline).fontSize(13).opacity(0.7)
+            Text(script.tagline).fontSize(13).fontColor(WarmTheme.textSecondary)
           }
-          Text(`${script.genre ?? '未知题材'} · ${script.durationMin} 分钟 · ${script.difficulty <= 1 ? '新手' : script.difficulty === 2 ? '进阶' : '硬核'}`).fontSize(12).opacity(0.6)
+          Text(`${script.genre ?? '未知题材'} · ${script.durationMin} 分钟 · ${script.difficulty <= 1 ? '新手' : script.difficulty === 2 ? '进阶' : '硬核'}`).fontSize(12).fontColor(WarmTheme.textSecondary)
           if (script.tags) {
             Row({ space: 6 }) {
               ForEach(script.tags, (tag: string) => {
-                Text(`#${tag}`).fontSize(11).opacity(0.6)
+                Text(`#${tag}`).fontSize(11).fontColor(WarmTheme.textSecondary)
                   .padding({ left: 8, right: 8, top: 4, bottom: 4 })
-                  .backgroundColor('#EEF1F5').borderRadius(12)
+                  .backgroundColor('#FFF2E5').borderRadius(12)
               }, (tag: string) => tag)
             }
           }
           Row({ space: 6 }) {
             if (script.rating) {
-              Text(`评分 ${script.rating?.toFixed(1)}`).fontSize(12).opacity(0.65)
+              Text(`评分 ${script.rating?.toFixed(1)}`).fontSize(12).fontColor(WarmTheme.accentDark)
             }
             if (script.releaseDaysAgo !== undefined) {
-              Text(script.releaseDaysAgo <= 7 ? '新品' : script.releaseDaysAgo <= 30 ? '近期开售' : '经典回归').fontSize(11).opacity(0.6)
+              Text(script.releaseDaysAgo <= 7 ? '新品' : script.releaseDaysAgo <= 30 ? '近期开售' : '经典回归').fontSize(11).fontColor(WarmTheme.textSecondary)
             }
             if (this.downloadStatusLocal(script.id) === 'completed') {
-              Text('离线可玩').fontSize(11).opacity(0.7)
+              Text('离线可玩').fontSize(11).fontColor(WarmTheme.textSecondary)
                 .padding({ left: 8, right: 8, top: 4, bottom: 4 })
-                .backgroundColor('#E5F5EA').borderRadius(12)
+                .backgroundColor('#F0F5EE').borderRadius(12)
             }
           }
         }
         Blank()
         Column({ space: 8 }) {
-          Button('详情').onClick(() => {
-            try { router.pushUrl({ url: 'pages/DetailPage', params: { id: script.id } }) } catch (_) {}
-          })
+          Button('详情')
+            .backgroundColor('#F3E6DA')
+            .fontColor(WarmTheme.textPrimary)
+            .onClick(() => {
+              try { router.pushUrl({ url: 'pages/DetailPage', params: { id: script.id } }) } catch (_) {}
+            })
           if (this.downloadStatusLocal(script.id) === 'downloading') {
-            Button('暂停').onClick(() => {
-              pauseDownload(script.id);
-              this.refreshDownloads();
-            })
+            Button('暂停')
+              .backgroundColor('#F6E1D4')
+              .fontColor(WarmTheme.textPrimary)
+              .onClick(() => {
+                pauseDownload(script.id);
+                this.refreshDownloads();
+              })
           } else if (this.downloadStatusLocal(script.id) === 'completed') {
-            Button('删除').onClick(() => {
-              deleteDownload(script.id);
-              this.refreshDownloads();
-            })
+            Button('删除')
+              .backgroundColor('#F6E1D4')
+              .fontColor(WarmTheme.textPrimary)
+              .onClick(() => {
+                deleteDownload(script.id);
+                this.refreshDownloads();
+              })
           } else {
             Button(this.downloadStatusLocal(script.id) === 'paused' ? '继续下载' : '下载')
               .type(ButtonType.Capsule)
+              .backgroundColor(WarmTheme.accent)
+              .fontColor('#FFFFFF')
               .onClick(() => {
                 startOrResumeDownload(script.id);
                 this.refreshDownloads();
@@ -245,14 +259,15 @@ struct LibraryPage {
       }
       if (this.hasDownloadInfo(script.id)) {
         Column({ space: 6 }) {
-          Progress({ value: this.downloadProgressValue(script.id) }).width('100%').height(4).backgroundColor('#E4E6EB')
-          Text(this.downloadProgressLabel(script.id)).fontSize(11).opacity(0.6)
+          Progress({ value: this.downloadProgressValue(script.id) }).width('100%').height(4).backgroundColor('#F1E4D8')
+          Text(this.downloadProgressLabel(script.id)).fontSize(11).fontColor(WarmTheme.textSecondary)
         }
       }
     }
     .padding({ left: 20, right: 20, top: 16, bottom: 16 })
-    .backgroundColor('#FFFFFF')
-    .borderRadius(18)
+    .backgroundColor(WarmTheme.card)
+    .borderRadius(20)
+    .shadow(WarmShadow.light)
     .onClick(() => {
       try { router.pushUrl({ url: 'pages/DetailPage', params: { id: script.id } }) } catch (_) {}
     })
@@ -260,14 +275,17 @@ struct LibraryPage {
 
   build() {
     Scroll() {
-      Column({ space: 18 }) {
+      Column({ space: 20 }) {
         Row() {
-          Text('剧本库').fontSize(26).fontWeight(FontWeight.Bold)
+          Text('剧本库').fontSize(26).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary)
           Blank()
-          Button(this.offlineMode ? '切换在线' : '离线模式').onClick(() => {
-            this.offlineMode = !this.offlineMode;
-            this.applyFilters();
-          })
+          Button(this.offlineMode ? '切换在线' : '离线模式')
+            .backgroundColor('#FFE7D6')
+            .fontColor(WarmTheme.textPrimary)
+            .onClick(() => {
+              this.offlineMode = !this.offlineMode;
+              this.applyFilters();
+            })
         }.padding({ top: 24, left: 20, right: 20 })
 
         TextInput({ placeholder: '搜索标题 / 标签' })
@@ -276,6 +294,8 @@ struct LibraryPage {
             this.applyFilters();
           })
           .margin({ left: 20, right: 20 })
+          .backgroundColor(WarmTheme.card)
+          .borderRadius(24)
 
         Row({ space: 10 }) {
           ForEach(this.tabs, (tab: DifficultyTab) => {
@@ -283,6 +303,8 @@ struct LibraryPage {
               .type(this.activeTab === tab.idx ? ButtonType.Capsule : ButtonType.Normal)
               .fontSize(13)
               .padding({ left: 14, right: 14 })
+              .backgroundColor(this.activeTab === tab.idx ? WarmTheme.card : '#FFE8D8')
+              .fontColor(this.activeTab === tab.idx ? WarmTheme.textPrimary : WarmTheme.textSecondary)
               .onClick(() => {
                 this.activeTab = tab.idx;
                 this.applyFilters();
@@ -292,17 +314,17 @@ struct LibraryPage {
         }.margin({ left: 20, right: 20 })
 
         Column({ space: 12 }) {
-          Text('题材').fontSize(14).opacity(0.7).padding({ left: 20 })
+          Text('题材').fontSize(14).fontColor(WarmTheme.textSecondary).padding({ left: 20 })
           this.filterChipRow(this.genres, this.genre, (value: string) => { this.genre = value })
-          Text('难度').fontSize(14).opacity(0.7).padding({ left: 20 })
+          Text('难度').fontSize(14).fontColor(WarmTheme.textSecondary).padding({ left: 20 })
           this.filterChipRow(this.difficultyChips, this.difficulty, (value: string) => { this.difficulty = value })
-          Text('时长').fontSize(14).opacity(0.7).padding({ left: 20 })
+          Text('时长').fontSize(14).fontColor(WarmTheme.textSecondary).padding({ left: 20 })
           this.filterChipRow(this.durationChips, this.duration, (value: string) => { this.duration = value })
         }
 
         if (this.filtered.length === 0) {
           Column({ space: 10 }) {
-            Text('没有符合条件的剧本').fontSize(16).padding({ top: 40 })
+            Text('没有符合条件的剧本').fontSize(16).fontColor(WarmTheme.textPrimary).padding({ top: 40 })
             Button('清空筛选').onClick(() => {
               this.keyword = '';
               this.genre = 'all';
@@ -318,20 +340,20 @@ struct LibraryPage {
             })
           }.padding({ left: 20, right: 20 })
         } else {
-          Column({ space: 12 }) {
-            Text('新品上架').fontSize(18).fontWeight(FontWeight.Medium).padding({ left: 20, right: 20 })
+          Column({ space: 16 }) {
+            Text('新品上架').fontSize(18).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 20, right: 20 })
             ForEach(this.recentScripts(), (script: Script) => {
               this.renderScriptItem(script)
             }, (script: Script) => `${script.id}-new-${this.revision}`)
 
-            Text('高分口碑').fontSize(18).fontWeight(FontWeight.Medium).padding({ left: 20, right: 20 })
+            Text('高分口碑').fontSize(18).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 20, right: 20 })
             ForEach(this.highScoreScripts(), (script: Script) => {
               this.renderScriptItem(script)
             }, (script: Script) => `${script.id}-top-${this.revision}`)
 
-            Text('离线已下载').fontSize(18).fontWeight(FontWeight.Medium).padding({ left: 20, right: 20 })
+            Text('离线已下载').fontSize(18).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 20, right: 20 })
             if (this.downloadedScripts().length === 0) {
-              Text('暂无离线剧本，先下载一个吧。').fontSize(13).opacity(0.6).padding({ left: 20, right: 20 })
+              Text('暂无离线剧本，先下载一个吧。').fontSize(13).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
             } else {
               ForEach(this.downloadedScripts(), (script: Script) => {
                 this.renderScriptItem(script)
@@ -340,6 +362,6 @@ struct LibraryPage {
           }.padding({ bottom: 32 })
         }
       }
-    }.scrollBar(BarState.Off).height('100%').backgroundColor('#F6F7F9')
+    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
   }
 }

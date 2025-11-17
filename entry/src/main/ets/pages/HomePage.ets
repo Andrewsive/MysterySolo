@@ -2,6 +2,7 @@ import router from '@ohos.router';
 import { listScripts } from '../model/store';
 import { ShortScript } from '../model/types';
 import { hasOnboarded } from '../model/progress';
+import { WarmTheme, WarmShadow } from './uiTheme';
 
 interface TabEntry {
   label: string;
@@ -74,12 +75,8 @@ struct HomePage {
     return '硬核逻辑';
   }
 
-  private accentColor(): string {
-    return '#F6B756';
-  }
-
   private coverColor(id: string): string {
-    const palette: string[] = ['#FEE5CF', '#E8F1FF', '#F5E4FF', '#EAF7EF', '#FFEAEA'];
+    const palette: string[] = ['#FFE9DA', '#FEE0C6', '#FFEFD7', '#FFDACF', '#FFF2E2'];
     let hash = 0;
     for (let i = 0; i < id.length; i++) {
       hash += id.charCodeAt(i);
@@ -90,167 +87,161 @@ struct HomePage {
   build() {
     Scroll() {
       Column({ space: 20 }) {
-        // 顶部大卡片
-        Column({ space: 16 }) {
-          Row({ space: 10 }) {
-            Text('◀').opacity(0.7).fontSize(18).onClick(() => {
-              try { router.back() } catch (_) {}
-            })
-            Column({ space: 2 }) {
-              Text('主题剧本库').fontSize(22).fontWeight(FontWeight.Bold)
-              Text('单人沉浸 · 卡片式精选').fontSize(12).opacity(0.65)
-            }.alignItems(HorizontalAlign.Start)
-            Blank()
-            Text('⋯').fontSize(22).opacity(0.7)
-          }.padding({ left: 20, right: 20, top: 8 })
-
-          Row({ space: 10 }) {
-            Text('🔍')
-            TextInput({ placeholder: '搜剧本/标签/作者' })
-              .onChange((v: string) => { this.keyword = v })
-              .onSubmit(() => {
-                try { router.pushUrl({ url: 'pages/LibraryPage' }) } catch (_) {}
-              })
-              .layoutWeight(1)
-            Button('筛选').fontSize(12).onClick(() => {})
-          }
-          .padding({ left: 16, right: 16 })
-          .backgroundColor('#FFFFFF')
-          .borderRadius(24)
-          .height(44)
-          .margin({ left: 20, right: 20 })
-
+        Column({ space: 18 }) {
           Row({ space: 12 }) {
-            ForEach(this.filterGroups, (label: string) => {
-              Row({ space: 4 }) {
-                Text(label).fontSize(12)
-                Text('▾').fontSize(10).opacity(0.6)
-              }
-              .padding({ left: 12, right: 12, top: 6, bottom: 6 })
-              .backgroundColor('rgba(255,255,255,0.35)')
-              .borderRadius(14)
-            }, (label: string) => label)
-          }.margin({ left: 20, right: 20, bottom: 4 })
+            Column({ space: 4 }) {
+              Text('你好，推理旅人').fontSize(20).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+              Text('继续在独白世界里寻找真相').fontSize(12).fontColor(WarmTheme.textSecondary)
+            }.layoutWeight(1)
+            Button('🔔').backgroundColor('transparent').onClick(() => {})
+          }.padding({ left: 20, right: 20, top: 16 })
 
-          Row({ space: 10 }) {
-            ForEach(this.tabs, (tab: TabEntry) => {
-              Button(tab.label)
-                .type(this.activeTab === tab.idx ? ButtonType.Capsule : ButtonType.Normal)
-                .backgroundColor(this.activeTab === tab.idx ? '#FFFFFF' : 'rgba(255,255,255,0.35)')
-                .fontColor(this.activeTab === tab.idx ? '#333333' : '#4B3C1F')
-                .fontSize(12)
-                .padding({ left: 18, right: 18 })
-                .onClick(() => { this.activeTab = tab.idx; })
-            }, (tab: TabEntry) => tab.idx.toString())
-          }.margin({ left: 20, right: 20, bottom: 8 })
+          Column({ space: 12 }) {
+            Row({ space: 10 }) {
+              Text('🔍').fontSize(16)
+              TextInput({ placeholder: '搜索剧本 / 标签 / 作者' })
+                .onChange((v: string) => { this.keyword = v })
+                .layoutWeight(1)
+              Button('筛选').fontSize(12).backgroundColor(WarmTheme.card)
+            }
+            .padding({ left: 18, right: 18 })
+            .height(50)
+            .backgroundColor('#FFFFFF')
+            .borderRadius(28)
+            .shadow(WarmShadow.light)
+
+            Row({ space: 10 }) {
+              ForEach(this.filterGroups, (label: string) => {
+                Row({ space: 4 }) {
+                  Text(label).fontSize(12)
+                  Text('▾').fontSize(10).opacity(0.7)
+                }
+                .padding({ left: 12, right: 12, top: 6, bottom: 6 })
+                .backgroundColor('#FFEFE0')
+                .borderRadius(16)
+              }, (label: string) => label)
+            }
+
+            Row({ space: 10 }) {
+              ForEach(this.tabs, (tab: TabEntry) => {
+                Button(tab.label)
+                  .type(this.activeTab === tab.idx ? ButtonType.Capsule : ButtonType.Normal)
+                  .backgroundColor(this.activeTab === tab.idx ? WarmTheme.card : '#FFE9DA')
+                  .fontColor(this.activeTab === tab.idx ? WarmTheme.textPrimary : WarmTheme.textSecondary)
+                  .fontSize(12)
+                  .padding({ left: 18, right: 18 })
+                  .onClick(() => { this.activeTab = tab.idx; })
+              }, (tab: TabEntry) => tab.idx.toString())
+            }
+          }.padding({ left: 20, right: 20, bottom: 12 })
         }
-        .padding({ bottom: 20, top: 12 })
-        .backgroundColor(this.accentColor())
-        .borderRadius({ bottomLeft: 28, bottomRight: 28 })
+        .backgroundColor(WarmTheme.softCard)
+        .borderRadius({ bottomLeft: 32, bottomRight: 32 })
 
-        // 分类 chips
-        Column({ space: 8 }) {
-          Text('热门玩法').fontSize(15).fontWeight(FontWeight.Medium).padding({ left: 20, right: 20 })
+        Column({ space: 10 }) {
+          Text('热门玩法').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 20, right: 20 })
           Row({ space: 8 }) {
             ForEach(this.moodOptions, (label: string) => {
               Button(label)
                 .type(this.moodFilter === label ? ButtonType.Capsule : ButtonType.Normal)
                 .fontSize(12)
                 .padding({ left: 14, right: 14 })
-                .backgroundColor(this.moodFilter === label ? '#FFECD2' : '#F3F4F7')
-                .fontColor('#333333')
+                .backgroundColor(this.moodFilter === label ? WarmTheme.accentLight : '#F8E9DD')
+                .fontColor(this.moodFilter === label ? WarmTheme.accentDark : WarmTheme.textSecondary)
                 .onClick(() => { this.moodFilter = label; })
             }, (label: string) => label)
           }.margin({ left: 20, right: 20 })
         }
 
-        // 快速入口
         Column({ space: 8 }) {
-          Text('快速入口').fontSize(15).fontWeight(FontWeight.Medium).padding({ left: 20, right: 20 })
+          Text('快捷入口').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 20, right: 20 })
           Row({ space: 12 }) {
-            Button('剧本库')
-              .type(ButtonType.Capsule)
-              .backgroundColor('#FFE2C0')
-              .fontColor('#5B2A00')
-              .layoutWeight(1)
-              .onClick(() => {
-                try { router.pushUrl({ url: 'pages/LibraryPage' }) } catch (_) {}
-              })
-            Button('下载管理')
-              .backgroundColor('#FFF6E8')
-              .fontColor('#8A4A00')
-              .layoutWeight(1)
-              .onClick(() => {
-                try { router.pushUrl({ url: 'pages/DownloadsPage' }) } catch (_) {}
-              })
-            Button('个人中心')
-              .backgroundColor('#F3F4F7')
-              .fontColor('#333333')
-              .layoutWeight(1)
-              .onClick(() => {
-                try { router.pushUrl({ url: 'pages/ProfilePage' }) } catch (_) {}
-              })
+            this.quickEntry('剧本库', () => { try { router.pushUrl({ url: 'pages/LibraryPage' }) } catch (_) {} })
+            this.quickEntry('下载管理', () => { try { router.pushUrl({ url: 'pages/DownloadsPage' }) } catch (_) {} })
+            this.quickEntry('个人中心', () => { try { router.pushUrl({ url: 'pages/ProfilePage' }) } catch (_) {} })
           }.padding({ left: 20, right: 20 })
         }
 
-        // 卡片列表
-        Column({ space: 14 }) {
+        Column({ space: 16 }) {
           ForEach(this.filtered(), (item: ShortScript) => {
             Column({ space: 12 }) {
-              Row({ space: 14 }) {
+              Row({ space: 12 }) {
                 Column() {
                   Text(item.title.length > 0 ? item.title.substring(0, 1) : '剧')
-                    .fontSize(26)
+                    .fontSize(24)
                     .fontWeight(FontWeight.Bold)
-                    .fontColor('#5A4A2B')
+                    .fontColor(WarmTheme.textPrimary)
                 }
-                .width(72)
-                .height(96)
+                .width(64)
+                .height(84)
                 .backgroundColor(this.coverColor(item.id))
-                .borderRadius(18)
+                .borderRadius(22)
                 .alignItems(HorizontalAlign.Center)
                 .justifyContent(FlexAlign.Center)
 
                 Column({ space: 6 }) {
                   Row({ space: 8 }) {
-                    Text(item.title).fontSize(16).fontWeight(FontWeight.Medium).layoutWeight(1)
+                    Text(item.title).fontSize(16).fontWeight(FontWeight.Medium).layoutWeight(1).fontColor(WarmTheme.textPrimary)
                     Text(item.rating ? `${item.rating.toFixed(1)}分` : '评分待定')
-                      .fontSize(12).fontColor('#FF8A00')
+                      .fontSize(12).fontColor(WarmTheme.accentDark)
                   }.width('100%')
                   if (item.tagline) {
-                    Text(item.tagline).fontSize(12).opacity(0.7).maxLines(2)
+                    Text(item.tagline).fontSize(12).fontColor(WarmTheme.textSecondary).maxLines(2)
                   }
-                  Text(`${this.difficultyLabel(item.difficulty)} · 约 ${item.durationMin} 分钟`).fontSize(11).opacity(0.55)
+                  Text(`${this.difficultyLabel(item.difficulty)} · 约 ${item.durationMin} 分钟`).fontSize(11).fontColor(WarmTheme.textSecondary)
                   Row({ space: 6 }) {
                     if (item.tags) {
                       ForEach(item.tags.slice(0, 3), (tag: string) => {
-                        Text(tag).fontSize(10).opacity(0.75)
-                          .padding({ left: 10, right: 10, top: 4, bottom: 4 })
-                          .backgroundColor('#F4F4F5')
-                          .borderRadius(12)
+                        Text(`#${tag}`).fontSize(10).fontColor(WarmTheme.textSecondary)
+                          .padding({ left: 8, right: 8, top: 3, bottom: 3 })
+                          .backgroundColor('#FFF2E5')
+                          .borderRadius(10)
                       }, (tag: string) => tag)
                     }
                   }
                 }.layoutWeight(1)
               }
               Row({ space: 10 }) {
-                Button('想玩').fontSize(12).backgroundColor('#FFF5E3').fontColor('#C47A00')
-                Button('评价').fontSize(12).backgroundColor('#F1F2F5').fontColor('#333333')
+                Button('想玩')
+                  .fontSize(12)
+                  .backgroundColor('#FFE1CD')
+                  .fontColor(WarmTheme.accentDark)
+                  .onClick(() => {
+                    try { router.pushUrl({ url: 'pages/PlayPage', params: { id: item.id } }) } catch (_) {}
+                  })
+                Button('笔记')
+                  .fontSize(12)
+                  .backgroundColor('#F6E7DF')
+                  .fontColor(WarmTheme.textPrimary)
+                  .onClick(() => {
+                    try { router.pushUrl({ url: 'pages/NotesPage', params: { id: item.id } }) } catch (_) {}
+                  })
                 Blank()
-                Button('查看').type(ButtonType.Capsule).fontSize(13).backgroundColor('#FFB347').fontColor('#3A2200')
+                Button('查看').type(ButtonType.Capsule).fontSize(13).backgroundColor(WarmTheme.accent).fontColor('#FFFFFF')
                   .onClick(() => {
                     try { router.pushUrl({ url: 'pages/DetailPage', params: { id: item.id } }) } catch (_) {}
                   })
               }
             }
-            .padding(16)
-            .backgroundColor('#FFFFFF')
-            .borderRadius(22)
-            .shadow({ radius: 12, color: '#12000000', offsetX: 0, offsetY: 6 })
+            .padding(18)
+            .backgroundColor(WarmTheme.card)
+            .borderRadius(26)
+            .shadow(WarmShadow.light)
           }, (item: ShortScript) => item.id)
-        }.padding({ left: 20, right: 20, bottom: 40 })
+        }.padding({ left: 20, right: 20, bottom: 48 })
       }
-    }.scrollBar(BarState.Auto).height('100%').backgroundColor('#F7F5F2')
+    }.scrollBar(BarState.Auto).height('100%').backgroundColor(WarmTheme.background)
+  }
+
+  @Builder
+  private quickEntry(label: string, action: () => void) {
+    Button(label)
+      .type(ButtonType.Capsule)
+      .fontSize(13)
+      .layoutWeight(1)
+      .backgroundColor(WarmTheme.accentLight)
+      .fontColor(WarmTheme.accentDark)
+      .onClick(() => { try { action() } catch (_) {} })
   }
 }
 
