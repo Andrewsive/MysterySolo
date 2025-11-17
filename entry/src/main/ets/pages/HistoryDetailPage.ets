@@ -37,48 +37,57 @@ struct HistoryDetailPage {
   }
 
   build() {
-    Scroll() {
-      Column({ space: 18 }) {
-        Text('历史详情').fontSize(26).fontWeight(FontWeight.Bold).padding({ top: 24, left: 20, right: 20 })
+    Column() {
+      Scroll() {
+        Column({ space: 18 }) {
+          Text('历史详情').fontSize(26).fontWeight(FontWeight.Bold)
 
-        if (!this.loaded) {
-          Column({ space: 12 }) {
-            Text('未找到游玩记录').fontSize(16).padding({ top: 40 })
-            Button('返回').onClick(() => { try { router.back() } catch (_) {} })
-          }.padding({ left: 20, right: 20 })
-        } else {
-          Column({ space: 12 }) {
-            Text(`剧本 ${this.scriptId}`).fontSize(18).fontWeight(FontWeight.Medium)
-            Text(`${new Date(this.timestamp).toLocaleString()} · 得分 ${this.score}`).fontSize(12).opacity(0.6)
-            Text(`结局：${this.endingTitle}`).fontSize(14)
-          }.padding({ left: 20, right: 20 })
+          if (!this.loaded) {
+            Column({ space: 12 }) {
+              Text('未找到游玩记录').fontSize(16).padding({ top: 40 })
+              Button('返回').onClick(() => { try { router.back() } catch (_) {} })
+            }
+          } else {
+            Column({ space: 12 }) {
+              Text(`剧本 ${this.scriptId}`).fontSize(18).fontWeight(FontWeight.Medium)
+              Text(`${new Date(this.timestamp).toLocaleString()} · 得分 ${this.score}`).fontSize(12).opacity(0.6)
+              Text(`结局：${this.endingTitle}`).fontSize(14)
+            }
 
-          Column({ space: 8 }) {
-            Text('线路回放').fontSize(16).fontWeight(FontWeight.Medium).padding({ left: 20, right: 20 })
-            ForEach(this.trail, (step: TrailEntry, index?: number) => {
-              Column({ space: 4 }) {
-                Text(`步骤 ${(index ?? 0) + 1}`).fontSize(12).opacity(0.6)
-                Text(step.choiceText).fontSize(14)
-              }.padding({ left: 20, right: 20, top: 10, bottom: 10 }).backgroundColor('#FFFFFF').borderRadius(14)
-            }, (step: TrailEntry) => `${step.sceneId}-${step.choiceText}`)
+            Column({ space: 8 }) {
+              Text('线路回放').fontSize(16).fontWeight(FontWeight.Medium)
+              ForEach(this.trail, (step: TrailEntry, index?: number) => {
+                Column({ space: 4 }) {
+                  Text(`步骤 ${(index ?? 0) + 1}`).fontSize(12).opacity(0.6)
+                  Text(step.choiceText).fontSize(14)
+                }.padding({ top: 10, bottom: 10 }).backgroundColor('#FFFFFF').borderRadius(14)
+              }, (step: TrailEntry) => `${step.sceneId}-${step.choiceText}`)
+            }
+
+            Column({ space: 8 }) {
+              Text('收集线索').fontSize(16).fontWeight(FontWeight.Medium)
+              ForEach(this.clues, (id: string) => {
+                Text(`· ${id}`).fontSize(13).opacity(0.65)
+              }, (id: string) => id)
+            }
           }
-
-          Column({ space: 8 }) {
-            Text('收集线索').fontSize(16).fontWeight(FontWeight.Medium).padding({ left: 20, right: 20 })
-            ForEach(this.clues, (id: string) => {
-              Text(`· ${id}`).fontSize(13).opacity(0.65)
-            }, (id: string) => id)
-          }
-
-          Column({ space: 12 }) {
-            Button('再次挑战').type(ButtonType.Capsule).onClick(() => {
-              try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.scriptId } }) } catch (_) {}
-            })
-            Button('返回').onClick(() => { try { router.back() } catch (_) {} })
-          }.margin({ left: 20, right: 20, bottom: 24 })
         }
+        .padding({ left: 20, right: 20, top: 24, bottom: 24 })
       }
-    }.scrollBar(BarState.Off).backgroundColor('#F6F7F9').height('100%')
+      .scrollBar(BarState.Off)
+      .height('100%')
+      .width('100%')
+
+      Row({ space: 12 }) {
+        Button('再次挑战').type(ButtonType.Capsule).layoutWeight(1).onClick(() => {
+          try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.scriptId } }) } catch (_) {}
+        })
+        Button('返回').layoutWeight(1).onClick(() => { try { router.back() } catch (_) {} })
+      }
+      .padding({ left: 20, right: 20, bottom: 24, top: 12 })
+      .backgroundColor('#F6F7F9')
+    }
+    .height('100%')
   }
 }
 

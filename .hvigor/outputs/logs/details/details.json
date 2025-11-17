@@ -7,8 +7,7 @@
       }
     ],
     "NATIVE_COMPILER": "Default",
-    "BUILD_MODE": "debug",
-    "USE_NORMALIZED_OHMURL": true
+    "BUILD_MODE": "debug"
   },
   "HVIGOR": {
     "IS_INCREMENTAL": true,
@@ -17,19 +16,18 @@
     "IS_HVIGORFILE_TYPE_CHECK": false,
     "TASK_TIME": {
       "1043bfc77febe75fafec0c4309faccf1": {
-        "CreateModuleInfo": 370700,
-        "ConfigureCmake": 217100,
-        "PreCheckSyscap": 224700,
-        "ProcessIntegratedHsp": 479400,
-        "BuildNativeWithCmake": 209600,
-        "SyscapTransform": 1655200,
-        "ProcessStartupConfig": 1105900,
-        "BuildNativeWithNinja": 410500,
-        "BuildJS": 1190600,
-        "ProcessCompiledResources": 435900,
-        "PackingCheck": 3107400,
-        "CollectDebugSymbol": 584700,
-        "assembleHap": 132500
+        "CreateModuleInfo": 2046800,
+        "PreCheckSyscap": 832800,
+        "ProcessStartupConfig": 5677000,
+        "PreviewProcessResource": 3947600,
+        "PreviewCompileResource": 565142700,
+        "PreviewHookCompileResource": 1449200,
+        "CopyPreviewProfile": 29466100,
+        "ReplacePreviewerPage": 2868200,
+        "buildPreviewerResource": 1438400,
+        "PreviewUpdateAssets": 15119200,
+        "PreviewArkTS": 7768997100,
+        "PreviewBuild": 605600
       }
     },
     "APIS": [
@@ -50,10 +48,11 @@
       "getParameter",
       "getProductName",
       "nodesEvaluated",
-      "getCommandEntryTask"
+      "getCommandEntryTask",
+      "getStartParams"
     ],
     "CONFIG_PROPERTIES": {},
-    "TOTAL_TIME": 222735400,
-    "BUILD_ID": "202511132241085000"
+    "TOTAL_TIME": 8939130600,
+    "BUILD_ID": "202511171535371730"
   }
 }
