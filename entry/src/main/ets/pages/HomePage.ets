@@ -13,17 +13,19 @@ interface TabEntry {
 @Component
 struct HomePage {
   private data: ShortScript[] = listScripts();
-  private tabs: TabEntry[] = [
-    { label: '全部', idx: 0 },
-    { label: '新手', idx: 1 },
-    { label: '进阶', idx: 2 },
-    { label: '硬核', idx: 3 }
-  ];
-  private filterGroups: string[] = ['主题', '类型', '玩法'];
-  private moodOptions: string[] = ['全部', '欢乐', '情感', '硬核', '惊悚', '都市'];
+  private filterGroups: string[] = ['主题', '类型', '玩法', '难度'];
+  private themeOptions: string[] = ['全部', '古宅', '都市', '艺术', '情感'];
+  private genreOptions: string[] = ['全部', '线索追踪', '轻推理', '逻辑推理', '多结局'];
+  private playOptions: string[] = ['全部', '单线解谜', '情感', '推理'];
+  private difficultyOptions: string[] = ['全部', '新手', '进阶', '硬核'];
+  private moodOptions: string[] = ['全部', '情感', '推理', '艺术', '都市'];
   @State keyword: string = '';
-  @State activeTab: number = 0;
   @State moodFilter: string = '全部';
+  @State expandedFilter: string = ''; // 当前展开的筛选项
+  @State selectedTheme: string = '全部';
+  @State selectedGenre: string = '全部';
+  @State selectedPlay: string = '全部';
+  @State selectedDifficulty: string = '全部';
 
   aboutToAppear() {
     if (!hasOnboarded()) {
@@ -32,16 +34,47 @@ struct HomePage {
   }
 
   private filtered(): ShortScript[] {
-    return this.data.filter((s: ShortScript) => this.matchTab(s) && this.matchKeyword(s) && this.matchMood(s));
+    return this.data.filter((s: ShortScript) => 
+      this.matchKeyword(s) && 
+      this.matchMood(s) &&
+      this.matchTheme(s) &&
+      this.matchGenre(s) &&
+      this.matchPlay(s) &&
+      this.matchDifficulty(s)
+    );
   }
 
-  private matchTab(s: ShortScript): boolean {
-    switch (this.activeTab) {
-      case 1:
+  private matchTheme(s: ShortScript): boolean {
+    if (this.selectedTheme === '全部') {
+      return true;
+    }
+    return !!(s.tags && s.tags.some(tag => tag.includes(this.selectedTheme)));
+  }
+
+  private matchGenre(s: ShortScript): boolean {
+    if (this.selectedGenre === '全部') {
+      return true;
+    }
+    return !!(s.tags && s.tags.some(tag => tag.includes(this.selectedGenre)));
+  }
+
+  private matchPlay(s: ShortScript): boolean {
+    if (this.selectedPlay === '全部') {
+      return true;
+    }
+    return !!(s.tags && s.tags.some(tag => tag.includes(this.selectedPlay)));
+  }
+
+  private matchDifficulty(s: ShortScript): boolean {
+    if (this.selectedDifficulty === '全部') {
+      return true;
+    }
+    switch (this.selectedDifficulty) {
+      case '新手':
         return s.difficulty <= 1;
-      case 2:
+      case '进阶':
         return s.difficulty === 2;
-      case 3:
+      case '硬核':
         return s.difficulty >= 3;
       default:
         return true;
@@ -84,17 +117,77 @@ struct HomePage {
     return palette[Math.abs(hash) % palette.length];
   }
 
+  private toggleFilter(filterName: string) {
+    if (this.expandedFilter === filterName) {
+      this.expandedFilter = '';
+    } else {
+      this.expandedFilter = filterName;
+    }
+  }
+
+  private getFilterOptions(filterName: string): string[] {
+    switch (filterName) {
+      case '主题':
+        return this.themeOptions;
+      case '类型':
+        return this.genreOptions;
+      case '玩法':
+        return this.playOptions;
+      case '难度':
+        return this.difficultyOptions;
+      default:
+        return [];
+    }
+  }
+
+  private getSelectedValue(filterName: string): string {
+    switch (filterName) {
+      case '主题':
+        return this.selectedTheme;
+      case '类型':
+        return this.selectedGenre;
+      case '玩法':
+        return this.selectedPlay;
+      case '难度':
+        return this.selectedDifficulty;
+      default:
+        return '全部';
+    }
+  }
+
+  private selectFilterOption(filterName: string, option: string) {
+    switch (filterName) {
+      case '主题':
+        this.selectedTheme = option;
+        break;
+      case '类型':
+        this.selectedGenre = option;
+        break;
+      case '玩法':
+        this.selectedPlay = option;
+        break;
+      case '难度':
+        this.selectedDifficulty = option;
+        break;
+    }
+    this.expandedFilter = '';
+  }
+
   build() {
-    Scroll() {
-      Column({ space: 20 }) {
-        Column({ space: 18 }) {
-          Row({ space: 12 }) {
-            Column({ space: 4 }) {
-              Text('你好，推理旅人').fontSize(20).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
-              Text('继续在独白世界里寻找真相').fontSize(12).fontColor(WarmTheme.textSecondary)
-            }.layoutWeight(1)
-            Button('🔔').backgroundColor('transparent').onClick(() => {})
-          }.padding({ left: 20, right: 20, top: 16 })
+    Column() {
+      Scroll() {
+        Column({ space: 0 }) {
+          Column({ space: 14 }) {
+            Row({ space: 12 }) {
+              Blank()
+              Column({ space: 4 }) {
+                Text('你好，推理旅人').fontSize(20).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+                Text('继续在独白世界里寻找真相').fontSize(12).fontColor(WarmTheme.textSecondary)
+              }
+              .alignItems(HorizontalAlign.Center)
+              Blank()
+              Button('🔔').backgroundColor('transparent').onClick(() => {})
+            }.padding({ left: 20, right: 20, top: 16, bottom: 12 }).width('100%')
 
           Column({ space: 12 }) {
             Row({ space: 10 }) {
@@ -102,6 +195,7 @@ struct HomePage {
               TextInput({ placeholder: '搜索剧本 / 标签 / 作者' })
                 .onChange((v: string) => { this.keyword = v })
                 .layoutWeight(1)
+                .textAlign(TextAlign.Center)
               Button('筛选').fontSize(12).backgroundColor(WarmTheme.card)
             }
             .padding({ left: 18, right: 18 })
@@ -110,30 +204,59 @@ struct HomePage {
             .borderRadius(28)
             .shadow(WarmShadow.light)
 
-            Row({ space: 10 }) {
-              ForEach(this.filterGroups, (label: string) => {
-                Row({ space: 4 }) {
-                  Text(label).fontSize(12)
-                  Text('▾').fontSize(10).opacity(0.7)
-                }
-                .padding({ left: 12, right: 12, top: 6, bottom: 6 })
-                .backgroundColor('#FFEFE0')
-                .borderRadius(16)
-              }, (label: string) => label)
-            }
+            Stack({ alignContent: Alignment.TopStart }) {
+              Row({ space: 10 }) {
+                ForEach(this.filterGroups, (label: string) => {
+                  Column() {
+                    Row({ space: 4 }) {
+                      Text(this.getSelectedValue(label) === '全部' ? label : `${label}:${this.getSelectedValue(label)}`)
+                        .fontSize(12)
+                        .fontColor(WarmTheme.textPrimary)
+                      Text('▾')
+                        .fontSize(10)
+                        .opacity(0.7)
+                        .fontColor(WarmTheme.textPrimary)
+                    }
+                    .padding({ left: 12, right: 12, top: 6, bottom: 6 })
+                    .backgroundColor(this.expandedFilter === label ? WarmTheme.accentLight : '#FFEFE0')
+                    .borderRadius(16)
+                    .onClick(() => {
+                      this.toggleFilter(label);
+                    })
+                  }
+                }, (label: string) => label)
+              }
+              .justifyContent(FlexAlign.Center)
+              .width('100%')
 
-            Row({ space: 10 }) {
-              ForEach(this.tabs, (tab: TabEntry) => {
-                Button(tab.label)
-                  .type(this.activeTab === tab.idx ? ButtonType.Capsule : ButtonType.Normal)
-                  .backgroundColor(this.activeTab === tab.idx ? WarmTheme.card : '#FFE9DA')
-                  .fontColor(this.activeTab === tab.idx ? WarmTheme.textPrimary : WarmTheme.textSecondary)
-                  .fontSize(12)
-                  .padding({ left: 18, right: 18 })
-                  .onClick(() => { this.activeTab = tab.idx; })
-              }, (tab: TabEntry) => tab.idx.toString())
+              if (this.expandedFilter.length > 0) {
+                Column({ space: 0 }) {
+                  Column({ space: 8 }) {
+                    ForEach(this.getFilterOptions(this.expandedFilter), (option: string) => {
+                      Text(option)
+                        .fontSize(13)
+                        .fontColor(this.getSelectedValue(this.expandedFilter) === option ? WarmTheme.accentDark : WarmTheme.textPrimary)
+                        .fontWeight(this.getSelectedValue(this.expandedFilter) === option ? FontWeight.Medium : FontWeight.Regular)
+                        .padding({ left: 16, right: 16, top: 10, bottom: 10 })
+                        .backgroundColor(this.getSelectedValue(this.expandedFilter) === option ? '#FFF2E5' : '#FFFFFF')
+                        .width('100%')
+                        .onClick(() => {
+                          this.selectFilterOption(this.expandedFilter, option);
+                        })
+                    }, (option: string) => option)
+                  }
+                  .padding(8)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(12)
+                  .shadow(WarmShadow.card)
+                  .margin({ top: 40, left: 20 })
+                  .width(140)
+                }
+              }
             }
-          }.padding({ left: 20, right: 20, bottom: 12 })
+            .width('100%')
+            .height(this.expandedFilter.length > 0 ? 250 : 40)
+          }.padding({ left: 20, right: 20, bottom: 14 })
         }
         .backgroundColor(WarmTheme.softCard)
         .borderRadius({ bottomLeft: 32, bottomRight: 32 })
@@ -152,8 +275,9 @@ struct HomePage {
             }, (label: string) => label)
           }.margin({ left: 20, right: 20 })
         }
+        .margin({ top: 16 })
 
-        Column({ space: 8 }) {
+        Column({ space: 10 }) {
           Text('快捷入口').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 20, right: 20 })
           Row({ space: 12 }) {
             this.quickEntry('剧本库', () => { try { router.pushUrl({ url: 'pages/LibraryPage' }) } catch (_) {} })
@@ -161,9 +285,40 @@ struct HomePage {
             this.quickEntry('个人中心', () => { try { router.pushUrl({ url: 'pages/ProfilePage' }) } catch (_) {} })
           }.padding({ left: 20, right: 20 })
         }
+        .margin({ top: 16 })
 
-        Column({ space: 16 }) {
-          ForEach(this.filtered(), (item: ShortScript) => {
+        if (this.filtered().length === 0) {
+          Column({ space: 16 }) {
+            Text('😔')
+              .fontSize(48)
+              .margin({ top: 50 })
+            Text('暂无匹配的剧本')
+              .fontSize(16)
+              .fontColor(WarmTheme.textSecondary)
+            Text('试试调整筛选条件或搜索其他关键词')
+              .fontSize(13)
+              .fontColor(WarmTheme.textSecondary)
+              .opacity(0.7)
+            Button('清除所有筛选')
+              .fontSize(13)
+              .backgroundColor(WarmTheme.accentLight)
+              .fontColor(WarmTheme.accentDark)
+              .margin({ top: 12 })
+              .onClick(() => {
+                this.keyword = '';
+                this.selectedTheme = '全部';
+                this.selectedGenre = '全部';
+                this.selectedPlay = '全部';
+                this.selectedDifficulty = '全部';
+                this.moodFilter = '全部';
+              })
+          }
+          .width('100%')
+          .padding({ top: 30, bottom: 60 })
+          .alignItems(HorizontalAlign.Center)
+        } else {
+          Column({ space: 16 }) {
+            ForEach(this.filtered(), (item: ShortScript) => {
             Column({ space: 12 }) {
               Row({ space: 12 }) {
                 Column() {
@@ -228,9 +383,11 @@ struct HomePage {
             .borderRadius(26)
             .shadow(WarmShadow.light)
           }, (item: ShortScript) => item.id)
-        }.padding({ left: 20, right: 20, bottom: 48 })
-      }
-    }.scrollBar(BarState.Auto).height('100%').backgroundColor(WarmTheme.background)
+          }.padding({ left: 20, right: 20, bottom: 24, top: 20 }).margin({ top: 16 })
+        }
+      }.padding({ bottom: 20 })
+      }.scrollBar(BarState.Auto).height('100%').backgroundColor(WarmTheme.background)
+    }.height('100%').backgroundColor(WarmTheme.background)
   }
 
   @Builder
