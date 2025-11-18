@@ -29,6 +29,12 @@ class ReviewEntry {
   }
 }
 
+interface ReviewTemplate {
+  users: string[];
+  regions: string[];
+  contents: string[][];
+}
+
 @Entry
 @Component
 struct DetailPage {
@@ -46,22 +52,89 @@ struct DetailPage {
   @State highlightCards: string[] = [];
   @State genre: string = '';
   @State coverSeed: string = '剧';
-  @State reviews: ReviewEntry[] = [
-    new ReviewEntry('r1', '晨光旅人', '线索像雨滴一样串联，最后一步特别治愈。建议注意煤油灯的提示！', 24, false, [
-      { id: 'r1c1', user: '悦悦呀', content: '感谢提醒！', likes: 1 }
-    ]),
-    new ReviewEntry('r2', '独白收集者', '节奏很温柔，中途可以多回到书房整理思路。希望有更多结局。', 18, false, []),
-    new ReviewEntry('r3', '半夏', '喜欢这种记忆系剧情，背景音乐再丰富些就完美了。', 11, false, [])
-  ];
+  @State reviews: ReviewEntry[] = [];
   @State showAllReviews: boolean = false;
   @State editingReviewId: string = '';
   @State commentDraft: string = '';
-  @State likeStates: Map<string, boolean> = new Map([['r1', false], ['r2', false], ['r3', false]]);
-  @State likeCounts: Map<string, number> = new Map([['r1', 24], ['r2', 18], ['r3', 11]]);
-  @State commentLikeStates: Map<string, boolean> = new Map([['r1c1', false]]);
-  @State commentLikeCounts: Map<string, number> = new Map([['r1c1', 1]]);
+  @State likeStates: Map<string, boolean> = new Map();
+  @State likeCounts: Map<string, number> = new Map();
+  @State commentLikeStates: Map<string, boolean> = new Map();
+  @State commentLikeCounts: Map<string, number> = new Map();
   @State expandedComments: Set<string> = new Set();
   @State loaded: boolean = false;
+
+  // 根据剧本ID生成不同的评论数据
+  private generateReviews(scriptId: string): void {
+    const template: ReviewTemplate = {
+      users: ['晨光旅人', '独白收集者', '半夏', '星夜漫步', '雾里观花', '时光旅者'],
+      regions: ['福建', '北京', '上海', '广东', '浙江', '江苏', '四川', '湖北', '山东', '河南'],
+      contents: [
+        ['线索像雨滴一样串联，最后一步特别治愈。建议注意煤油灯的提示！', '节奏很温柔，中途可以多回到书房整理思路。希望有更多结局。', '喜欢这种记忆系剧情，背景音乐再丰富些就完美了。'],
+        ['剧情紧凑，每个细节都值得推敲。凶手的动机设计得很巧妙！', '氛围营造得非常好，玩的时候真的有身临其境的感觉。', '推理难度适中，适合新手入门，强烈推荐！'],
+        ['结局让人意想不到，反转设计得很精彩。多周目体验更佳！', '人物刻画很细腻，每个角色都有自己的故事。', '谜题设计巧妙，需要仔细观察才能找到线索。'],
+        ['音乐和剧情配合得天衣无缝，沉浸感十足！', '这个剧本的世界观很完整，细节经得起推敲。', '难度偏高但很有成就感，适合喜欢挑战的玩家。'],
+        ['故事情节跌宕起伏，玩到最后真的惊呆了！', '逻辑链条很严密，没有明显的漏洞，制作用心。', '画面和文案都很精美，是一部高质量的作品。']
+      ]
+    };
+
+    // 使用scriptId作为种子生成伪随机数
+    const seed = scriptId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    
+    const contentGroup = template.contents[seed % template.contents.length];
+    
+    const reviews: ReviewEntry[] = [];
+    const likeStates = new Map<string, boolean>();
+    const likeCounts = new Map<string, number>();
+    const commentLikeStates = new Map<string, boolean>();
+    const commentLikeCounts = new Map<string, number>();
+
+    for (let i = 0; i < 3; i++) {
+      const reviewId = `r${i + 1}`;
+      const userIndex = (seed + i * 17) % template.users.length;
+      const user = template.users[userIndex];
+      const content = contentGroup[i];
+      const likes = 10 + (seed + i * 13) % 20;
+      
+      const comments: CommentEntry[] = [];
+      if (i === 0) {
+        const commentId = `${reviewId}c1`;
+        const commentUserIndex = (seed + i * 23 + 5) % template.users.length;
+        const newComment: CommentEntry = {
+          id: commentId,
+          user: template.users[commentUserIndex],
+          content: '感谢分享，这个提示很有用！',
+          likes: 1 + (seed % 3)
+        };
+        comments.push(newComment);
+        commentLikeStates.set(commentId, false);
+        commentLikeCounts.set(commentId, newComment.likes);
+      }
+      
+      reviews.push(new ReviewEntry(reviewId, user, content, likes, false, comments));
+      likeStates.set(reviewId, false);
+      likeCounts.set(reviewId, likes);
+    }
+
+    this.reviews = reviews;
+    this.likeStates = likeStates;
+    this.likeCounts = likeCounts;
+    this.commentLikeStates = commentLikeStates;
+    this.commentLikeCounts = commentLikeCounts;
+  }
+
+  // 根据评论ID生成地区
+  private getRegionForReview(reviewIndex: number): string {
+    const regions = ['福建', '北京', '上海', '广东', '浙江', '江苏', '四川', '湖北', '山东', '河南', '湖南', '安徽', '重庆', '天津'];
+    const seed = this.sId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return regions[(seed + reviewIndex * 7) % regions.length];
+  }
+
+  // 根据评论ID生成子评论地区
+  private getRegionForComment(commentIndex: number): string {
+    const regions = ['北京', '上海', '深圳', '杭州', '成都', '武汉', '西安', '南京', '苏州', '长沙'];
+    const seed = this.sId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return regions[(seed + commentIndex * 11) % regions.length];
+  }
 
   aboutToAppear() {
     try {
@@ -90,6 +163,9 @@ struct DetailPage {
       this.genre = s.genre ?? '悬疑';
       this.coverSeed = s.title.length > 0 ? s.title.substring(0, 1) : '剧';
       this.loaded = true;
+      
+      // 根据剧本ID生成对应的评论数据
+      this.generateReviews(this.sId);
     } else {
       this.title = '';
       this.difficulty = 0;
@@ -292,7 +368,7 @@ struct DetailPage {
           Column({ space: 12 }) {
             Text('用户评价').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 4 })
             Column({ space: 16 }) {
-              ForEach(this.displayedReviews(), (review: ReviewEntry) => {
+              ForEach(this.displayedReviews(), (review: ReviewEntry, index: number) => {
                 Column({ space: 0 }) {
                   Row({ space: 12 }) {
                     Row() {
@@ -313,7 +389,7 @@ struct DetailPage {
                       Text(review.content).fontSize(14).lineHeight(24).fontColor(WarmTheme.textSecondary)
                       Row({ space: 8 }) {
                         Text('昨天 22:33').fontSize(11).fontColor('#999999')
-                        Text('福建').fontSize(11).fontColor('#999999')
+                        Text(this.getRegionForReview(index)).fontSize(11).fontColor('#999999')
                         Text('回复').fontSize(11).fontColor('#999999').fontWeight(FontWeight.Medium)
                           .onClick(() => { this.startComment(review.id) })
                         Blank()
@@ -348,7 +424,7 @@ struct DetailPage {
                       
                       if (this.expandedComments.has(review.id) && review.comments.length > 0) {
                         Column({ space: 0 }) {
-                          ForEach(review.comments, (comment: CommentEntry) => {
+                          ForEach(review.comments, (comment: CommentEntry, commentIndex: number) => {
                             Column({ space: 0 }) {
                               Row({ space: 12 }) {
                                 Row() {
@@ -369,7 +445,7 @@ struct DetailPage {
                                   Text(comment.content).fontSize(14).lineHeight(24).fontColor(WarmTheme.textSecondary)
                                   Row({ space: 8 }) {
                                     Text('1小时前').fontSize(11).fontColor('#999999')
-                                    Text('北京').fontSize(11).fontColor('#999999')
+                                    Text(this.getRegionForComment(commentIndex)).fontSize(11).fontColor('#999999')
                                     Text('回复').fontSize(11).fontColor('#999999').fontWeight(FontWeight.Medium)
                                     Blank()
                                     Column({ space: 2 }) {

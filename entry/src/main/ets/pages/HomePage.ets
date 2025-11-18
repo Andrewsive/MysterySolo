@@ -19,7 +19,7 @@ struct HomePage {
     { label: '进阶', idx: 2 },
     { label: '硬核', idx: 3 }
   ];
-  private filterGroups: string[] = ['主题', '类型', '人数', '玩法'];
+  private filterGroups: string[] = ['主题', '类型', '玩法'];
   private moodOptions: string[] = ['全部', '欢乐', '情感', '硬核', '惊悚', '都市'];
   @State keyword: string = '';
   @State activeTab: number = 0;
