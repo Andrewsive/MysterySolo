@@ -11,29 +11,10 @@
   },
   "HVIGOR": {
     "IS_INCREMENTAL": true,
-    "IS_DAEMON": true,
+    "IS_DAEMON": false,
     "IS_PARALLEL": true,
     "IS_HVIGORFILE_TYPE_CHECK": false,
-    "TASK_TIME": {
-      "1043bfc77febe75fafec0c4309faccf1": {
-        "init": 1059500,
-        "CreateModuleInfo": 1753100,
-        "PreCheckSyscap": 947800,
-        "ProcessStartupConfig": 3179300,
-        "PreviewProcessResource": 3432200,
-        "PreviewCompileResource": 787892100,
-        "PreviewHookCompileResource": 897300,
-        "CopyPreviewProfile": 9795400,
-        "ReplacePreviewerPage": 784400,
-        "buildPreviewerResource": 480500,
-        "PreviewUpdateAssets": 14274700,
-        "PreviewArkTS": 34881949400,
-        "PreviewBuild": 1077700
-      },
-      "APP": {
-        "init": 606100
-      }
-    },
+    "TASK_TIME": {},
     "APIS": [
       "getHvigorConfig",
       "getRootNodeDescriptor",
@@ -50,14 +31,20 @@
       "getExtParam",
       "getExtParams",
       "getProperty",
-      "getProperties",
-      "getParameter",
-      "getProductName",
-      "nodesEvaluated",
-      "getCommandEntryTask"
+      "getProperties"
     ],
     "CONFIG_PROPERTIES": {},
-    "BUILD_ID": "202511201153352010",
-    "TOTAL_TIME": 36089579900
+    "BUILD_ID": "202511201715472030",
+    "ERROR_MESSAGE": [
+      {
+        "CODE": "00303217",
+        "MESSAGE": "Invalid value of '%s' in the system environment path.",
+        "SOLUTIONS": [
+          "Correct the value, run hvigorw --stop-daemon to stop the daemon process, and then try again."
+        ],
+        "TIMESTAMP": "1763630150456"
+      }
+    ],
+    "TOTAL_TIME": 3269914300
   }
 }
