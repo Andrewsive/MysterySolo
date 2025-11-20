@@ -2516,3 +2516,362 @@ Error Message: Invalid value of 'DEVECO_SDK_HOME' in the system environment path
 [2025-11-20T17:15:50.523] [DEBUG] debug-file - worker[0] exits with exit code 0.
 [2025-11-20T17:15:50.523] [DEBUG] debug-file - worker[1] exits with exit code 0.
 [2025-11-20T17:15:50.524] [DEBUG] debug-file - Current worker pool is terminated.
+[2025-11-20T17:23:00.511] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-11-20T17:23:00.939] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-11-20T17:23:02.991] [DEBUG] debug-file - hvigorfile, require result:  { default: { system: [Function: appTasks], plugins: [] } }
+[2025-11-20T17:23:03.138] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-11-20T17:23:00.512] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '6.0.0',
+  dependencies: {},
+  execution: {},
+  logging: {},
+  debugging: {},
+  nodeOptions: {}
+}
+[2025-11-20T17:23:03.144] [DEBUG] debug-file - hvigor build process will be closed with an error.
+[2025-11-20T17:23:03.195] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-11-20T17:23:00.943] [DEBUG] debug-file - Cache service initialization finished in 4 ms 
+[2025-11-20T17:23:02.991] [DEBUG] debug-file - hvigorfile, binding system plugins [Function: appTasks]
+[2025-11-20T17:23:03.138] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-11-20T17:23:00.515] [DEBUG] debug-file - env: daemon=false
+[2025-11-20T17:23:03.145] [ERROR] debug-file - [31m00303217 Configuration Error
+Error Message: Invalid value of 'DEVECO_SDK_HOME' in the system environment path.
+
+* Try the following:
+  > Correct the value, run hvigorw --stop-daemon to stop the daemon process, and then try again.
+[39m
+
+[31m* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+
+[2025-11-20T17:23:03.199] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-11-20T17:23:00.944] [DEBUG] debug-file - hvigorfile, resolving C:\Dev\MysterySolo\hvigorfile.ts
+[2025-11-20T17:23:03.138] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-11-20T17:23:00.515] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2025-11-20T17:23:03.146] [DEBUG] debug-file - ERROR: stacktrace = AdaptorError: [31m00303217 Configuration Error
+Error Message: Invalid value of 'DEVECO_SDK_HOME' in the system environment path.
+
+* Try the following:
+  > Correct the value, run hvigorw --stop-daemon to stop the daemon process, and then try again.
+[39m
+    at OhosLogger.printErrorExit (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\log\hvigor-log.js:1:5069)
+    at Property.validatePath (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\sdk\lib\property-get.js:1:2027)
+    at Property.getHosSdkDir (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\sdk\lib\property-get.js:1:1395)
+    at SdkLoader.getSdkInfo (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\sdk\sdk-loader.js:1:668)
+    at new ProjectTaskService (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\tasks\service\project-task-service.js:1:2010)
+    at AppPlugin.initTaskService (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\app-plugin.js:1:715)
+    at ProjectImpl.<anonymous> (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js:1:2502)
+    at ProjectImpl.executeAfterBindSystemPluginsHook (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\hvigor-node-impl\default-node-impl.js:1:5526)
+    at evaluateNodeVigorFile (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js:1:9135)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2025-11-20T17:23:03.138] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-11-20T17:23:03.201] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2025-11-20T17:23:03.146] [ERROR] debug-file - AdaptorError: [31m00303217 Configuration Error
+Error Message: Invalid value of 'DEVECO_SDK_HOME' in the system environment path.
+
+* Try the following:
+  > Correct the value, run hvigorw --stop-daemon to stop the daemon process, and then try again.
+[39m
+    at OhosLogger.printErrorExit (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\log\hvigor-log.js:1:5069)
+    at Property.validatePath (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\sdk\lib\property-get.js:1:2027)
+    at Property.getHosSdkDir (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\sdk\lib\property-get.js:1:1395)
+    at SdkLoader.getSdkInfo (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\sdk\sdk-loader.js:1:668)
+    at new ProjectTaskService (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\tasks\service\project-task-service.js:1:2010)
+    at AppPlugin.initTaskService (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\app-plugin.js:1:715)
+    at ProjectImpl.<anonymous> (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js:1:2502)
+    at ProjectImpl.executeAfterBindSystemPluginsHook (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\hvigor-node-impl\default-node-impl.js:1:5526)
+    at evaluateNodeVigorFile (C:\Program Files\Huawei\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js:1:9135)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[2025-11-20T17:23:03.201] [DEBUG] debug-file - Clear worker 0.
+[2025-11-20T17:23:03.158] [ERROR] debug-file - BUILD FAILED in 2 s 225 ms 
+[2025-11-20T17:23:03.201] [DEBUG] debug-file - Worker 0 has been cleared.
+[2025-11-20T17:23:03.192] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-11-20T17:23:03.201] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-11-20T17:23:03.192] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-11-20T17:23:03.202] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-11-20T17:23:03.202] [DEBUG] debug-file - Clear worker 1.
+[2025-11-20T17:23:03.202] [DEBUG] debug-file - Worker 1 has been cleared.
+[2025-11-20T17:23:03.202] [DEBUG] debug-file - Current idle worker size: 0.
+[2025-11-20T17:23:03.202] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-11-20T17:23:03.211] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-11-20T17:23:03.215] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2025-11-20T17:23:03.215] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2025-11-20T17:23:03.216] [DEBUG] debug-file - Current worker pool is terminated.
+[2025-11-20T17:28:35.167] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchStart
+[2025-11-20T17:28:35.241] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2025-11-20T17:28:37.384] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.391] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.386] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.399] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.386] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.416] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.387] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.419] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.387] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.422] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.388] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.426] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.389] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.430] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.390] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.434] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.390] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.438] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.391] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.443] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.392] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.447] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.392] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.452] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.392] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.457] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.392] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.461] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.393] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.467] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.395] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.471] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.396] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.477] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.396] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.480] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.398] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.484] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.400] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.486] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.401] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.489] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.401] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.492] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.402] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.496] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.403] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.499] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.403] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.501] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.403] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.502] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.404] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.510] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.407] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.514] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.407] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.517] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.412] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.520] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.413] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.523] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.413] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.527] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.413] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.529] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.413] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.532] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.414] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.535] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.414] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.537] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.414] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.540] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.544] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.548] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.551] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.555] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.559] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.564] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.567] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.571] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.415] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.573] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.416] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.576] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.578] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.583] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.585] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.594] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.597] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.434] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.600] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.435] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.604] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.435] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.609] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.435] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.611] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.435] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.615] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.435] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.617] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.436] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.620] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:37.436] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:37.623] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:38.510] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchResult
+[2025-11-20T17:28:38.515] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2025-11-20T17:28:50.044] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchStart
+[2025-11-20T17:28:50.047] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchStart
+[2025-11-20T17:28:50.394] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.395] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.394] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.396] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.394] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.398] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.394] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.399] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.404] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.405] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.405] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.409] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.405] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.417] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.405] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.417] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.418] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.419] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.420] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.421] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.422] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.422] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.423] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.424] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.425] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.425] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.426] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.406] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.427] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.407] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.428] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.407] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.429] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.407] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.429] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.430] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.430] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.431] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.432] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.433] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.437] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.439] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.440] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.408] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.441] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.409] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.442] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.409] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.442] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.409] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.443] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.410] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.444] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.445] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.447] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.417] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.448] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.418] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.449] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.418] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.450] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.419] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.451] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.419] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.452] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.419] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.454] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.419] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.455] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.420] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.457] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.420] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.458] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.420] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.459] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.420] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.460] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.420] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.461] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.420] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.461] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.421] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.463] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.422] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.467] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.422] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.468] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.422] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.469] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.422] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.470] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.422] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.471] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.423] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.472] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.423] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchLog
+[2025-11-20T17:28:50.472] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchLog
+[2025-11-20T17:28:50.662] [DEBUG] debug-file - watch worker: send response to session manager. Response type: WatchResult
+[2025-11-20T17:28:50.663] [DEBUG] debug-file - session manager: watch message received from worker 1. Type: WatchResult
+[2025-11-20T17:29:01.950] [DEBUG] debug-file - session manager: receive watch compile data.
+[2025-11-20T17:29:01.950] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-20T17:29:01.955] [DEBUG] debug-file - session manager: receive watch compile data.
+[2025-11-20T17:29:01.956] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-20T17:29:01.956] [DEBUG] debug-file - session manager: receive watch compile data.
+[2025-11-20T17:29:01.956] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-20T17:29:01.956] [DEBUG] debug-file - session manager: receive watch compile data.
+[2025-11-20T17:29:01.957] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-11-20T17:29:01.973] [DEBUG] debug-file - watch worker: receive watch compile tata.
+[2025-11-20T17:29:01.980] [DEBUG] debug-file - watch worker: receive watch compile tata.
+[2025-11-20T17:29:01.980] [DEBUG] debug-file - watch worker: receive watch compile tata.
+[2025-11-20T17:29:01.981] [DEBUG] debug-file - watch worker: receive watch compile tata.

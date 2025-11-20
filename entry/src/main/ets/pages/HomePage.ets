@@ -419,8 +419,8 @@ struct HomePage {
               .fontColor('#2D2419')
               .padding({ left: 20, bottom: 16 })
           }
-          .width('100%')
           .height(141)
+          .borderRadius(15)
           .margin({ left: 20, right: 20 })
           .shadow({ radius: 10, color: 'rgba(0, 0, 0, 0.25)', offsetY: 5 })
         }

@@ -34,7 +34,7 @@
       "getProperties"
     ],
     "CONFIG_PROPERTIES": {},
-    "BUILD_ID": "202511201715472030",
+    "BUILD_ID": "202511201723009320",
     "ERROR_MESSAGE": [
       {
         "CODE": "00303217",
@@ -42,9 +42,9 @@
         "SOLUTIONS": [
           "Correct the value, run hvigorw --stop-daemon to stop the daemon process, and then try again."
         ],
-        "TIMESTAMP": "1763630150456"
+        "TIMESTAMP": "1763630583140"
       }
     ],
-    "TOTAL_TIME": 3269914300
+    "TOTAL_TIME": 2224769300
   }
 }
