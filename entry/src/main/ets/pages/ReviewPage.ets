@@ -13,6 +13,7 @@ interface ReviewParams {
 struct ReviewPage {
   @State scriptId: string = 'demo';
   @State scriptTitle: string = '';
+  @State rating: number = 0; // 评分：0-5星
   @State feeling: string = '';
   @State highlight: string = '';
   @State suggestion: string = '';
@@ -45,6 +46,54 @@ struct ReviewPage {
     .padding({ left: 20, right: 20 })
   }
 
+  @Builder
+  private ratingSection() {
+    Column({ space: 12 }) {
+      Text('给剧本打分').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+      Row({ space: 16 }) {
+        ForEach([1, 2, 3, 4, 5], (star: number) => {
+          SymbolGlyph(this.rating >= star ? $r('sys.symbol.star_fill') : $r('sys.symbol.star'))
+            .fontSize(40)
+            .fontColor([this.rating >= star ? '#FFA500' : '#CCCCCC'])
+            .onClick(() => {
+              this.rating = star;
+              this.saved = false;
+            })
+        }, (star: number) => star.toString())
+      }
+      .justifyContent(FlexAlign.Center)
+      .width('100%')
+      
+      if (this.rating > 0) {
+        Text(this.getRatingText())
+          .fontSize(13)
+          .fontColor(WarmTheme.textSecondary)
+          .textAlign(TextAlign.Center)
+      }
+    }
+    .padding({ left: 20, right: 20, top: 12, bottom: 12 })
+    .backgroundColor(WarmTheme.card)
+    .borderRadius(20)
+    .margin({ left: 20, right: 20 })
+  }
+
+  private getRatingText(): string {
+    switch (this.rating) {
+      case 1:
+        return '不太满意';
+      case 2:
+        return '一般般';
+      case 3:
+        return '还不错';
+      case 4:
+        return '很好玩';
+      case 5:
+        return '超级棒！';
+      default:
+        return '';
+    }
+  }
+
   build() {
     Scroll() {
       Column({ space: 18 }) {
@@ -61,6 +110,8 @@ struct ReviewPage {
           Text('撰写剧本点评').fontSize(24).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary)
           Text(`剧本：${this.scriptTitle.length > 0 ? this.scriptTitle : this.scriptId}`).fontSize(12).fontColor(WarmTheme.textSecondary)
         }.padding({ left: 20, right: 20 })
+
+        this.ratingSection()
 
         this.reviewField('整体感受', '写写氛围、节奏或剧情给你的触动', this.feeling, (v: string) => { this.feeling = v })
         this.reviewField('亮点与体验', '哪些设置或关卡最令你惊喜？', this.highlight, (v: string) => { this.highlight = v })
@@ -82,6 +133,7 @@ struct ReviewPage {
             .fontColor(WarmTheme.textPrimary)
             .layoutWeight(1)
             .onClick(() => {
+              this.rating = 0;
               this.feeling = '';
               this.highlight = '';
               this.suggestion = '';

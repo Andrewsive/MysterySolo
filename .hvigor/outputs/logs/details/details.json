@@ -3,15 +3,11 @@
     "MODULES": [
       {
         "MODULE_NAME": "1043bfc77febe75fafec0c4309faccf1",
-        "API_TYPE": "stageMode",
-        "INCREMENTAL_TASKS": {
-          "COMPILE_ARKTS": true
-        }
+        "API_TYPE": "stageMode"
       }
     ],
     "NATIVE_COMPILER": "Default",
-    "BUILD_MODE": "debug",
-    "USE_NORMALIZED_OHMURL": true
+    "BUILD_MODE": "debug"
   },
   "HVIGOR": {
     "IS_INCREMENTAL": true,
@@ -20,31 +16,22 @@
     "IS_HVIGORFILE_TYPE_CHECK": false,
     "TASK_TIME": {
       "1043bfc77febe75fafec0c4309faccf1": {
-        "CreateModuleInfo": 394400,
-        "ConfigureCmake": 210500,
-        "MergeProfile": 2832800,
-        "CreateBuildProfile": 1429800,
-        "PreCheckSyscap": 217500,
-        "GeneratePkgContextInfo": 2933600,
-        "ProcessIntegratedHsp": 497400,
-        "BuildNativeWithCmake": 288500,
-        "SyscapTransform": 1538900,
-        "ProcessProfile": 63941600,
-        "ProcessRouterMap": 1846100,
-        "ProcessShareConfig": 1502000,
-        "ProcessStartupConfig": 1062000,
-        "BuildNativeWithNinja": 1313300,
-        "GenerateLoaderJson": 8415200,
-        "CompileResource": 318242100,
-        "BuildJS": 1310200,
-        "CompileArkTS": 1087584500,
-        "GeneratePkgModuleJson": 1823700,
-        "ProcessCompiledResources": 538100,
-        "PackageHap": 110858600,
-        "PackingCheck": 3095200,
-        "SignHap": 164153900,
-        "CollectDebugSymbol": 958300,
-        "assembleHap": 168700
+        "init": 1059500,
+        "CreateModuleInfo": 1753100,
+        "PreCheckSyscap": 947800,
+        "ProcessStartupConfig": 3179300,
+        "PreviewProcessResource": 3432200,
+        "PreviewCompileResource": 787892100,
+        "PreviewHookCompileResource": 897300,
+        "CopyPreviewProfile": 9795400,
+        "ReplacePreviewerPage": 784400,
+        "buildPreviewerResource": 480500,
+        "PreviewUpdateAssets": 14274700,
+        "PreviewArkTS": 34881949400,
+        "PreviewBuild": 1077700
+      },
+      "APP": {
+        "init": 606100
       }
     },
     "APIS": [
@@ -55,6 +42,8 @@
       "getAllNodes",
       "getRootNode",
       "getNodeName",
+      "getStartParams",
+      "buildFinished",
       "getNodePath",
       "subNodes",
       "getExtraOption",
@@ -65,11 +54,10 @@
       "getParameter",
       "getProductName",
       "nodesEvaluated",
-      "getCommandEntryTask",
-      "getStartParams"
+      "getCommandEntryTask"
     ],
     "CONFIG_PROPERTIES": {},
-    "TOTAL_TIME": 1995518300,
-    "BUILD_ID": "202511182334532590"
+    "BUILD_ID": "202511201153352010",
+    "TOTAL_TIME": 36089579900
   }
 }

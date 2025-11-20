@@ -75,37 +75,40 @@ struct HistoryDetailPage {
                 Text(`· ${id}`).fontSize(13).fontColor(WarmTheme.textSecondary)
               }, (id: string) => id)
             }
-            .padding({ left: 16, right: 16, bottom: 12 })
+            .padding({ left: 16, right: 16, top: 12, bottom: 12 })
             .backgroundColor(WarmTheme.card)
             .borderRadius(20)
             .shadow(WarmShadow.light)
+
+            // 底部按钮放在滚动区域内
+            Row({ space: 12 }) {
+              Button('再次挑战')
+                .type(ButtonType.Capsule)
+                .layoutWeight(1)
+                .backgroundColor(WarmTheme.accent)
+                .fontColor('#FFFFFF')
+                .onClick(() => {
+                  try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.scriptId } }) } catch (_) {}
+                })
+              Button('返回')
+                .layoutWeight(1)
+                .backgroundColor('#F6E1D4')
+                .fontColor(WarmTheme.textPrimary)
+                .onClick(() => { try { router.back() } catch (_) {} })
+            }
+            .padding({ top: 20 })
+            .width('100%')
           }
         }
-        .padding({ left: 20, right: 20, top: 24, bottom: 24 })
+        .padding({ left: 20, right: 20, top: 24, bottom: 32 })
       }
-      .scrollBar(BarState.Off)
-      .height('100%')
+      .scrollBar(BarState.Auto)
+      .layoutWeight(1)
       .width('100%')
-
-      Row({ space: 12 }) {
-        Button('再次挑战')
-          .type(ButtonType.Capsule)
-          .layoutWeight(1)
-          .backgroundColor(WarmTheme.accent)
-          .fontColor('#FFFFFF')
-          .onClick(() => {
-            try { router.replaceUrl({ url: 'pages/PlayPage', params: { id: this.scriptId } }) } catch (_) {}
-          })
-        Button('返回')
-          .layoutWeight(1)
-          .backgroundColor('#F6E1D4')
-          .fontColor(WarmTheme.textPrimary)
-          .onClick(() => { try { router.back() } catch (_) {} })
-      }
-      .padding({ left: 20, right: 20, bottom: 24, top: 12 })
       .backgroundColor(WarmTheme.background)
     }
     .height('100%')
+    .backgroundColor(WarmTheme.background)
   }
 }
 

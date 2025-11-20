@@ -9,6 +9,15 @@ interface TabEntry {
   idx: number;
 }
 
+interface Notification {
+  id: string;
+  title: string;
+  content: string;
+  time: string;
+  read: boolean;
+  type: 'new' | 'activity' | 'system';
+}
+
 @Entry
 @Component
 struct HomePage {
@@ -26,6 +35,35 @@ struct HomePage {
   @State selectedGenre: string = '全部';
   @State selectedPlay: string = '全部';
   @State selectedDifficulty: string = '全部';
+  @State showNotifications: boolean = false;
+  @State showNotificationDetail: boolean = false;
+  @State selectedNotification: Notification | null = null;
+  @State notifications: Notification[] = [
+    {
+      id: 'n1',
+      title: '新剧本上线',
+      content: '「静物画室」已解锁，挑战艺术系硬核推理！',
+      time: '10分钟前',
+      read: false,
+      type: 'new'
+    },
+    {
+      id: 'n2',
+      title: '限时活动',
+      content: '完成3个剧本即可解锁隐藏结局，活动倒计时3天',
+      time: '1小时前',
+      read: false,
+      type: 'activity'
+    },
+    {
+      id: 'n3',
+      title: '游戏提示',
+      content: '记得使用笔记功能记录线索，可大幅提升推理效率',
+      time: '昨天',
+      read: true,
+      type: 'system'
+    }
+  ];
 
   aboutToAppear() {
     if (!hasOnboarded()) {
@@ -173,9 +211,58 @@ struct HomePage {
     this.expandedFilter = '';
   }
 
+  private getUnreadCount(): number {
+    return this.notifications.filter(n => !n.read).length;
+  }
+
+  private markAsRead(notificationId: string) {
+    const index = this.notifications.findIndex(n => n.id === notificationId);
+    if (index !== -1) {
+      this.notifications[index].read = true;
+      this.notifications = this.notifications.slice();
+    }
+  }
+
+  private viewNotificationDetail(notification: Notification) {
+    // 标记为已读
+    if (!notification.read) {
+      this.markAsRead(notification.id);
+    }
+    // 显示详情
+    this.selectedNotification = notification;
+    this.showNotificationDetail = true;
+  }
+
+  private getNotificationDetailContent(notification: Notification): string {
+    switch (notification.id) {
+      case 'n1':
+        return '新剧本「静物画室」现已上线！\n\n这是一个艺术系硬核推理剧本，难度等级★★★。著名绘画导师的画室突然封闭，你受邀进入画室，寻找失踪的学生与隐藏在作品中的留言。\n\n特色玩法：\n• 色卡拼图：不同色块对应字母\n• 暗房底片：记录学生情绪\n• 导师手稿：揭示师生矛盾\n\n预计游玩时长：35分钟\n立即前往剧本库查看详情吧！';
+      case 'n2':
+        return '限时活动「推理达人」正在进行中！\n\n活动时间：即日起至3天后\n\n活动内容：\n完成任意3个剧本即可解锁神秘隐藏结局「真相回响」\n\n活动奖励：\n✨ 独家剧本结局\n🎁 推理达人称号\n⭐ 额外成就点数\n\n当前进度：0/3\n快去挑战剧本，解锁专属奖励吧！';
+      case 'n3':
+        return '游戏小贴士：善用笔记功能\n\n推理过程中遇到难题？试试使用笔记功能！\n\n使用方法：\n1. 在游戏中点击「笔记」按钮\n2. 记录嫌疑人、动机、证据等信息\n3. 整理思路，串联线索\n\n小技巧：\n• 及时记录重要线索，避免遗忘\n• 用笔记梳理时间线和人物关系\n• 标记矛盾点，帮助突破推理瓶颈\n\n使用笔记功能可大幅提升推理效率，快去试试吧！';
+      default:
+        return notification.content;
+    }
+  }
+
+  private getNotificationIcon(type: string): string {
+    switch (type) {
+      case 'new':
+        return '🎉';
+      case 'activity':
+        return '🎁';
+      case 'system':
+        return '💡';
+      default:
+        return '📢';
+    }
+  }
+
   build() {
-    Column() {
-      Scroll() {
+    Stack() {
+      Column() {
+        Scroll() {
         Column({ space: 0 }) {
           Column({ space: 14 }) {
             Row({ space: 12 }) {
@@ -186,12 +273,25 @@ struct HomePage {
               }
               .alignItems(HorizontalAlign.Center)
               Blank()
-              Button('🔔').backgroundColor('transparent').onClick(() => {})
+              Badge({
+                count: this.getUnreadCount(),
+                position: BadgePosition.RightTop,
+                style: { badgeSize: 16, badgeColor: '#FF5A5F' }
+              }) {
+                SymbolGlyph($r('sys.symbol.bell'))
+                  .fontSize(24)
+                  .fontColor([WarmTheme.textPrimary])
+                  .onClick(() => {
+                    this.showNotifications = !this.showNotifications;
+                  })
+              }
             }.padding({ left: 20, right: 20, top: 16, bottom: 12 }).width('100%')
 
           Column({ space: 12 }) {
             Row({ space: 10 }) {
-              Text('🔍').fontSize(16)
+              SymbolGlyph($r('sys.symbol.search'))
+                .fontSize(20)
+                .fontColor([WarmTheme.textSecondary])
               TextInput({ placeholder: '搜索剧本 / 标签 / 作者' })
                 .onChange((v: string) => { this.keyword = v })
                 .layoutWeight(1)
@@ -385,9 +485,165 @@ struct HomePage {
           }, (item: ShortScript) => item.id)
           }.padding({ left: 20, right: 20, bottom: 24, top: 20 }).margin({ top: 16 })
         }
-      }.padding({ bottom: 20 })
-      }.scrollBar(BarState.Auto).height('100%').backgroundColor(WarmTheme.background)
-    }.height('100%').backgroundColor(WarmTheme.background)
+        }.padding({ bottom: 20 })
+        }.scrollBar(BarState.Auto).height('100%').backgroundColor(WarmTheme.background)
+      }.height('100%').backgroundColor(WarmTheme.background)
+
+      // 通知弹窗
+      if (this.showNotifications) {
+        Column() {
+          Column({ space: 0 }) {
+            Row({ space: 12 }) {
+              Text('通知中心').fontSize(18).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+              Blank()
+              Text('关闭')
+                .fontSize(14)
+                .fontColor(WarmTheme.textSecondary)
+                .onClick(() => {
+                  this.showNotifications = false;
+                })
+            }
+            .padding({ left: 20, right: 20, top: 16, bottom: 12 })
+
+            Scroll() {
+              Column({ space: 1 }) {
+                ForEach(this.notifications, (notification: Notification) => {
+                  Column({ space: 8 }) {
+                    Row({ space: 10 }) {
+                      Text(this.getNotificationIcon(notification.type)).fontSize(24)
+                      Column({ space: 6 }) {
+                        Row({ space: 8 }) {
+                          Text(notification.title)
+                            .fontSize(15)
+                            .fontWeight(FontWeight.Medium)
+                            .fontColor(WarmTheme.textPrimary)
+                          if (!notification.read) {
+                            Text('未读')
+                              .fontSize(10)
+                              .fontColor('#FFFFFF')
+                              .backgroundColor('#FF5A5F')
+                              .padding({ left: 6, right: 6, top: 2, bottom: 2 })
+                              .borderRadius(8)
+                          }
+                        }
+                        Text(notification.content)
+                          .fontSize(13)
+                          .fontColor(WarmTheme.textSecondary)
+                          .maxLines(2)
+                        Text(notification.time)
+                          .fontSize(11)
+                          .fontColor('#999999')
+                      }
+                      .layoutWeight(1)
+                      .alignItems(HorizontalAlign.Start)
+                    }
+                    .padding(16)
+                    .width('100%')
+                  }
+                  .backgroundColor(notification.read ? WarmTheme.card : '#FFF9F5')
+                  .onClick(() => {
+                    this.viewNotificationDetail(notification);
+                  })
+                }, (notification: Notification) => notification.id)
+              }
+            }
+            .layoutWeight(1)
+          }
+          .width('90%')
+          .height('70%')
+          .backgroundColor(WarmTheme.card)
+          .borderRadius(20)
+          .shadow(WarmShadow.card)
+        }
+        .width('100%')
+        .height('100%')
+        .backgroundColor('rgba(0, 0, 0, 0.5)')
+        .justifyContent(FlexAlign.Center)
+        .onClick(() => {
+          this.showNotifications = false;
+        })
+      }
+
+      // 通知详情弹窗
+      if (this.showNotificationDetail && this.selectedNotification) {
+        Column() {
+          Column({ space: 0 }) {
+            Row({ space: 12 }) {
+              SymbolGlyph($r('sys.symbol.chevron_left'))
+                .fontSize(20)
+                .fontColor([WarmTheme.textPrimary])
+                .onClick(() => {
+                  this.showNotificationDetail = false;
+                  this.selectedNotification = null;
+                })
+              Text('通知详情')
+                .fontSize(18)
+                .fontWeight(FontWeight.Medium)
+                .fontColor(WarmTheme.textPrimary)
+              Blank()
+              Text('关闭')
+                .fontSize(14)
+                .fontColor(WarmTheme.textSecondary)
+                .onClick(() => {
+                  this.showNotificationDetail = false;
+                  this.showNotifications = false;
+                  this.selectedNotification = null;
+                })
+            }
+            .padding({ left: 20, right: 20, top: 16, bottom: 12 })
+
+            Scroll() {
+              Column({ space: 20 }) {
+                // 标题和图标
+                Row({ space: 12 }) {
+                  Text(this.getNotificationIcon(this.selectedNotification.type))
+                    .fontSize(36)
+                  Column({ space: 6 }) {
+                    Text(this.selectedNotification.title)
+                      .fontSize(20)
+                      .fontWeight(FontWeight.Bold)
+                      .fontColor(WarmTheme.textPrimary)
+                    Text(this.selectedNotification.time)
+                      .fontSize(12)
+                      .fontColor('#999999')
+                  }
+                  .alignItems(HorizontalAlign.Start)
+                }
+                .padding({ left: 20, right: 20 })
+
+                Divider()
+                  .color('#EEEEEE')
+                  .margin({ left: 20, right: 20 })
+
+                // 详细内容
+                Text(this.getNotificationDetailContent(this.selectedNotification))
+                  .fontSize(14)
+                  .fontColor(WarmTheme.textSecondary)
+                  .lineHeight(24)
+                  .padding({ left: 20, right: 20 })
+              }
+              .padding({ top: 12, bottom: 20 })
+            }
+            .layoutWeight(1)
+          }
+          .width('90%')
+          .height('75%')
+          .backgroundColor(WarmTheme.card)
+          .borderRadius(20)
+          .shadow(WarmShadow.card)
+        }
+        .width('100%')
+        .height('100%')
+        .backgroundColor('rgba(0, 0, 0, 0.5)')
+        .justifyContent(FlexAlign.Center)
+        .onClick(() => {
+          this.showNotificationDetail = false;
+          this.selectedNotification = null;
+        })
+      }
+    }
+    .width('100%')
+    .height('100%')
   }
 
   @Builder
