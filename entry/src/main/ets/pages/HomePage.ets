@@ -405,24 +405,18 @@ struct HomePage {
             .fontColor('#1A1A1A')
             .padding({ left: 20 })
           
-          // 推荐大卡片 - 带文字覆盖
-          Stack({ alignContent: Alignment.BottomStart }) {
-            Column()
-              .width('100%')
-              .height('100%')
-              .backgroundColor('#C4B5A0')
-              .borderRadius(15)
-            
-            Text('冷小兵档案')
-              .fontSize(24)
-              .fontWeight(FontWeight.Bold)
-              .fontColor('#2D2419')
-              .padding({ left: 20, bottom: 16 })
-          }
-          .height(141)
-          .borderRadius(15)
-          .margin({ left: 20, right: 20 })
-          .shadow({ radius: 10, color: 'rgba(0, 0, 0, 0.25)', offsetY: 5 })
+          // 推荐大卡片 - 使用rawfile图片
+          Image($rawfile('featured_banner.png'))
+            .width('calc(100% - 40vp)')
+            .height(141)
+            .borderRadius(15)
+            .objectFit(ImageFit.Cover)
+            .margin({ left: 20, right: 20 })
+            .shadow({ radius: 10, color: 'rgba(0, 0, 0, 0.25)', offsetY: 5 })
+            .onClick(() => {
+              // 点击推荐卡片，跳转到对应剧本
+              try { router.pushUrl({ url: 'pages/DetailPage', params: { id: 'script1' } }) } catch (_) {}
+            })
         }
         .margin({ top: 8 })
 
@@ -703,6 +697,9 @@ struct HomePage {
         .layoutWeight(1)
         .justifyContent(FlexAlign.Center)
         .padding({ top: 6, bottom: 6 })
+        .onClick(() => {
+          try { router.pushUrl({ url: 'pages/HomePage' }) } catch (_) {}
+        })
 
         // 剧本库
         Column({ space: 2 }) {
@@ -717,7 +714,7 @@ struct HomePage {
         .justifyContent(FlexAlign.Center)
         .padding({ top: 6, bottom: 6 })
         .onClick(() => {
-          try { router.pushUrl({ url: 'pages/ScriptLibraryPage' }) } catch (_) {}
+          try { router.pushUrl({ url: 'pages/LibraryPage' }) } catch (_) {}
         })
 
         // 下载管理
@@ -733,7 +730,7 @@ struct HomePage {
         .justifyContent(FlexAlign.Center)
         .padding({ top: 6, bottom: 6 })
         .onClick(() => {
-          try { router.pushUrl({ url: 'pages/DownloadPage' }) } catch (_) {}
+          try { router.pushUrl({ url: 'pages/DownloadsPage' }) } catch (_) {}
         })
 
         // 个人中心
@@ -755,9 +752,7 @@ struct HomePage {
       .width('100%')
       .height(48)
       .backgroundColor('#F5F5F5')
-      .borderRadius(15)
-      .shadow({ radius: 10, color: 'rgba(0, 0, 0, 0.25)', offsetY: 4 })
-      .margin({ left: 20, right: 20, bottom: 15 })
+      .shadow({ radius: 10, color: 'rgba(0, 0, 0, 0.25)', offsetY: -2 })
     }
     .width('100%')
     .height('100%')
