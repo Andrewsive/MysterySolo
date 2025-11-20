@@ -155,6 +155,35 @@ struct HomePage {
     return palette[Math.abs(hash) % palette.length];
   }
 
+  private getCoverImage(index: number): string {
+    const covers = ['cover1.png', 'cover2.png', 'cover3.png'];
+    return covers[index % covers.length];
+  }
+
+  private getFilterButtonX(filterName: string): number {
+    // 计算每个筛选按钮的X位置
+    const buttonWidth = 50; // 每个按钮大约的宽度
+    const gap = 12; // 按钮之间的间距
+    const startX = 60; // 起始位置（居中考虑）
+    
+    const index = this.filterGroups.indexOf(filterName);
+    return startX + index * (buttonWidth + gap);
+  }
+
+  private getDropdownX(): number {
+    // 根据当前展开的筛选项计算X位置
+    const filterIndex = this.filterGroups.indexOf(this.expandedFilter);
+    if (filterIndex === -1) return 20;
+    
+    // 每个按钮约占60像素（包括间距），起始位置根据居中计算
+    const buttonWidth = 48; // 按钮宽度约48
+    const spacing = 12; // 按钮间距
+    const totalWidth = this.filterGroups.length * buttonWidth + (this.filterGroups.length - 1) * spacing;
+    const startX = (360 - totalWidth) / 2; // 360是屏幕宽度
+    
+    return startX + filterIndex * (buttonWidth + spacing);
+  }
+
   private toggleFilter(filterName: string) {
     if (this.expandedFilter === filterName) {
       this.expandedFilter = '';
@@ -262,21 +291,16 @@ struct HomePage {
   build() {
     Stack({ alignContent: Alignment.Bottom }) {
       Column() {
-        Scroll() {
+        // 顶部区域 - 固定不滚动
         Column({ space: 0 }) {
-          // 顶部区域 - 浅蓝灰色背景
-          Column({ space: 0 }) {
             // 顶部标题栏
             Row({ space: 12 }) {
-              // 左侧头像 - 使用背景色块
-              Stack({ alignContent: Alignment.Center }) {
-                Text('👤')
-                  .fontSize(20)
-              }
-              .width(35)
-              .height(35)
-              .backgroundColor('#E5E9EC')
-              .borderRadius(10)
+              // 左侧头像 - 使用图片
+              Image($rawfile('avatar.png'))
+                .width(35)
+                .height(35)
+                .borderRadius(10)
+                .objectFit(ImageFit.Cover)
               
               Column({ space: 2 }) {
                 Text('你好，推理旅人')
@@ -343,66 +367,50 @@ struct HomePage {
             .margin({ left: 20, right: 20, bottom: 8 })
 
             // 筛选按钮区域
-            Stack({ alignContent: Alignment.TopStart }) {
-              Row({ space: 12 }) {
-                ForEach(this.filterGroups, (label: string) => {
-                  Column() {
-                    Text(label)
-                      .fontSize(10)
-                      .fontColor('#1A1A1A')
-                  }
-                  .height(16)
-                  .padding({ left: 10, right: 10 })
-                  .backgroundColor('#F9FAFB')
-                  .borderRadius(6)
-                  .border({ width: 0.5, color: 'rgba(128, 128, 128, 0.5)' })
-                  .justifyContent(FlexAlign.Center)
-                  .onClick(() => {
-                    this.toggleFilter(label);
-                  })
-                }, (label: string) => label)
-              }
-              .justifyContent(FlexAlign.Center)
-              .width('100%')
-
-              if (this.expandedFilter.length > 0) {
-                Column({ space: 0 }) {
-                  Column({ space: 8 }) {
-                    ForEach(this.getFilterOptions(this.expandedFilter), (option: string) => {
-                      Text(option)
-                        .fontSize(13)
-                        .fontColor(this.getSelectedValue(this.expandedFilter) === option ? '#3B73FE' : '#1A1A1A')
-                        .fontWeight(this.getSelectedValue(this.expandedFilter) === option ? FontWeight.Medium : FontWeight.Regular)
-                        .padding({ left: 16, right: 16, top: 10, bottom: 10 })
-                        .backgroundColor(this.getSelectedValue(this.expandedFilter) === option ? '#F0F5FF' : '#FFFFFF')
-                        .width('100%')
-                        .onClick(() => {
-                          this.selectFilterOption(this.expandedFilter, option);
-                        })
-                    }, (option: string) => option)
-                  }
-                  .padding(8)
-                  .backgroundColor('#FFFFFF')
-                  .borderRadius(12)
-                  .shadow({ radius: 8, color: 'rgba(0, 0, 0, 0.15)', offsetY: 2 })
-                  .margin({ top: 25, left: 20 })
-                  .width(140)
+            Row({ space: 12 }) {
+              ForEach(this.filterGroups, (label: string) => {
+                Row({ space: 5 }) {
+                  Text(label)
+                    .fontSize(13)
+                    .fontColor(this.expandedFilter === label || this.getSelectedValue(label) !== '全部' ? '#3B73FE' : '#1A1A1A')
+                    .fontWeight(this.expandedFilter === label || this.getSelectedValue(label) !== '全部' ? FontWeight.Medium : FontWeight.Regular)
+                  Text('▼')
+                    .fontSize(10)
+                    .fontColor(this.expandedFilter === label || this.getSelectedValue(label) !== '全部' ? '#3B73FE' : '#999999')
                 }
-              }
+                .height(24)
+                .padding({ left: 12, right: 12 })
+                .backgroundColor(this.expandedFilter === label ? '#E6EFFF' : (this.getSelectedValue(label) !== '全部' ? '#F0F5FF' : '#F9FAFB'))
+                .borderRadius(8)
+                .border({ 
+                  width: 1, 
+                  color: this.expandedFilter === label || this.getSelectedValue(label) !== '全部' ? '#3B73FE' : 'rgba(128, 128, 128, 0.5)' 
+                })
+                .justifyContent(FlexAlign.Center)
+                .onClick(() => {
+                  this.toggleFilter(label);
+                })
+              }, (label: string) => label)
             }
+            .justifyContent(FlexAlign.Center)
             .width('100%')
-            .height(this.expandedFilter.length > 0 ? 220 : 26)
-            .margin({ bottom: 8 })
-          }
-          .backgroundColor('#F1F5F9')
-          .padding({ bottom: 8 })
+            .height(32)
+            .margin({ bottom: 0 })
+        }
+        .backgroundColor('#F1F5F9')
+        .padding({ bottom: 8 })
 
+        // 可滚动内容区域
+        Scroll() {
+        Column({ space: 0 }) {
         // 今日推荐区域
         Column({ space: 8 }) {
           Text('今日推荐')
-            .fontSize(13)
+            .fontSize(17)
             .fontWeight(FontWeight.Bold)
             .fontColor('#1A1A1A')
+            .width('100%')
+            .textAlign(TextAlign.Start)
             .padding({ left: 20 })
           
           // 推荐大卡片 - 使用rawfile图片
@@ -422,9 +430,11 @@ struct HomePage {
 
         // 剧本栏标题
         Text('剧本栏')
-          .fontSize(13)
+          .fontSize(17)
           .fontWeight(FontWeight.Bold)
           .fontColor('#1A1A1A')
+          .width('100%')
+          .textAlign(TextAlign.Start)
           .padding({ left: 20 })
           .margin({ top: 14 })
 
@@ -459,15 +469,15 @@ struct HomePage {
           .alignItems(HorizontalAlign.Center)
         } else {
           Column({ space: 11 }) {
-            ForEach(this.filtered(), (item: ShortScript) => {
+            ForEach(this.filtered(), (item: ShortScript, index: number) => {
               // 剧本卡片 - 设计稿样式
               Row({ space: 12 }) {
                 // 左侧图片
-                Column()
+                Image($rawfile(this.getCoverImage(index)))
                   .width(88)
                   .height(96)
-                  .backgroundColor(this.coverColor(item.id))
                   .borderRadius(15)
+                  .objectFit(ImageFit.Cover)
 
                 // 右侧信息
                 Column({ space: 4 }) {
@@ -528,8 +538,38 @@ struct HomePage {
           .padding({ left: 20, right: 20, bottom: 100, top: 8 })
         }
         }.padding({ bottom: 20 })
-        }.scrollBar(BarState.Auto).height('100%').backgroundColor('#F1F5F9')
-      }.height('100%').backgroundColor('#F1F5F9')
+        }
+        .scrollBar(BarState.Auto)
+        .layoutWeight(1)
+        .backgroundColor('#F1F5F9')
+      }
+      .height('100%')
+      .backgroundColor('#F1F5F9')
+
+      // 筛选下拉框 - 悬浮在最上层
+      if (this.expandedFilter.length > 0) {
+        Column({ space: 6 }) {
+          ForEach(this.getFilterOptions(this.expandedFilter), (option: string) => {
+            Text(option)
+              .fontSize(12)
+              .fontColor(this.getSelectedValue(this.expandedFilter) === option ? '#3B73FE' : '#1A1A1A')
+              .fontWeight(this.getSelectedValue(this.expandedFilter) === option ? FontWeight.Medium : FontWeight.Regular)
+              .padding({ left: 10, right: 10, top: 8, bottom: 8 })
+              .backgroundColor(this.getSelectedValue(this.expandedFilter) === option ? '#F0F5FF' : '#FFFFFF')
+              .width('100%')
+              .onClick(() => {
+                this.selectFilterOption(this.expandedFilter, option);
+              })
+          }, (option: string) => option)
+        }
+        .padding(5)
+        .backgroundColor('#FFFFFF')
+        .borderRadius(10)
+        .shadow({ radius: 12, color: 'rgba(0, 0, 0, 0.2)', offsetY: 4 })
+        .width(85)
+        .position({ x: this.getFilterButtonX(this.expandedFilter), y: 172 })
+        .zIndex(1000)
+      }
 
       // 通知弹窗
       if (this.showNotifications) {
@@ -685,14 +725,15 @@ struct HomePage {
       }
       // 底部导航栏
       Row({ space: 0 }) {
-        // 主页
+        // 主页 - 当前选中
         Column({ space: 2 }) {
           SymbolGlyph($r('sys.symbol.house'))
             .fontSize(24)
-            .fontColor(['#1A1A1A'])
+            .fontColor(['#3B73FE'])
           Text('主页')
             .fontSize(11)
-            .fontColor('#1A1A1A')
+            .fontColor('#3B73FE')
+            .fontWeight(FontWeight.Medium)
         }
         .layoutWeight(1)
         .justifyContent(FlexAlign.Center)
@@ -705,10 +746,10 @@ struct HomePage {
         Column({ space: 2 }) {
           SymbolGlyph($r('sys.symbol.book'))
             .fontSize(24)
-            .fontColor(['#1A1A1A'])
+            .fontColor(['#666666'])
           Text('剧本库')
             .fontSize(11)
-            .fontColor('#1A1A1A')
+            .fontColor('#666666')
         }
         .layoutWeight(1)
         .justifyContent(FlexAlign.Center)
@@ -721,10 +762,10 @@ struct HomePage {
         Column({ space: 2 }) {
           SymbolGlyph($r('sys.symbol.arrow_down_circle'))
             .fontSize(24)
-            .fontColor(['#1A1A1A'])
+            .fontColor(['#666666'])
           Text('下载管理')
             .fontSize(11)
-            .fontColor('#1A1A1A')
+            .fontColor('#666666')
         }
         .layoutWeight(1)
         .justifyContent(FlexAlign.Center)
@@ -737,10 +778,10 @@ struct HomePage {
         Column({ space: 2 }) {
           SymbolGlyph($r('sys.symbol.person'))
             .fontSize(24)
-            .fontColor(['#1A1A1A'])
+            .fontColor(['#666666'])
           Text('个人中心')
             .fontSize(11)
-            .fontColor('#1A1A1A')
+            .fontColor('#666666')
         }
         .layoutWeight(1)
         .justifyContent(FlexAlign.Center)
