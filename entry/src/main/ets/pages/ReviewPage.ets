@@ -35,12 +35,12 @@ struct ReviewPage {
   @Builder
   private reviewField(title: string, placeholder: string, value: string, handler: (v: string) => void) {
     Column({ space: 10 }) {
-      Text(title).fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+      Text(title).fontSize(14).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
       TextInput({ placeholder, text: value })
         .onChange((v: string) => { handler(v); this.saved = false })
         .height(120)
-        .backgroundColor(WarmTheme.card)
-        .borderRadius(20)
+        .backgroundColor('#FFFFFF')
+        .borderRadius(15)
         .padding({ left: 12, right: 12 })
     }
     .padding({ left: 20, right: 20 })
@@ -49,7 +49,7 @@ struct ReviewPage {
   @Builder
   private ratingSection() {
     Column({ space: 12 }) {
-      Text('给剧本打分').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+      Text('给剧本打分').fontSize(14).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
       Row({ space: 16 }) {
         ForEach([1, 2, 3, 4, 5], (star: number) => {
           SymbolGlyph(this.rating >= star ? $r('sys.symbol.star_fill') : $r('sys.symbol.star'))
@@ -67,13 +67,13 @@ struct ReviewPage {
       if (this.rating > 0) {
         Text(this.getRatingText())
           .fontSize(13)
-          .fontColor(WarmTheme.textSecondary)
+          .fontColor('#666666')
           .textAlign(TextAlign.Center)
       }
     }
     .padding({ left: 20, right: 20, top: 12, bottom: 12 })
-    .backgroundColor(WarmTheme.card)
-    .borderRadius(20)
+    .backgroundColor('#FFFFFF')
+    .borderRadius(15)
     .margin({ left: 20, right: 20 })
   }
 
@@ -99,16 +99,16 @@ struct ReviewPage {
       Column({ space: 18 }) {
         Row({ space: 12 }) {
           Button('← 返回')
-            .backgroundColor('#F6E1D4')
-            .fontColor(WarmTheme.textPrimary)
+            .backgroundColor('#E6EFFF')
+            .fontColor('#3B73FE')
             .borderRadius(16)
             .onClick(() => { try { router.back() } catch (_) {} })
           Blank()
         }.width('100%').padding({ left: 20, right: 20, top: 16 })
 
         Column({ space: 6 }) {
-          Text('撰写剧本点评').fontSize(24).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary)
-          Text(`剧本：${this.scriptTitle.length > 0 ? this.scriptTitle : this.scriptId}`).fontSize(12).fontColor(WarmTheme.textSecondary)
+          Text('撰写剧本点评').fontSize(24).fontWeight(FontWeight.Bold).fontColor('#1A1A1A')
+          Text(`剧本：${this.scriptTitle.length > 0 ? this.scriptTitle : this.scriptId}`).fontSize(12).fontColor('#666666')
         }.padding({ left: 20, right: 20 })
 
         this.ratingSection()
@@ -118,19 +118,19 @@ struct ReviewPage {
         this.reviewField('建议 / 吐槽', '想改进的地方、或对下一位玩家的提醒', this.suggestion, (v: string) => { this.suggestion = v })
 
         if (this.saved) {
-          Text('✔ 已提交，感谢你的反馈').fontSize(12).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
+          Text('✔ 已提交，感谢你的反馈').fontSize(12).fontColor('#666666').padding({ left: 20, right: 20 })
         }
 
         Row({ space: 12 }) {
           Button('提交')
             .type(ButtonType.Capsule)
-            .backgroundColor(WarmTheme.accent)
+            .backgroundColor('#3B73FE')
             .fontColor('#FFFFFF')
             .layoutWeight(1)
             .onClick(() => { this.onSubmit(); })
           Button('清空')
-            .backgroundColor('#F6E1D4')
-            .fontColor(WarmTheme.textPrimary)
+            .backgroundColor('#E6EFFF')
+            .fontColor('#3B73FE')
             .layoutWeight(1)
             .onClick(() => {
               this.rating = 0;
@@ -141,7 +141,7 @@ struct ReviewPage {
             })
         }.padding({ left: 20, right: 20, bottom: 32 })
       }
-    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
+    }.scrollBar(BarState.Off).height('100%').backgroundColor('#F1F5F9')
   }
 }
 

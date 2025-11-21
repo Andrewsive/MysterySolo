@@ -104,9 +104,9 @@ struct PlayPage {
       Column({ space: 18 }) {
         // 顶部标题栏
         Column({ space: 6 }) {
-          Text(this.scriptTitle).fontSize(24).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary).padding({ top: 24, left: 20, right: 20 })
+          Text(this.scriptTitle).fontSize(24).fontWeight(FontWeight.Bold).fontColor('#1A1A1A').padding({ top: 24, left: 20, right: 20 })
           if (this.scriptMood.length > 0) {
-            Text(this.scriptMood).fontSize(13).fontColor(WarmTheme.textSecondary).padding({ left: 20, right: 20 })
+            Text(this.scriptMood).fontSize(13).fontColor('#666666').padding({ left: 20, right: 20 })
           }
         }
 
@@ -114,24 +114,27 @@ struct PlayPage {
         if (this.totalClues > 0) {
           Column({ space: 8 }) {
             Row() {
-              Text('🔍 线索进度').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+              Text('🔍 线索进度').fontSize(14).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
               Blank()
-              Text(`${this.clueCount}/${this.totalClues}`).fontSize(14).fontColor(WarmTheme.textSecondary)
+              Text(`${this.clueCount}/${this.totalClues}`).fontSize(14).fontColor('#666666')
             }.width('100%')
             
             Progress({ value: this.clueCount, total: this.totalClues, type: ProgressType.Linear })
               .width('100%')
               .height(6)
               .borderRadius(3)
+              .color('#3B73FE')
+              .backgroundColor('#E6EFFF')
             
             if (this.hasNewClue) {
-              Text('✨ 刚刚获得了新线索！').fontSize(12).fontColor(WarmTheme.accentDark)
+              Text('✨ 刚刚获得了新线索！').fontSize(12).fontColor('#3B73FE')
             }
           }
           .padding(16)
-          .backgroundColor('#FFF0E0')
-          .borderRadius(12)
+          .backgroundColor('#FFFFFF')
+          .borderRadius(15)
           .margin({ left: 20, right: 20 })
+          .shadow({ radius: 8, color: 'rgba(0, 0, 0, 0.1)', offsetY: 2 })
         }
 
         // 功能按钮栏
@@ -140,14 +143,14 @@ struct PlayPage {
             Button() {
               Row({ space: 4 }) {
                 Text('📋').fontSize(16)
-                Text('线索簿').fontSize(14)
+                Text('线索簿').fontSize(14).fontColor('#666666')
                 if (this.clueCount > 0) {
-                  Text(`(${this.clueCount})`).fontSize(12).opacity(0.7)
+                  Text(`(${this.clueCount})`).fontSize(12).opacity(0.7).fontColor('#666666')
                 }
               }
             }
             .type(ButtonType.Normal)
-            .backgroundColor('#FFF2E5')
+            .backgroundColor('#E6EFFF')
             .borderRadius(14)
             .height(46)
             .layoutWeight(1)
@@ -161,12 +164,12 @@ struct PlayPage {
             Button() {
               Row({ space: 4 }) {
                 Text('💡').fontSize(16)
-                Text(`提示`).fontSize(14)
-                Text(`${this.usedHints}/${Math.max(this.hints.length, 1)}`).fontSize(12).opacity(0.7)
+                Text(`提示`).fontSize(14).fontColor('#666666')
+                Text(`${this.usedHints}/${Math.max(this.hints.length, 1)}`).fontSize(12).opacity(0.7).fontColor('#666666')
               }
             }
             .type(ButtonType.Normal)
-            .backgroundColor('#FFECDC')
+            .backgroundColor('#E6EFFF')
             .borderRadius(14)
             .height(46)
             .layoutWeight(1)
@@ -178,11 +181,11 @@ struct PlayPage {
           Button() {
             Row({ space: 4 }) {
               Text('🔄').fontSize(16)
-              Text('重新开始').fontSize(14)
+              Text('重新开始').fontSize(14).fontColor('#666666')
             }
           }
           .type(ButtonType.Normal)
-          .backgroundColor('#F4E7DC')
+          .backgroundColor('#E5E9EC')
           .borderRadius(14)
           .height(46)
           .width('100%')
@@ -210,24 +213,24 @@ struct PlayPage {
 
         // 剧情文本区域
         Column({ space: 12 }) {
-          Text('剧情进展').fontSize(14).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+          Text('剧情进展').fontSize(14).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
           Text(this.sceneText)
             .fontSize(16)
             .lineHeight(26)
-            .fontColor(WarmTheme.textPrimary)
+            .fontColor('#1A1A1A')
             .padding({ left: 16, right: 16, top: 16, bottom: 16 })
         }
-        .backgroundColor(WarmTheme.card)
-        .borderRadius(20)
+        .backgroundColor('#FFFFFF')
+        .borderRadius(15)
         .margin({ left: 20, right: 20 })
-        .shadow(WarmShadow.light)
+        .shadow({ radius: 8, color: 'rgba(0, 0, 0, 0.1)', offsetY: 2 })
 
         // 选项提示
         if (this.choices.length > 0) {
           Text('📍 请选择你的行动：')
             .fontSize(14)
             .fontWeight(FontWeight.Medium)
-            .fontColor(WarmTheme.textPrimary)
+            .fontColor('#1A1A1A')
             .padding({ left: 20 })
         }
 
@@ -236,17 +239,17 @@ struct PlayPage {
           ForEach(this.choices, (c: Choice, index: number) => {
             Button() {
               Row({ space: 8 }) {
-                Text(`${index + 1}`).fontSize(14).fontColor(WarmTheme.textSecondary)
-                Text(c.text).fontSize(15).layoutWeight(1).textAlign(TextAlign.Start).fontColor(WarmTheme.textPrimary)
-                Text('→').fontSize(16).fontColor(WarmTheme.textSecondary)
+                Text(`${index + 1}`).fontSize(14).fontColor('#666666')
+                Text(c.text).fontSize(15).layoutWeight(1).textAlign(TextAlign.Start).fontColor('#1A1A1A')
+                Text('→').fontSize(16).fontColor('#666666')
               }.width('100%')
             }
             .type(ButtonType.Normal)
             .margin({ left: 20, right: 20 })
             .padding({ top: 16, bottom: 16, left: 16, right: 16 })
-            .backgroundColor(WarmTheme.card)
-            .borderRadius(18)
-            .shadow(WarmShadow.light)
+            .backgroundColor('#FFFFFF')
+            .borderRadius(15)
+            .shadow({ radius: 8, color: 'rgba(0, 0, 0, 0.1)', offsetY: 2 })
             .onClick(() => {
               if (!this.eng) {
                 return;
@@ -261,7 +264,7 @@ struct PlayPage {
           })
         }.padding({ bottom: 32 })
       }
-    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
+    }.scrollBar(BarState.Off).height('100%').backgroundColor('#F1F5F9')
   }
 }
 

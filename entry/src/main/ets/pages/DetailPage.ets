@@ -270,49 +270,49 @@ struct DetailPage {
     Scroll() {
       Column({ space: 22 }) {
         if (!this.loaded) {
-          Text('加载中…').padding(16).fontColor(WarmTheme.textPrimary)
+          Text('加载中…').padding(16).fontColor('#1A1A1A')
         } else {
           Column({ space: 18 }) {
             Row({ space: 12 }) {
-              Button('◀').backgroundColor('transparent').fontColor(WarmTheme.textPrimary).onClick(() => {
+              Button('◀').backgroundColor('transparent').fontColor('#1A1A1A').onClick(() => {
                 try { router.back() } catch (_) {}
               })
-              Text('剧本详情').fontColor(WarmTheme.textSecondary).fontSize(13)
+              Text('剧本详情').fontColor('#666666').fontSize(13)
               Blank()
-              Text('…').fontSize(18).fontColor(WarmTheme.textSecondary)
+              Text('…').fontSize(18).fontColor('#666666')
             }.padding({ left: 20, right: 20, top: 12 })
 
             Column({ space: 16 }) {
               Row({ space: 18 }) {
                 Column() {
-                  Text(this.coverSeed).fontSize(34).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary)
+                  Text(this.coverSeed).fontSize(34).fontWeight(FontWeight.Bold).fontColor('#1A1A1A')
                 }
                 .width(110)
                 .height(150)
-                .backgroundColor('#FFE2CE')
+                .backgroundColor('#F1F5F9')
                 .borderRadius(24)
                 .alignItems(HorizontalAlign.Center)
                 .justifyContent(FlexAlign.Center)
 
                 Column({ space: 10 }) {
                   Column({ space: 4 }) {
-                    Text(this.title).fontSize(22).fontWeight(FontWeight.Bold).fontColor(WarmTheme.textPrimary)
+                    Text(this.title).fontSize(22).fontWeight(FontWeight.Bold).fontColor('#1A1A1A')
                     if (this.tagline.length > 0) {
-                      Text(this.tagline).fontSize(13).fontColor(WarmTheme.textSecondary)
+                      Text(this.tagline).fontSize(13).fontColor('#666666')
                     }
                   }
                   Row({ space: 8 }) {
-                    Text(this.genre).fontSize(12).fontColor(WarmTheme.textSecondary)
-                    Text(this.difficultyLabel()).fontSize(12).fontColor(WarmTheme.textSecondary)
-                    Text(`约 ${this.durationMin} 分钟`).fontSize(12).fontColor(WarmTheme.textSecondary)
+                    Text(this.genre).fontSize(12).fontColor('#666666')
+                    Text(this.difficultyLabel()).fontSize(12).fontColor('#666666')
+                    Text(`约 ${this.durationMin} 分钟`).fontSize(12).fontColor('#666666')
                   }
                   Row({ space: 6 }) {
                     ForEach(this.tags.slice(0, 4), (tag: string) => {
                       Text(tag)
                         .fontSize(11)
-                        .fontColor(WarmTheme.textSecondary)
+                        .fontColor('#666666')
                         .padding({ left: 10, right: 10, top: 4, bottom: 4 })
-                        .backgroundColor('#FFF2E5')
+                        .backgroundColor('#E6EFFF')
                         .borderRadius(12)
                     })
                   }
@@ -321,15 +321,15 @@ struct DetailPage {
 
               Row({ space: 12 }) {
                 Button('想玩')
-                  .backgroundColor('#FFE3CF')
-                  .fontColor(WarmTheme.accentDark)
+                  .backgroundColor('#3B73FE')
+                  .fontColor('#FFFFFF')
                   .borderRadius(20)
                   .onClick(() => {
                     try { router.pushUrl({ url: 'pages/PlayPage', params: { id: this.sId } }) } catch (_) {}
                   })
                 Button('写测评')
-                  .backgroundColor('#F9E7DB')
-                  .fontColor(WarmTheme.textPrimary)
+                  .backgroundColor('#E6EFFF')
+                  .fontColor('#3B73FE')
                   .borderRadius(20)
                   .onClick(() => {
                     try { router.pushUrl({ url: 'pages/ReviewPage', params: { id: this.sId, title: this.title } }) } catch (_) {}
@@ -338,55 +338,53 @@ struct DetailPage {
               }
             }
             .padding(22)
-            .backgroundColor(WarmTheme.card)
+            .backgroundColor('#FFFFFF')
             .borderRadius(32)
-            .shadow(WarmShadow.card)
+            .shadow({ radius: 8, color: 'rgba(0, 0, 0, 0.1)', offsetY: 2 })
           }
 
           Column({ space: 16 }) {
-            Text('玩家评分').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+            Text('玩家评分').fontSize(16).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
             Row({ space: 12 }) {
               Column({ space: 6 }) {
-                Text(this.rating.toFixed(1)).fontSize(34).fontWeight(FontWeight.Bold).fontColor(WarmTheme.accentDark)
-                Text('综合评价').fontSize(12).fontColor(WarmTheme.textSecondary)
-                Text('基于 14466 位玩家统计').fontSize(10).fontColor('#B49987')
+                Text(this.rating.toFixed(1)).fontSize(34).fontWeight(FontWeight.Bold).fontColor('#3B73FE')
+                Text('综合评价').fontSize(12).fontColor('#666666')
+                Text('基于 14466 位玩家统计').fontSize(10).fontColor('#999999')
               }
               Column({ space: 12 }) {
                 ForEach(['剧情', '情绪', '推理'], (label: string, index: number) => {
                   Row({ space: 10 }) {
-                    Text(label).fontSize(12).fontColor(WarmTheme.textSecondary)
+                    Text(label).fontSize(12).fontColor('#666666')
                     Progress({ value: this.ratingBreakdown[index], total: 10, type: ProgressType.Linear })
                       .layoutWeight(1)
                       .height(4)
-                    Text(this.ratingBreakdown[index].toFixed(1)).fontSize(12).fontColor(WarmTheme.textPrimary)
+                      .color('#3B73FE')
+                      .backgroundColor('#E6EFFF')
+                    Text(this.ratingBreakdown[index].toFixed(1)).fontSize(12).fontColor('#1A1A1A')
                   }
                 })
               }.layoutWeight(1)
-            }.padding(18).backgroundColor('#FFF2E5').borderRadius(26)
+            }.padding(18).backgroundColor('#FFFFFF').borderRadius(26)
           }.padding({ left: 20, right: 20 })
 
           Column({ space: 12 }) {
-            Text('用户评价').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary).padding({ left: 4 })
+            Text('用户评价').fontSize(16).fontWeight(FontWeight.Medium).fontColor('#1A1A1A').padding({ left: 4 })
             Column({ space: 16 }) {
               ForEach(this.displayedReviews(), (review: ReviewEntry, index: number) => {
                 Column({ space: 0 }) {
                   Row({ space: 12 }) {
-                    Row() {
-                      Text('👤').fontSize(20)
-                    }
-                    .width(46)
-                    .height(46)
-                    .borderRadius(23)
-                    .backgroundColor('#F5E6D9')
-                    .justifyContent(FlexAlign.Center)
-                    .alignItems(VerticalAlign.Center)
+                    Image($rawfile('avatar.png'))
+                      .width(46)
+                      .height(46)
+                      .borderRadius(23)
+                      .objectFit(ImageFit.Cover)
 
                     Column({ space: 12 }) {
                       Row({ space: 0 }) {
-                        Text(review.user).fontSize(15).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+                        Text(review.user).fontSize(15).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
                         Blank()
                       }
-                      Text(review.content).fontSize(14).lineHeight(24).fontColor(WarmTheme.textSecondary)
+                      Text(review.content).fontSize(14).lineHeight(24).fontColor('#666666')
                       Row({ space: 8 }) {
                         Text('昨天 22:33').fontSize(11).fontColor('#999999')
                         Text(this.getRegionForReview(index)).fontSize(11).fontColor('#999999')
@@ -427,22 +425,18 @@ struct DetailPage {
                           ForEach(review.comments, (comment: CommentEntry, commentIndex: number) => {
                             Column({ space: 0 }) {
                               Row({ space: 12 }) {
-                                Row() {
-                                  Text('👤').fontSize(20)
-                                }
-                                .width(46)
-                                .height(46)
-                                .borderRadius(23)
-                                .backgroundColor('#F5E6D9')
-                                .justifyContent(FlexAlign.Center)
-                                .alignItems(VerticalAlign.Center)
+                                Image($rawfile('avatar.png'))
+                                  .width(46)
+                                  .height(46)
+                                  .borderRadius(23)
+                                  .objectFit(ImageFit.Cover)
 
                                 Column({ space: 12 }) {
                                   Row({ space: 0 }) {
-                                    Text(comment.user).fontSize(15).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
+                                    Text(comment.user).fontSize(15).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
                                     Blank()
                                   }
-                                  Text(comment.content).fontSize(14).lineHeight(24).fontColor(WarmTheme.textSecondary)
+                                  Text(comment.content).fontSize(14).lineHeight(24).fontColor('#666666')
                                   Row({ space: 8 }) {
                                     Text('1小时前').fontSize(11).fontColor('#999999')
                                     Text(this.getRegionForComment(commentIndex)).fontSize(11).fontColor('#999999')
@@ -468,9 +462,9 @@ struct DetailPage {
                               }.alignItems(VerticalAlign.Top)
                             }
                             .padding(16)
-                            .backgroundColor('#FAFAFA')
-                            .borderRadius(0)
-                            .margin({ bottom: 1 })
+                            .backgroundColor('#FFFFFF')
+                            .borderRadius(12)
+                            .margin({ bottom: 8 })
                           }, (comment: CommentEntry) => comment.id)
                         }.margin({ top: 8 })
                       }
@@ -487,12 +481,12 @@ struct DetailPage {
                       Row({ space: 10 }) {
                         Button('发送')
                           .type(ButtonType.Capsule)
-                          .backgroundColor(WarmTheme.accent)
+                          .backgroundColor('#3B73FE')
                           .fontColor('#FFFFFF')
                           .fontSize(12)
                           .onClick(() => { this.submitComment() })
                         Button('取消')
-                          .backgroundColor('#F0F0F0')
+                          .backgroundColor('#E5E9EC')
                           .fontColor('#666666')
                           .fontSize(12)
                           .borderRadius(18)
@@ -502,16 +496,16 @@ struct DetailPage {
                   }
                 }
                 .padding(16)
-                .backgroundColor('#FAFAFA')
-                .borderRadius(0)
-                .margin({ bottom: 1 })
+                .backgroundColor('#FFFFFF')
+                .borderRadius(12)
+                .margin({ bottom: 8 })
               }, (review: ReviewEntry) => review.id)
             }
             Row({ space: 10 }) {
               Button(this.showAllReviews ? '收起评价' : '展开更多')
                 .type(ButtonType.Capsule)
-                .backgroundColor('#F4E6DA')
-                .fontColor(WarmTheme.textPrimary)
+                .backgroundColor('#E6EFFF')
+                .fontColor('#3B73FE')
                 .fontSize(13)
                 .onClick(() => { this.showAllReviews = !this.showAllReviews })
               Blank()
@@ -519,35 +513,35 @@ struct DetailPage {
           }.padding({ left: 20, right: 20 })
 
           Column({ space: 12 }) {
-            Text('剧情简介').fontSize(16).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
-            Text(this.intro).fontSize(14).lineHeight(24).fontColor(WarmTheme.textSecondary)
+            Text('剧情简介').fontSize(16).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
+            Text(this.intro).fontSize(14).lineHeight(24).fontColor('#666666')
           }.padding({ left: 20, right: 20 })
 
           if (this.highlightCards.length > 0 || this.mood.length > 0 || this.highlight.length > 0) {
             Column({ space: 12 }) {
               if (this.mood.length > 0) {
                 Column({ space: 6 }) {
-                  Text('沉浸氛围').fontSize(15).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
-                  Text(this.mood).fontSize(13).fontColor(WarmTheme.textSecondary)
+                  Text('沉浸氛围').fontSize(15).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
+                  Text(this.mood).fontSize(13).fontColor('#666666')
                 }
               }
               if (this.highlight.length > 0) {
                 Column({ space: 6 }) {
-                  Text('亮点设定').fontSize(15).fontWeight(FontWeight.Medium).fontColor(WarmTheme.textPrimary)
-                  Text(this.highlight).fontSize(13).fontColor(WarmTheme.textSecondary)
+                  Text('亮点设定').fontSize(15).fontWeight(FontWeight.Medium).fontColor('#1A1A1A')
+                  Text(this.highlight).fontSize(13).fontColor('#666666')
                 }
               }
               ForEach(this.highlightCards, (desc: string) => {
-                Text(desc).fontSize(13).fontColor(WarmTheme.textSecondary).padding({ top: 6, bottom: 6 })
-                  .backgroundColor('#FFF6EE').borderRadius(14).padding({ left: 12, right: 12 })
+                Text(desc).fontSize(13).fontColor('#666666').padding({ top: 6, bottom: 6 })
+                  .backgroundColor('#E6EFFF').borderRadius(14).padding({ left: 12, right: 12 })
               }, (desc: string) => desc)
-            }.padding({ left: 20, right: 20 }).backgroundColor(WarmTheme.card).borderRadius(26).padding({ top: 16, bottom: 16 }).shadow(WarmShadow.light)
+            }.padding({ left: 20, right: 20 }).backgroundColor('#FFFFFF').borderRadius(26).padding({ top: 16, bottom: 16 }).shadow({ radius: 8, color: 'rgba(0, 0, 0, 0.1)', offsetY: 2 })
           }
 
           Button('立即开始推理')
             .type(ButtonType.Capsule)
             .fontSize(16)
-            .backgroundColor(WarmTheme.accent)
+            .backgroundColor('#3B73FE')
             .fontColor('#FFFFFF')
             .margin({ left: 20, right: 20, bottom: 36, top: 4 })
             .onClick(() => {
@@ -555,6 +549,6 @@ struct DetailPage {
             })
         }
       }.padding({ bottom: 24 })
-    }.scrollBar(BarState.Off).height('100%').backgroundColor(WarmTheme.background)
+    }.scrollBar(BarState.Off).height('100%').backgroundColor('#F1F5F9')
   }
 } 
